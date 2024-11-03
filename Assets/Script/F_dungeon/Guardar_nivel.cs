@@ -5,12 +5,14 @@ public class GuardarCargarMazmorra : MonoBehaviour
 {
     [SerializeField] private SO_guardaNivel _mazmorraSO;
     public int _whidth, _height;
+    string _name_arch;
 
-    private void Start()
+    private void Awake()
     {
-       /* if (File.Exists(Obt_Dir("nivel1"))) { 
-        
-        }*/
+        //precargar informacion del SO
+        _name_arch = _mazmorraSO.archivo;
+        _whidth = _mazmorraSO.width;
+        _height = _mazmorraSO.height;
     }
     public void GuardarEnScriptableObject(Cell[,] board, int x, int y)
     {
@@ -123,5 +125,12 @@ public class GuardarCargarMazmorra : MonoBehaviour
             }
             return true;
         }
+    }
+
+    //----
+    //-----------------------------
+    //----
+    public string Obt_nom_archivo() {
+        return _name_arch;
     }
 }
