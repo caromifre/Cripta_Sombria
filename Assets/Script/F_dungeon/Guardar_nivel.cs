@@ -4,10 +4,19 @@ using UnityEngine;
 public class GuardarCargarMazmorra : MonoBehaviour
 {
     [SerializeField] private SO_guardaNivel _mazmorraSO;
+    public int _whidth, _height;
 
-    //guardar la mazmorra o nivel elegido
+    private void Start()
+    {
+       /* if (File.Exists(Obt_Dir("nivel1"))) { 
+        
+        }*/
+    }
     public void GuardarEnScriptableObject(Cell[,] board, int x, int y)
     {
+        //guardar la mazmorra o nivel elegido
+        /* Este metodo recibe el tablero a ser guardado en board
+         en x e y las dimensiones de la matriz*/
         _mazmorraSO.width = x;
         _mazmorraSO.height = y;
         _mazmorraSO.cells = new Cell[x * y];
@@ -31,9 +40,17 @@ public class GuardarCargarMazmorra : MonoBehaviour
           }
     }
 
-    //carga el o los niveles desde el scriptable object
+    //-----
+    //--------------------------------
+    //-----
+    
     public void CargarDesdeScriptableObject(ref Cell[,] board)
     {
+        //carga el o los niveles desde el scriptable object
+        /* Este metodo recibe el tablero como referencia en board
+         en x e y las dimensiones de la matriz busca el archivo
+        donde se guardo al configuracion del scriotableObject y 
+        lo carga en la matriz board*/
         board = new Cell[_mazmorraSO.width, _mazmorraSO.height];
 
         if(inicializar_tablero(ref board)){
@@ -59,9 +76,11 @@ public class GuardarCargarMazmorra : MonoBehaviour
     //-----------------------------
     //----
 
-    //inicializa el array (tablero) en blanco
+    
     bool inicializar_tablero(ref Cell[] board)
     {
+        //inicializa el array (tablero) en blanco
+        //para un array unidimensional
         if (board == null)
         {
             Debug.Log("error al inicializar el tablero inicicalizar board con 'new' ");
@@ -71,19 +90,23 @@ public class GuardarCargarMazmorra : MonoBehaviour
         {
             //crea un tablero en blanco
             for (int a = 0; a < board.GetLength(0); a++)
-            {
-                
-                    board[a] = new Cell();
-                
+            {                
+                board[a] = new Cell();                
             }
             return true;
         }
 
     }
-    
-    //sobrecarga para matrices 2d
+
+    //----
+    //-----------------------------
+    //----
+
     bool inicializar_tablero(ref Cell[,] board)
     {
+        //sobrecarga para matrices 2d
+        //inicializa el array (tablero) en blanco
+        //para un matriz 2D
         if (board == null)
         {
             Debug.Log("error al inicializar el tablero inicicalizar board con 'new' ");

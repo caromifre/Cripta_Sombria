@@ -15,8 +15,8 @@ public class Instancia_mazmorra : MonoBehaviour,IGen_mazmorra
         // X,Y indican el tamaño de la matriz de objetos a instanciar
         //o_x,o_y es el tamaño de la celda offset en x e y
         GameObject Nueva_celda;
-        int celda = 0;
-        
+        int celda;
+        Debug.Log("tamaño: " + board.GetLength(0) +" - "+ board.GetLength(1));
         for (int a = 0; a < X; a++)
         {
             for (int b = 0; b < Y; b++)
@@ -26,7 +26,7 @@ public class Instancia_mazmorra : MonoBehaviour,IGen_mazmorra
                     if (board[a, b].inicio) celda = _INICIO;
                     else if (board[a, b].fin) celda = _FIN;
                     else celda = Random.Range(2, rooms.Length);
-
+                    Debug.Log("instancia: " + a + " - "+ b);
                     Nueva_celda = Instantiate(rooms[celda], new Vector3(a * o_x, 0f, -b * o_y), Quaternion.identity) as GameObject;
                     _P_celda = Nueva_celda.GetComponent<Prop_Celda>();
                     _P_celda.actualizar_celda(_PAREDES, board[a, b].pared);

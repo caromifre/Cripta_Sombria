@@ -2,7 +2,10 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 
-/*clase apra guardar en disco los datos del scriptable object*/
+/* clase para guardar en disco los datos del scriptable object
+ * esta clase se usa para ser heredada en vez del ScriptableObject
+ * asi el ScriptableObject que herede de esta clase ya tiene la funcion
+ * de guardar a un archivo los datos que se le pasen*/
 public class Guardar_nivel_Disk : ScriptableObject
 {
     public void Guardar(string nom_arch=null) {
@@ -20,6 +23,10 @@ public class Guardar_nivel_Disk : ScriptableObject
         //cerrar
         file.Close();
     }
+
+    //----
+    //-----------------------------
+    //----
     public void Cargar(string nom_arch = null) {
         //carga los datos el scriptableObject
         if (File.Exists(Obt_Dir(nom_arch)))
@@ -36,6 +43,9 @@ public class Guardar_nivel_Disk : ScriptableObject
         }
     }
 
+    //----
+    //-----------------------------
+    //----
     string Obt_Dir(string nom_arch = null) {
         //comprueba y obtiene nombre  y direcion completo para guardar el archivo 
 
@@ -43,32 +53,6 @@ public class Guardar_nivel_Disk : ScriptableObject
         string nom_compl = string.IsNullOrEmpty(nom_arch)?name:nom_arch;
         //devuelve nombre completo mas extension
         return string.Format("{0}/{1}.bin", Application.persistentDataPath,nom_compl);
-    }
-
-    //----
-    //-----------------------------
-    //----
-
-    //inicializa el array (tablero) en blanco
-    bool inicializar_tablero(ref Cell[,] board)
-    {
-        if (board == null)
-        {
-            Debug.Log("error al inicializar el tablero inicicalizar board con 'new' ");
-            return false;
-        }
-        else
-        {
-            //crea un tablero en blanco
-            for (int a = 0; a < board.GetLength(0); a++)
-            {
-                for (int b = 0; b < board.GetLength(1); b++)
-                {
-                    board[a, b] = new Cell();
-                }
-            }
-            return true;
-        }
     }
 
 }
