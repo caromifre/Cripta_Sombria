@@ -27,7 +27,7 @@ public class Fabrica_mazmorras : MonoBehaviour
     }
 
 
-
+    //crea botonera basica
     private void OnGUI()
     {
         float w = Screen.width / 2;
@@ -36,11 +36,33 @@ public class Fabrica_mazmorras : MonoBehaviour
         {
             RegenerateDungeon();
         }
+        if (GUI.Button(new Rect(w, h - 60f, 250, 50), "Guardar Nivel")) {
+            GuardarMazmorra();
+        }
+        if (GUI.Button(new Rect(w, h - 120f, 250, 50), "Cargar Nivel"))
+        {
+            CargarMazmorra();
+        }
     }
 
     void RegenerateDungeon()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+    void GuardarMazmorra()
+    {
+        //GuardarCargarMazmorra2 guardado = GetComponent<GuardarCargarMazmorra2>();
+        GuardarCargarMazmorra guardado = GetComponent<GuardarCargarMazmorra>();
+        guardado.GuardarEnScriptableObject(_board, _x, _y);
+        //guardado.GuardarEnJSON();
+    }
 
+    void CargarMazmorra()
+    {
+        //GuardarCargarMazmorra2 guardado = GetComponent<GuardarCargarMazmorra2>();
+        GuardarCargarMazmorra guardado = GetComponent<GuardarCargarMazmorra>();
+        guardado.CargarDesdeScriptableObject(ref _board);
+        //guardado.CargarDesdeJSON();
+        _Gen_mazmorra.Generardungeon(_rooms, _board, _x, _y, offset.x, offset.y);
+    }
 }
