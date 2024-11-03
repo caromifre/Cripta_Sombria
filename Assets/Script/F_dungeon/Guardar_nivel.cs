@@ -34,8 +34,8 @@ public class GuardarCargarMazmorra : MonoBehaviour
                         c++;
                     }
                 }
-                //guardar datos en archivo binario
-                _mazmorraSO.Guardar("nivel1");
+                //guardar datos en archivo binario en 
+                _mazmorraSO.Guardar(_mazmorraSO.archivo);
                 Debug.Log("Mazmorra guardada en Scriptable Object");
           }
     }
@@ -56,7 +56,7 @@ public class GuardarCargarMazmorra : MonoBehaviour
         if(inicializar_tablero(ref board)){
             //obtener datos del archivo binario
             int c = 0;
-            _mazmorraSO.Cargar("nivel1");
+            _mazmorraSO.Cargar(_mazmorraSO.archivo);
 
             for (int i = 0; i < _mazmorraSO.width; i++)
             {
