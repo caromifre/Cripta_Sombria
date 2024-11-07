@@ -65,6 +65,19 @@ public abstract class Enemy : MonoBehaviour
         }
     }
 
+    // Funcion para esquivar paredes
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Collision"))
+        {
+            // Desactivar la animacion de caminar
+            animator.SetBool("Walk", false);
+
+            // Sumar 90 grados a la dirección actual
+            transform.Rotate(0, 90, 0);
+        }
+    }
+
     // Rotacion del enemigo a un angulo aleatorio
     protected void RotateEnemy()
     {
