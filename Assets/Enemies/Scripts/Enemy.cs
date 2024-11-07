@@ -1,0 +1,171 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class Enemy : MonoBehaviour
+{
+    // Atributos comunes para todos los enemigos
+    public float health { get; protected set; }
+    public float walkSpeed { get; protected set; }
+    public float runSpeed { get; protected set; }
+    public float detectionRange { get; protected set; }
+    public float damageGenerate { get; protected set; }
+
+    protected Animator animator;
+    protected GameObject player;
+
+    protected float player_distance; // Distancia del jugador
+    protected string action; // Animacion
+    protected int routine; // Rutina de comportamiento
+    private float timer;   // Cronometro
+    private Quaternion targetRotation;
+
+    private void Update()
+    {
+        if (DetectPlayer())
+        {
+            if (DistanceToPlayer() <= 1.5)
+            { 
+                Attack(); 
+            }
+            if (DistanceToPlayer() > 1.5)
+            {
+                MoveTowardsPlayer();
+            }
+        }
+        else 
+        { 
+            BehaviourRoutine(); 
+        }
+    }
+
+    // Logica de comportamiento segun una rutina basica
+    public virtual void BehaviourRoutine()
+    {
+        timer += Time.deltaTime;
+        if (timer >= 4)
+        {
+            routine = Random.Range(0, 3);
+            timer = 0;
+        }
+        if (health > 0)
+        {
+            switch (routine)
+            {
+                case 0: // Quedarse quieto
+                    SetAnimationFalse();
+                    break;
+                case 1: // Rotar
+                    RotateEnemy();
+                    break;
+                case 2: // Caminar
+                    Walk();
+                    break;
+            }
+        }
+    }
+
+    // Rotacion del enemigo a un angulo aleatorio
+    protected void RotateEnemy()
+    {
+        float degree = Random.Range(0, 360);
+        targetRotation = Quaternion.Euler(0, degree, 0);
+        routine++;
+    }
+
+    // Movimiento basico del enemigo
+    protected void Walk()
+    {
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 0.5f);
+        transform.Translate(Vector3.forward * walkSpeed * Time.deltaTime);
+        SetAnimation("Walk");
+    }
+
+    // Distancia a la que se encuentra del player
+    protected float DistanceToPlayer()
+    {
+        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        return distanceToPlayer;
+    }
+    // Deteccion del jugador con un rango personalizado por cada enemigo
+    protected bool DetectPlayer()
+    {
+        if (DistanceToPlayer() <= detectionRange)
+        {
+            return true;
+        }
+        else { return false; }  
+    }
+
+    // Movimiento hacia el jugador
+    protected void MoveTowardsPlayer()
+    {
+        Vector3 direction = (player.transform.position - transform.position).normalized;
+        direction.y = 0;
+        transform.rotation = Quaternion.LookRotation(direction);
+        transform.Translate(Vector3.forward * runSpeed * Time.deltaTime);
+
+        SetAnimation("Walk");
+    }
+
+    // Ataque
+    protected void Attack()
+    {
+        var lookPos = player.transform.position - transform.position;
+        lookPos.y = 0;
+
+        var rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 5f);
+        SetAnimation("Attack");
+        ///////////////// Incluir el daño hacia el jugador /////////////////
+    }
+
+    // Recibe dano
+    public void TakeDamage(float damage)
+    {
+        SetAnimation("Damage");
+        health -= damage;
+        animator.SetFloat("Health", health);
+        if (health <= 0) Die();
+    }
+
+    // Metodo para manejar la muerte
+    protected virtual void Die()
+    {
+        SetAnimation("Die");
+        Destroy(gameObject);
+    }
+
+    // Metodo para manejar los cambios de animaciones
+    protected void SetAnimation(string action)
+    {
+        SetAnimationFalse();
+
+        switch (action)
+        {
+            case "Still": // Quieto
+                SetAnimationFalse();
+                break;
+            case "Walk": // Caminar
+                animator.SetBool("Walk", true);
+                break;
+            case "Attack": // Atacar
+                animator.SetBool("Attack", true);
+                break;
+            case "Damage": // Recibir dano
+                animator.SetBool("Damage", true);
+                break;
+            case "Die": // Morir
+                animator.SetFloat("Health", 0);
+                break;
+        }
+    }
+
+    // Metodo para establecer las animaciones en false
+    protected void SetAnimationFalse()
+    {
+        animator.SetBool("Walk", false);
+        animator.SetBool("Attack", false);
+        animator.SetBool("Damage", false);
+    }
+}
