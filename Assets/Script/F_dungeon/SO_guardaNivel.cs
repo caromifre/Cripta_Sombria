@@ -21,4 +21,10 @@ public class SO_guardaNivel : Guardar_nivel_Disk
     public int height;
     //nombre del archivo donde se alamacena la mazmorra
     public string archivo;
+    //nombre de la carpeta donde se guardara el archivo
+    //esta carpeta se debe crear en la carpeta donde se halla 
+    //el sriptableobject
+    public string nom_carpeta;
+    //tamaño de la celda
+    public float offset_X, offset_Y;
 }

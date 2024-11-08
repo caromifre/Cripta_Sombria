@@ -22,7 +22,7 @@ public static class Constantes_celda
 
 
 
-
+    // booleanos para el control de los elementos de cada celda
     public const bool 
                     _DESACTIVAR_CELDA=false,
                     _ACTIVAR_CELDA=true,
@@ -30,6 +30,15 @@ public static class Constantes_celda
                     _ACTIVAR_PISO=true,
                     _ACTIVAR=true,
                     _DESACTIVAR=false;
-
-
+    
+    //enum para indicar que celda de los prefabs se va a mostrar o instanciar
+    public enum _TIPO_CELDA { 
+        INICIO=0,
+        FIN=1,
+        BASICA=2,
+        ORN_CANDELABRO=3,
+        ORN_LAMPARA=4,
+        ORN_ESQUELETO=5
+    
+    }
 }

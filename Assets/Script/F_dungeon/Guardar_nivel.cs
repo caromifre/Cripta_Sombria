@@ -14,13 +14,15 @@ public class GuardarCargarMazmorra : MonoBehaviour
         _whidth = _mazmorraSO.width;
         _height = _mazmorraSO.height;
     }
-    public void GuardarEnScriptableObject(Cell[,] board, int x, int y)
+    public void GuardarEnScriptableObject(Cell[,] board, int x, int y,float o_x,float o_y)
     {
         //guardar la mazmorra o nivel elegido
         /* Este metodo recibe el tablero a ser guardado en board
          en x e y las dimensiones de la matriz*/
         _mazmorraSO.width = x;
         _mazmorraSO.height = y;
+        _mazmorraSO.offset_X = o_x;
+        _mazmorraSO.offset_Y = o_y;
         _mazmorraSO.cells = new Cell[x * y];
         //inicializar celdas
         //crea un tablero en blanco
@@ -37,7 +39,7 @@ public class GuardarCargarMazmorra : MonoBehaviour
                     }
                 }
                 //guardar datos en archivo binario en 
-                _mazmorraSO.Guardar(_mazmorraSO.archivo);
+                _mazmorraSO.Guardar(_mazmorraSO.cells,_mazmorraSO.archivo);
                 Debug.Log("Mazmorra guardada en Scriptable Object");
           }
     }
@@ -46,7 +48,7 @@ public class GuardarCargarMazmorra : MonoBehaviour
     //--------------------------------
     //-----
     
-    public void CargarDesdeScriptableObject(ref Cell[,] board)
+    public void CargarDesdeScriptableObject(ref Cell[,] board,ref float o_x,ref float o_y)
     {
         //carga el o los niveles desde el scriptable object
         /* Este metodo recibe el tablero como referencia en board
@@ -59,7 +61,8 @@ public class GuardarCargarMazmorra : MonoBehaviour
             //obtener datos del archivo binario
             int c = 0;
             _mazmorraSO.Cargar(_mazmorraSO.archivo);
-
+            o_x = _mazmorraSO.offset_X;
+            o_y = _mazmorraSO.offset_Y;
             for (int i = 0; i < _mazmorraSO.width; i++)
             {
                 for (int j = 0; j < _mazmorraSO.height; j++)

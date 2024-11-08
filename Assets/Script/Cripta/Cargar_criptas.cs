@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Constantes_celda;
 //using static Constantes_celda;
 
+/*Clase para instanciar el nivel en la escena*/
 public class Cargar_criptas : MonoBehaviour
 {
     //matriz de celdas
     [SerializeField] GameObject[] _rooms;
-
+    [SerializeField] _TIPO_CELDA _tipo_celda;
     Instancia_mazmorra _Gen_mazmorra;
     GuardarCargarMazmorra _guardado;
-    //scriptable leer propiedades
-    SO_guardaNivel _SO_props;
+    float _X, _Y;
 
     Cell[,] _board;
 
@@ -21,25 +22,15 @@ public class Cargar_criptas : MonoBehaviour
         GameObject go = new GameObject("GeneradorMazmorra");
         _guardado = GetComponent<GuardarCargarMazmorra>();
 
-        _SO_props = new SO_guardaNivel();
-
-        Debug.Log("Archivo: "+_guardado.Obt_nom_archivo().ToString());
-
-        //_SO_props.Cargar(_SO_props.);
-
         _board = new Cell[_guardado._whidth, _guardado._height];
-        Debug.Log(_guardado._whidth + "  " + _guardado._height);
-        inicializar_tablero();
-        
-
-
        
+        inicializar_tablero();       
 
         _Gen_mazmorra = go.AddComponent<Instancia_mazmorra>();
 
-        _guardado.CargarDesdeScriptableObject(ref _board);
-        
-        _Gen_mazmorra.Generardungeon(_rooms, _board, _board.GetLength(0), _board.GetLength(1), 6, 6);
+        _guardado.CargarDesdeScriptableObject(ref _board,ref _X, ref _Y);
+        Debug.Log("_X: " + _X + "_Y: " + _Y);
+        _Gen_mazmorra.Generardungeon(_rooms, _board, _board.GetLength(0), _board.GetLength(1), _X, _Y,(int)_tipo_celda);
 
     }
 

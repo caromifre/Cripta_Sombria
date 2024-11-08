@@ -8,16 +8,17 @@ using UnityEngine;
  * de guardar a un archivo los datos que se le pasen*/
 public class Guardar_nivel_Disk : ScriptableObject
 {
-    public void Guardar(string nom_arch=null) {
+    public void Guardar(Cell[] cell, string nom_arch=null) {//cambio a obtner la lista de cell desde la llmada al metodo
 
         //funcion para guardar los datos del scriptable object en modo binario
         BinaryFormatter Bf = new BinaryFormatter();
         //crear archivo
         FileStream file = File.Create(Obt_Dir( nom_arch));
         //convertir a json
-        string json= JsonUtility.ToJson(this);
+        /*string json= JsonUtility.ToJson(this);
+        string kk=JsonUtility.FromJson<string>(json);*/
         //guardar
-        Bf.Serialize(file, json);
+        Bf.Serialize(file,cell);
 
         Debug.Log("directorio: " + Obt_Dir(nom_arch)  + " nombre: " + nom_arch);
         //cerrar
@@ -36,8 +37,11 @@ public class Guardar_nivel_Disk : ScriptableObject
             //abrir archivo
             FileStream file = File.Open(Obt_Dir(nom_arch), FileMode.Open);
             //descifrar y sobreescrobir el scriptableObject
-            JsonUtility.FromJsonOverwrite((string)Bf.Deserialize(file), this);
+            //JsonUtility.FromJsonOverwrite((string)Bf.Deserialize(file), this);
+            JsonUtility.ToJson(Bf.Deserialize(file),this);//modo binario
+            //string jon=Bf.Deserialize(file); 
             //cerrar archivo
+
             Debug.Log("directorio: " + Obt_Dir(nom_arch) + " nombre: " + nom_arch);
             file.Close();
         }

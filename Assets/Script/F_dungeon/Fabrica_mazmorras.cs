@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Constantes_celda;
 
 public class Fabrica_mazmorras : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class Fabrica_mazmorras : MonoBehaviour
     [SerializeField] int _x, _y;
     [SerializeField] int _startPos = 0;
 
-    [SerializeField] GameObject[] _rooms;
+    [SerializeField] GameObject[] _rooms;//lista de celdas para instanciar
+    [SerializeField] _TIPO_CELDA _tipo_celda;//selecionar decoracion
     [SerializeField] Vector2 offset;
     [SerializeField] int _Galerias;
     Cell[,] _board;
@@ -23,7 +25,8 @@ public class Fabrica_mazmorras : MonoBehaviour
 
         _Laberinto.crear_camino(_board);
         _C_galerias.crear_galerias(_board);
-        _Gen_mazmorra.Generardungeon(_rooms,_board,_x, _y,offset.x,offset.y);
+        _Gen_mazmorra.Generardungeon(_rooms,_board,_x, _y,offset.x,offset.y,(int)_tipo_celda);
+        //Debug.Log("celda elegida: " + ((int)_tipo_celda));
     }
 
 
@@ -53,7 +56,7 @@ public class Fabrica_mazmorras : MonoBehaviour
     {
         //GuardarCargarMazmorra2 guardado = GetComponent<GuardarCargarMazmorra2>();
         GuardarCargarMazmorra guardado = GetComponent<GuardarCargarMazmorra>();
-        guardado.GuardarEnScriptableObject(_board, _x, _y);
+        guardado.GuardarEnScriptableObject(_board, _x, _y,offset.x,offset.y);
         //guardado.GuardarEnJSON();
     }
 
@@ -61,8 +64,8 @@ public class Fabrica_mazmorras : MonoBehaviour
     {
         //GuardarCargarMazmorra2 guardado = GetComponent<GuardarCargarMazmorra2>();
         GuardarCargarMazmorra guardado = GetComponent<GuardarCargarMazmorra>();
-        guardado.CargarDesdeScriptableObject(ref _board);
+        guardado.CargarDesdeScriptableObject(ref _board,ref offset.x,ref offset.y);
         //guardado.CargarDesdeJSON();
-        _Gen_mazmorra.Generardungeon(_rooms, _board, _x, _y, offset.x, offset.y);
+        _Gen_mazmorra.Generardungeon(_rooms, _board, _x, _y, offset.x, offset.y,(int)_tipo_celda);
     }
 }

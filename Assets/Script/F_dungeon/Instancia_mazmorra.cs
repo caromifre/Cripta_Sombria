@@ -9,7 +9,7 @@ public class Instancia_mazmorra : MonoBehaviour,IGen_mazmorra
     public void GenerateDungeon() {
         Debug.Log("Este metodo fue sobrecaragdo usaer el nuevo metodo:\n Generardungeon(GameObject[] rooms, Cell[,] board, int X, int Y,float o_x,float o_y)");
     }
-    public void Generardungeon(GameObject[] rooms,Cell[,] board, int X, int Y,float o_x,float o_y) {
+    public void Generardungeon(GameObject[] rooms,Cell[,] board, int X, int Y,float o_x,float o_y,int tipo_celda) {
         //rooms recibe un array de gameobjects a instanciar donde el elemento [0] es primer elemento a instanciar y [1] sera el ultimo
         //board es una matriz que indica que elemtos se van a instanciar
         // X,Y indican el tamaño de la matriz de objetos a instanciar
@@ -25,8 +25,10 @@ public class Instancia_mazmorra : MonoBehaviour,IGen_mazmorra
                 {
                     if (board[a, b].inicio) celda = _INICIO;
                     else if (board[a, b].fin) celda = _FIN;
-                    else celda = Random.Range(2, rooms.Length);
-                    Debug.Log("instancia: " + a + " - "+ b);
+                    //else celda = Random.Range(2, rooms.Length);
+                    else  celda = tipo_celda;
+
+                    //Debug.Log("instancia: " + a + " - "+ b);
                     Nueva_celda = Instantiate(rooms[celda], new Vector3(a * o_x, 0f, -b * o_y), Quaternion.identity) as GameObject;
                     _P_celda = Nueva_celda.GetComponent<Prop_Celda>();
                     _P_celda.actualizar_celda(_PAREDES, board[a, b].pared);
