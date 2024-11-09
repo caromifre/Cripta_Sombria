@@ -165,7 +165,7 @@ public abstract class Enemy : MonoBehaviour
             case "Attack": // Atacar
                 animator.SetBool("Attack", true);
                 break;
-            case "Damage": // Recibir dano
+            case "Damage": // Recibir daño
                 animator.SetBool("Damage", true);
                 break;
             case "Die": // Morir

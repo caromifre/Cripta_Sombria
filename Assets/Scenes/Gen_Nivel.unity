@@ -633,12 +633,14 @@ MonoBehaviour:
   _x: 8
   _y: 5
   _startPos: 0
-  _rooms:
-  - {fileID: 2406978126415857164, guid: 2ebcb9cc12f83fd44abbcaddf6da3c99, type: 3}
-  - {fileID: 2406978126415857164, guid: 6261441a0963b9f49a40bb8fd7389eeb, type: 3}
-  - {fileID: 2406978126415857164, guid: 4efdcae8765dbd5488877547a9f45cff, type: 3}
+  _celda_incio: {fileID: 2406978126415857164, guid: 2ebcb9cc12f83fd44abbcaddf6da3c99,
+    type: 3}
+  _celda_fin: {fileID: 2406978126415857164, guid: 6261441a0963b9f49a40bb8fd7389eeb,
+    type: 3}
+  _celda_Decorada:
+  - {fileID: 2406978126415857164, guid: e9980b4da89f49c46adec615ff2eb519, type: 3}
+  _celda_galeria:
   - {fileID: 2406978126415857164, guid: 2d73ca16014a2064caa58052ecbd5a03, type: 3}
-  - {fileID: 2406978126415857164, guid: 9b5efa8ff9a2003468a42643243fee31, type: 3}
   - {fileID: 2406978126415857164, guid: e9980b4da89f49c46adec615ff2eb519, type: 3}
   _tipo_celda: 2
   offset: {x: 6, y: 6}

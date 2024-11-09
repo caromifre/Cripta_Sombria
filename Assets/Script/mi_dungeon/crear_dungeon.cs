@@ -54,8 +54,8 @@ public class crear_dungeon : MonoBehaviour
                     GameObject newRoom = Instantiate(_rooms[randomRoom], new Vector3(i * offset.x, 0f, -j * offset.y), Quaternion.identity) as GameObject;
 
                     // Actualiza la habitación según el estado de las paredes de la celda
-                    RoomBehaviour rb = newRoom.GetComponent<RoomBehaviour>();
-                    rb.UpdateRoom(currentCell.status);
+                   // RoomBehaviour rb = newRoom.GetComponent<RoomBehaviour>();
+                    //rb.UpdateRoom(currentCell.status);
 
                     // Renombra la habitación para facilitar su identificación
                     newRoom.name += " " + i + "-" + j;

@@ -13,7 +13,7 @@ public class Galerias : IGalerias
     public void crear_galerias(Cell[,] board)
     {
         //funcion para agregar galerias a la mazmorra
-        //la galeria no puede solaparse con la celda donde parece el jugador
+        //la galeria no puede solaparse con la celda donde aparece el jugador
         //lo minimo que ocupa una galeria son 4 celdas puede tener un pasillo que la 
         //separe del camino principal
         //cualquier pasillo se puede convertir en galeria

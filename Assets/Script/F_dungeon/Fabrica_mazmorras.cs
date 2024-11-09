@@ -12,7 +12,11 @@ public class Fabrica_mazmorras : MonoBehaviour
     [SerializeField] int _x, _y;
     [SerializeField] int _startPos = 0;
 
-    [SerializeField] GameObject[] _rooms;//lista de celdas para instanciar
+    GameObject[] _rooms;//lista de celdas para instanciar
+    [SerializeField] GameObject _celda_incio;//selecionar selda de incicio
+    [SerializeField] GameObject _celda_fin;//selecionar selda de incicio
+    [SerializeField] GameObject[] _celda_Decorada;//celdas decoradas
+    [SerializeField] GameObject[] _celda_galeria;//decoracion para las galerias
     [SerializeField] _TIPO_CELDA _tipo_celda;//selecionar decoracion
     [SerializeField] Vector2 offset;
     [SerializeField] int _Galerias;
