@@ -144,7 +144,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4207313150175797167}
-  - component: {fileID: 4556595756886689114}
   - component: {fileID: 1092582490008725442}
   m_Layer: 0
   m_Name: celda_candelabro
@@ -172,45 +171,6 @@ Transform:
   - {fileID: 3017994259283618609}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4556595756886689114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2406978126415857164}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c21447dfd260304fb9eacbe33d45fb7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _celda_gmo:
-  - {fileID: 2827047011628253619}
-  - {fileID: 2456154830534361988}
-  - {fileID: 8471689277243125292}
-  - {fileID: 9103638310493216380}
-  _puertas_gmo:
-  - {fileID: 629662168184614226}
-  - {fileID: 1531217203278411754}
-  - {fileID: 5093906981613746860}
-  - {fileID: 8249924707620018673}
-  _pared_puerta_gmo:
-  - {fileID: 5729038331748113318}
-  - {fileID: 4093146417553938408}
-  - {fileID: 425476708707675653}
-  - {fileID: 1465480602385191513}
-  _pilares_gmo:
-  - {fileID: 6709340046536469915}
-  - {fileID: 8821135665116022341}
-  - {fileID: 5863908163065946231}
-  - {fileID: 5760707209564183508}
-  _paredes:
-  - {fileID: 1956902181488140234}
-  - {fileID: 2795065132856690259}
-  - {fileID: 6401440522525641599}
-  - {fileID: 7556282696954941643}
-  _x: 5
-  _y: 5
 --- !u!114 &1092582490008725442
 MonoBehaviour:
   m_ObjectHideFlags: 0
