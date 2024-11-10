@@ -22,7 +22,7 @@ public abstract class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if (DetectPlayer())
+        /*if (DetectPlayer())
         {
             if (DistanceToPlayer() <= 1.5)
             { 
@@ -36,7 +36,8 @@ public abstract class Enemy : MonoBehaviour
         else 
         { 
             BehaviourRoutine(); 
-        }
+        }*/
+        BehaviourRoutine();
     }
 
     // Logica de comportamiento segun una rutina basica
@@ -45,7 +46,7 @@ public abstract class Enemy : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= 4)
         {
-            routine = Random.Range(0, 3);
+            routine = Random.Range(0, 2);
             timer = 0;
         }
         if (health > 0)
@@ -68,7 +69,7 @@ public abstract class Enemy : MonoBehaviour
     // Funcion para esquivar paredes
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Collision"))
+        if (collision.gameObject.CompareTag("Wall"))
         {
             // Desactivar la animacion de caminar
             animator.SetBool("Walk", false);
