@@ -19,7 +19,7 @@ public class Cargar_criptas : MonoBehaviour
     void Start()
     {
         //inicializar go como gameobject para evitar el error relacionado con MonoBehaviour
-        GameObject go = new GameObject("GeneradorMazmorra");
+        GameObject go = new GameObject("GeneradorCripta");
         _guardado = GetComponent<GuardarCargarMazmorra>();
 
         _board = new Cell[_guardado._whidth, _guardado._height];

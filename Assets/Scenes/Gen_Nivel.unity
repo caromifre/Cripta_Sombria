@@ -630,18 +630,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e15dede63672894eafcd1f8571a7a80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _x: 8
-  _y: 5
+  _x: 25
+  _y: 15
   _startPos: 0
-  _celda_incio: {fileID: 2406978126415857164, guid: 2ebcb9cc12f83fd44abbcaddf6da3c99,
-    type: 3}
-  _celda_fin: {fileID: 2406978126415857164, guid: 6261441a0963b9f49a40bb8fd7389eeb,
-    type: 3}
-  _celda_Decorada:
-  - {fileID: 2406978126415857164, guid: e9980b4da89f49c46adec615ff2eb519, type: 3}
-  _celda_galeria:
-  - {fileID: 2406978126415857164, guid: 2d73ca16014a2064caa58052ecbd5a03, type: 3}
-  - {fileID: 2406978126415857164, guid: e9980b4da89f49c46adec615ff2eb519, type: 3}
+  _rooms:
+  - {fileID: 2406978126415857164, guid: 2ebcb9cc12f83fd44abbcaddf6da3c99, type: 3}
+  - {fileID: 2406978126415857164, guid: 6261441a0963b9f49a40bb8fd7389eeb, type: 3}
+  - {fileID: 2406978126415857164, guid: 4efdcae8765dbd5488877547a9f45cff, type: 3}
   _tipo_celda: 2
   offset: {x: 6, y: 6}
   _Galerias: 0
@@ -672,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5931ce7f6642bf540b5208cbb4b06c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mazmorraSO: {fileID: 11400000, guid: 747d76d9775e8ba46a076fc5ca19822c, type: 2}
+  _mazmorraSO: {fileID: 11400000, guid: e8fdc829842d2e34bac77d786361f1ef, type: 2}
   _whidth: 0
   _height: 0
 --- !u!1660057539 &9223372036854775807

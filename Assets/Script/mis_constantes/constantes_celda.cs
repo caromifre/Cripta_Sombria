@@ -17,8 +17,10 @@ public static class Constantes_celda
                      _ARIBA_DER = 1,//indica posicion pilares
                      _ABAJO_DER = 2,
                      _ABAJO_IZQ = 3,
-                     _INICIO=0,
-                     _FIN=1;//indica posicion pilares
+                     _INICIO = 0,
+                     _FIN = 1,//indica posicion pilares
+                     _CELDA_DECORADA = 2,//incica la posicion en el array para las celdas decordas
+                     _CELDA_GAlERIA = 3;//indica la posicion para las celdas tipo galeria
 
 
 
