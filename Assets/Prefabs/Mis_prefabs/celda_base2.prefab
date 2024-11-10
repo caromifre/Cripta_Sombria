@@ -700,6 +700,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4375935841110635704, guid: 3bf117e32c71fb947b2fb7e63705b20f,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375935841110635704, guid: 3bf117e32c71fb947b2fb7e63705b20f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375935841110635704, guid: 3bf117e32c71fb947b2fb7e63705b20f,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4375935841110635704, guid: 3bf117e32c71fb947b2fb7e63705b20f,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -748,10 +763,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4375935841110635704, guid: 3bf117e32c71fb947b2fb7e63705b20f,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7979423323213027020, guid: 3bf117e32c71fb947b2fb7e63705b20f,
         type: 3}
       propertyPath: m_Name
       value: Instanciar_enemigos
+      objectReference: {fileID: 0}
+    - target: {fileID: 7979423323213027020, guid: 3bf117e32c71fb947b2fb7e63705b20f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Instan_Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

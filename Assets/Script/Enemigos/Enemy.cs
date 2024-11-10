@@ -19,7 +19,10 @@ public abstract class Enemy : MonoBehaviour
     protected int routine; // Rutina de comportamiento
     private float timer;   // Cronometro
     private Quaternion targetRotation;
-
+    //vriables para el suavizado de la rotacion
+    private bool isRotating = false;
+    private float rotationSpeed = 2.0f; // Ajusta la velocidad de rotación
+    
     private void Update()
     {
         /*if (DetectPlayer())
@@ -67,15 +70,29 @@ public abstract class Enemy : MonoBehaviour
     }
 
     // Funcion para esquivar paredes
+    /* private void OnCollisionEnter(Collision collision)
+     {
+         if (collision.gameObject.CompareTag("Wall"))
+         {
+             // Desactivar la animacion de caminar
+             animator.SetBool("Walk", false);
+
+             // Sumar 90 grados a la dirección actual
+             transform.Rotate(0, 90, 0);
+         }
+     }*/
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Wall") && !isRotating)
         {
-            // Desactivar la animacion de caminar
+            // Desactivar la animación de caminar
             animator.SetBool("Walk", false);
 
-            // Sumar 90 grados a la dirección actual
-            transform.Rotate(0, 90, 0);
+            // Definir la nueva rotación sumando 90 grados al eje Y
+            targetRotation = Quaternion.Euler(0, transform.eulerAngles.y + 90, 0);
+
+            // Iniciar la rotación suave
+            StartCoroutine(SmoothRotation());
         }
     }
 
@@ -181,5 +198,25 @@ public abstract class Enemy : MonoBehaviour
         animator.SetBool("Walk", false);
         animator.SetBool("Attack", false);
         animator.SetBool("Damage", false);
+    }
+
+    //corrutina para suavisar el giro
+    private IEnumerator SmoothRotation()
+    {
+        isRotating = true;
+        // Mientras el objeto no haya alcanzado la rotación deseada
+        while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
+        {
+            // Interpolamos la rotación suavemente usando Slerp
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+            // Esperamos hasta el siguiente frame
+            yield return null;
+        }
+
+        // Aseguramos que la rotación final sea exactamente la deseada
+        transform.rotation = targetRotation;
+
+        isRotating = false;
     }
 }
