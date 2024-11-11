@@ -18,7 +18,8 @@ public class PlayerAttack : PlayerBehaviour
         if(Input.GetButton("Fire2"))
         {
             _anim.SetBool("Defend",true);
-        }else
+        }
+        else
         {
             _anim.SetBool("Defend",false);
         }
