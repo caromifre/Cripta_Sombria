@@ -25,7 +25,7 @@ public abstract class Enemy : MonoBehaviour
     
     private void Update()
     {
-        /*if (DetectPlayer())
+       /*if (DetectPlayer())
         {
             if (DistanceToPlayer() <= 1.5)
             { 
@@ -81,7 +81,21 @@ public abstract class Enemy : MonoBehaviour
              transform.Rotate(0, 90, 0);
          }
      }*/
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Wall") && !isRotating)
+        {
+            // Desactivar la animación de caminar
+            animator.SetBool("Walk", false);
+
+            // Definir la nueva rotación sumando 90 grados al eje Y
+            targetRotation = Quaternion.Euler(0, transform.eulerAngles.y + 90, 0);
+
+            // Iniciar la rotación suave
+            StartCoroutine(SmoothRotation());
+        }
+    }*/
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Wall") && !isRotating)
         {

@@ -10,7 +10,7 @@ public class Cargar_criptas : MonoBehaviour
     //matriz de celdas
     [SerializeField] GameObject[] _rooms;
     [SerializeField] _TIPO_CELDA _tipo_celda;
-    Instancia_mazmorra _Gen_mazmorra;
+    Instanciar_criptas _Gen_mazmorra;
     GuardarCargarMazmorra _guardado;
     float _X, _Y;
 
@@ -26,7 +26,7 @@ public class Cargar_criptas : MonoBehaviour
        
         inicializar_tablero();       
 
-        _Gen_mazmorra = go.AddComponent<Instancia_mazmorra>();
+        _Gen_mazmorra = go.AddComponent<Instanciar_criptas>();
 
         _guardado.CargarDesdeScriptableObject(ref _board,ref _X, ref _Y);
         Debug.Log("_X: " + _X + "_Y: " + _Y);
