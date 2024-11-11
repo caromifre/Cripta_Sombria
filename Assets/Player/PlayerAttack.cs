@@ -15,7 +15,7 @@ public class PlayerAttack : PlayerBehaviour
             _anim.SetTrigger("SimpleAttack");
             attacking = true;
         }
-        if(Input.GetButtonDown("Fire2"))
+        if(Input.GetButton("Fire2"))
         {
             _anim.SetBool("Defend",true);
         }else
