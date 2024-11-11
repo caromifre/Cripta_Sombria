@@ -6,14 +6,18 @@ TagManager:
   tags:
   - Enemy
   - Collision
+  - Espada_Enemigo
+  - Escudo_Enemigo
+  - Foot_Spider
+  - Wall
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Enemy
   - Water
   - UI
-  - 
+  - Player
   - 
   - 
   - 

@@ -1,35 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-//using SVS;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : PlayerBehaviour
 {
-    [SerializeField] private float _characterSpeed = 6f;
-    [SerializeField] private float _turnSmoothVelocity = 0.2f;
     [SerializeField] private Transform cam;
 
-    CharacterController _character;
-    Animator _anim;
-    
+    // CharacterController _character;
+
     float _vMove;
     float _hMove;
     Vector3 _direction;
     float _turnSmoothTime;
     float _targetAngle;
     float _characterAngle;
+    float _characterSpeed;
+    float _turnSmoothVelocity;
     //float _gravity = -9.8f;
     //float _velocity;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        _character = GetComponent<CharacterController>();
-        _anim = GetComponentInChildren<Animator>();
+        _characterSpeed = 3f;
+        _turnSmoothVelocity = 0.2f;
+        cam = Camera.main.transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
         Controller();
         //apply gravity so character can always be on floor
@@ -80,31 +79,33 @@ public class PlayerController : MonoBehaviour
         _targetAngle = cam.eulerAngles.y;
         _characterAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetAngle, ref _turnSmoothVelocity, _turnSmoothTime);
 
-        // Rotamos suavemente
         transform.rotation = Quaternion.Euler(0f, _characterAngle, 0f);
 
-        // Movimiento basado en input del jugador
-        _direction = cam.transform.forward * _vMove + cam.transform.right * _hMove;
-        _direction.y = 0f;
+        Vector3 moveDirection = cam.transform.forward * _vMove + cam.transform.right * _hMove;
+        
+        moveDirection.y = 0f;
 
-        // Movimiento del personaje
-        transform.Translate(_direction.normalized * _characterSpeed * Time.deltaTime, Space.World);
+        transform.Translate(moveDirection.normalized * _characterSpeed * Time.deltaTime, Space.World);
 
 
         // Sprint (Aumentar velocidad)
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            _direction *= 3;
+            _characterSpeed = 5;
+        }
+        else
+        {
+            _characterSpeed = 3;
         }
         // Idle
-        if (_hMove == 0 || _vMove == 0)
+        if (_hMove == 0 && _vMove == 0)
         {
-            _anim.SetFloat("WalkVelocity", _direction.magnitude, 0f, Time.deltaTime);
+            _anim.SetBool("Walk",false);
         }
         // Caminar
         if ((_hMove != 0 || _vMove != 0) && (!Input.GetButtonDown("Fire1")) && (!Input.GetButtonDown("Fire2")))
         {
-            _anim.SetFloat("WalkVelocity", _direction.magnitude, 0.05f, Time.deltaTime);
+            _anim.SetBool("Walk", true);
         }
     }
 }

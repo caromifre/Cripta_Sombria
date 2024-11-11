@@ -12,6 +12,7 @@ public class Skeleton : Enemy
         runSpeed = 4;
         detectionRange = 10;
         damageGenerate = 10;
+        distanceAttack = 1.5f;
 
         player = GameObject.Find("Player");
         animator = GetComponent<Animator>();
