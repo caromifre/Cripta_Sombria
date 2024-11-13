@@ -14,16 +14,14 @@ public class PlayerBehaviour : MonoBehaviour
         health = 500;
         _anim = GetComponent<Animator>();
         _anim.SetFloat("Health", health);
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     // Recibe dano
     public void TakeDamage(float damage)
     {
-        Debug.Log(health);
-        health -= damage;
-        _anim.SetFloat("Health", health);
-        // if (health <= 0) Die();
+        if (!Input.GetButton("Fire2"))
+            Debug.Log(health);
+            health -= damage;
+            _anim.SetFloat("Health", health);
     }
 }

@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 6295659357709969314}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.6276245, y: 1.287, z: 0.31953233}
+  m_LocalPosition: {x: 0, y: 1.287, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -129,7 +129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageGenerate: 10
-  cam: {fileID: 0}
+  speed: 3
+  sprintSpeed: 5
+  smoothTime: 0.1
+  cameraScript: {fileID: 0}
 --- !u!114 &8734311435634128514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,12 +187,12 @@ Rigidbody:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
+  m_ImplicitCom: 0
+  m_ImplicitTensor: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!136 &8456319043298237098
 CapsuleCollider:
@@ -211,9 +214,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.26470906
-  m_Height: 2.0048041
+  m_Height: 1.8325336
   m_Direction: 1
-  m_Center: {x: 0, y: 0.91259265, z: -0.0033821464}
+  m_Center: {x: 0, y: 0.8264574, z: -0.0033821464}
 --- !u!1 &8943637886684816915
 GameObject:
   m_ObjectHideFlags: 0
