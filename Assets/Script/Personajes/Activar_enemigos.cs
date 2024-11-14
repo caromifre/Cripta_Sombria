@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Activar_enemigos : MonoBehaviour
 {
-    /*esta clase instancia los enemigos cuanfo el player
+    /*esta clase instancia los enemigos cuando el player
      esta cerca de la celda que posea el gameObject
     Instanciar_enemigo*/
     GameObject _Enemy_isntan;

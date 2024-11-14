@@ -1,73 +1,66 @@
-using System.Collections;
-using System.Collections.Generic;
-//using SVS;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : PlayerBehaviour
 {
-    [SerializeField] private float _characterSpeed = 6f;
-    [SerializeField] private float _turnSmoothVelocity = 0.2f;
+    [SerializeField] private float speed = 3f; // Velocidad de movimiento normal
+    [SerializeField] private float sprintSpeed = 5f; // Velocidad al correr
+    [SerializeField] private float smoothTime = 0.1f; // Tiempo de suavizado
+    [SerializeField] private FollowCamera cameraScript; // Inyectar referencia desde el Inspector
 
-       
-    CharacterController _character;
-    Animator _anim;
+    private float currentVelocity = 0f; // Variable para SmoothDamp
 
-    float _vMove;
-    float _hMove;
-
-    Vector3 _direction;
-    float _turnSmoothTime;
-    float _targetAngle;
-    float _characterAngle;
-    float _gravity = -9.8f;
-    float _velocity;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        _character = GetComponent<CharacterController>();
-        _anim = GetComponentInChildren<Animator>();
+        Controller();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Metodo principal para manejar el movimiento
+    private void Controller()
     {
-        //apply gravity so character can always be on floor
-        if(!_character.isGrounded)
+        Vector3 inputDirection = GetInputDirection();
+        if (inputDirection.magnitude > 0)
         {
-           _velocity = _gravity * Time.deltaTime;
-
+            RotatePlayer(inputDirection);
+            MovePlayer(inputDirection);
+            _anim.SetBool("Walk", true);
         }
         else
         {
-            _velocity = 0f;
+            _anim.SetBool("Walk", false);
         }
-        
-        //Input Keyboard
-        _hMove = Input.GetAxis("Horizontal") * -1;
-        _vMove = Input.GetAxis("Vertical") * -1;
-
-        //Calculate movement and direction
-        _direction = new Vector3(_hMove, _velocity, _vMove).normalized;
-
-        if(_direction.magnitude >= 0.1f)
-        {
-            _targetAngle = Mathf.Atan2(_direction.x,_direction.z) * Mathf.Rad2Deg;
-            _characterAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetAngle, ref _turnSmoothTime, _turnSmoothVelocity);
-           
-            transform.rotation = Quaternion.Euler(0f,_characterAngle,0f);
-
-            _character.Move(_direction * _characterSpeed * Time.deltaTime);
-        }
-
-        if(Input.GetKey(KeyCode.LeftShift))
-        {
-            _direction *= 3; 
-        }
- 
-        //Control de Animaciones
-        _anim.SetFloat("WalkVelocity",_direction.magnitude, 0.05f, Time.deltaTime);        
     }
 
+    // Obtener la direccion basada en la entrada del jugador
+    private Vector3 GetInputDirection()
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
+        // Direccion normalizada del movimiento
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+        // Invertir direccion si la camara esta volteada
+        if (cameraScript != null && cameraScript.isCameraFlipped)
+        {
+            return -direction;
+        }
+
+        return direction;
+    }
+
+    // Metodo para rotar al jugador hacia la direccion de movimiento
+    private void RotatePlayer(Vector3 direction)
+    {
+        // Rotacion suavizada
+        float targetAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, Quaternion.LookRotation(direction).eulerAngles.y, ref currentVelocity, smoothTime);
+
+        transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
+    }
+
+    // Metodo para mover al jugador
+    private void MovePlayer(Vector3 direction)
+    {
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : speed;
+        transform.Translate(direction * currentSpeed * Time.deltaTime, Space.World);
+    }
 }
