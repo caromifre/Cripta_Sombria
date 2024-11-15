@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89aae85aab75ea49b972d5b6bb1ffea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1480340341}
+  player: {fileID: 1109587623}
   defaultOffset: {x: -3, y: 5, z: -3}
   flippedOffset: {x: 3, y: 5, z: 3}
   rotationSpeed: 70
@@ -278,7 +278,7 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!1001 &1127169509
+--- !u!1001 &1109587622
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -341,21 +341,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8734311435634128514, guid: e7f87b508024fed46a8f2dfc992b8f98,
-        type: 3}
-      propertyPath: playerTransform
-      value: 
-      objectReference: {fileID: 1480340341}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7f87b508024fed46a8f2dfc992b8f98, type: 3}
---- !u!4 &1480340341 stripped
+--- !u!4 &1109587623 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5251107426523682287, guid: e7f87b508024fed46a8f2dfc992b8f98,
     type: 3}
-  m_PrefabInstance: {fileID: 1127169509}
+  m_PrefabInstance: {fileID: 1109587622}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2103461199
 GameObject:
@@ -577,19 +572,19 @@ PrefabInstance:
         type: 3}
       propertyPath: _rooms.Array.data[2]
       value: 
-      objectReference: {fileID: 2406978126415857164, guid: b1366c6c680b97c489dc701760b225a6,
+      objectReference: {fileID: 2406978126415857164, guid: fc648e9d5a3c45141987ec12f5d58595,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
       propertyPath: _rooms.Array.data[3]
       value: 
-      objectReference: {fileID: 2406978126415857164, guid: f29b74a89d40483439cc69b21f2f549a,
+      objectReference: {fileID: 2406978126415857164, guid: b1366c6c680b97c489dc701760b225a6,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
       propertyPath: _rooms.Array.data[4]
       value: 
-      objectReference: {fileID: 2406978126415857164, guid: fc648e9d5a3c45141987ec12f5d58595,
+      objectReference: {fileID: 2406978126415857164, guid: f29b74a89d40483439cc69b21f2f549a,
         type: 3}
     - target: {fileID: 4241712817423798347, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
@@ -675,4 +670,4 @@ SceneRoots:
   - {fileID: 2103461201}
   - {fileID: 6853589850755158839}
   - {fileID: 6569874860336851665}
-  - {fileID: 1127169509}
+  - {fileID: 1109587622}

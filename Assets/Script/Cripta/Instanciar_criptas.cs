@@ -52,11 +52,11 @@ public class Instanciar_criptas : MonoBehaviour, IGen_mazmorra
                     if (tot_gal == 0 && galeria) {
                         
                         tot_gal = board[a, b].num_galeria;
-                        Debug.Log("detecto total de galerias" + tot_gal);
+                        //Debug.Log("detecto total de galerias" + tot_gal);
                     }
                     if (galeria) {
                         num_gal = board[a, b].num_galeria;
-                        Debug.Log("Guarda valores para galeria tot: "+ tot_gal +" num:" + num_gal);
+                        //Debug.Log("Guarda valores para galeria tot: "+ tot_gal +" num:" + num_gal);
                         _datos_celda.SetGal(num_gal, tot_gal);
                     }
 

@@ -7,10 +7,10 @@ public class Datos_celda : MonoBehaviour, ISetGal,ISetCoord
     /* esta clase sirve para adjundar datos a las celdas al momento de instanciar
      * la celda
      * para que luego seran usados para adminstrar el nivel */
-    public int _coord_X { get; private set; }//cordenada x de la celda en la matriz  
-    public int _coord_Y { get; private set; }//coordeanda y de la matriz
-    public int _num_gal { get; private set; }//indice de galeria
-    public int _tot_gal { get; private set; }//total de galerias en el nivel
+    public int _coord_X { get; private set; } = 0;//cordenada x de la celda en la matriz  
+    public int _coord_Y { get; private set; } = 0;//coordeanda y de la matriz
+    public int _num_gal { get; private set; } = 0;//indice de galeria
+    public int _tot_gal { get; private set; } = 0;//total de galerias en el nivel
 
     // Método para inicializar los índices
     public void SetCoords(int x, int y)

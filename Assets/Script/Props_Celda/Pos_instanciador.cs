@@ -18,7 +18,7 @@ public class Pos_instanciador : MonoBehaviour
         _nuevo_ins_enemy=Instantiate(_ins_enemy, _transform.position, Quaternion.identity) as GameObject;
         
         _Enemigos=_nuevo_ins_enemy.GetComponent<Instanciar_enemigos>();
-        Debug.Log("enviando datos de galerias al instanciador num:" + _datos_Celda._num_gal + " tot: " + _datos_Celda._tot_gal);
+        //Debug.Log("enviando datos de galerias al instanciador num:" + _datos_Celda._num_gal + " tot: " + _datos_Celda._tot_gal);
         _Enemigos.SetGal(_datos_Celda._num_gal, _datos_Celda._tot_gal);
     }
 

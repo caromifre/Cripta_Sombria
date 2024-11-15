@@ -23,6 +23,7 @@ public class PlayerController : PlayerBehaviour
     private void Controller()
     {
         Vector3 inputDirection = GetInputDirection();
+
         isSprinting = Input.GetKey(KeyCode.LeftShift);
 
         // Cambiamos las animaciones según el estado

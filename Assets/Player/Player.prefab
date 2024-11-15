@@ -115,7 +115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 077d4ef0c8b06b04a9da6d213cac2a03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
   damageGenerate: 10
   pickupRange: 3
   playerTransform: {fileID: 0}
@@ -132,7 +131,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2055bc5e61813454a89d046808421709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
   damageGenerate: 10
   pickupRange: 3
   playerTransform: {fileID: 0}
@@ -151,10 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c9054b36cc3e1f4b99bef3b9f17f331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 120
   damageGenerate: 10
   pickupRange: 3
-  playerTransform: {fileID: 0}
+  playerTransform: {fileID: 5251107426523682287}
 --- !u!95 &8746017292990596939
 Animator:
   serializedVersion: 5
