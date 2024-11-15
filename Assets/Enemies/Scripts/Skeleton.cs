@@ -8,10 +8,10 @@ public class Skeleton : Enemy
     {
         // Valores del esqueleto
         health = 100;
-        walkSpeed = 2;
-        runSpeed = 4;
-        detectionRange = 10;
-        damageGenerate = 10;
+        walkSpeed = 2f;
+        runSpeed = 1.5f;
+        detectionRange = 5;
+        damageGenerate = 5;
         distanceAttack = 1.5f;
 
         player = GameObject.Find("Player");
