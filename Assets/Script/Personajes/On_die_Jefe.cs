@@ -8,8 +8,8 @@ public class On_die_Jefe : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Estado de animación terminado");
-        
-        Game_manager.Instance.mostrar_menu_muerte();
+
+        Game_manager.Instance.jefe_muerto();
     }
 
 }
