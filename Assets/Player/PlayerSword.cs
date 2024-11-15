@@ -19,8 +19,8 @@ public class PlayerSword : MonoBehaviour
         if (enemyHealth && player.attacking)
         {
             player.attacking = false;
-            Debug.Log("llego!!!!");
-            // Llamo al metodo del player para reastale vida, segun el daño que genera el esqueleto
+
+            // Llamo al metodo del player para reastarle vida, segun el daño que genera el esqueleto
             enemyHealth.TakeDamage(player.damageGenerate);
         }
     }

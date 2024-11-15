@@ -14,6 +14,7 @@ public abstract class Enemy : MonoBehaviour
 
     protected Animator animator;
     protected GameObject player;
+    private Rigidbody rb;
 
     protected float player_distance; // Distancia del jugador
     protected string action; // Animacion
@@ -26,10 +27,11 @@ public abstract class Enemy : MonoBehaviour
     private bool isRotating = false;
     private float rotationSpeed = 2.0f; // Ajusta la velocidad de rotación
 
-    private void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
         player = GameObject.Find("Player");
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -115,8 +117,13 @@ public abstract class Enemy : MonoBehaviour
     // Movimiento basico del enemigo
     protected void Walk()
     {
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 0.5f);
-        transform.Translate(Vector3.forward * walkSpeed * Time.deltaTime);
+        // Rota el Rigidbody hacia la dirección de la rotación objetivo
+        rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRotation, 0.5f));
+
+        // Mueve el Rigidbody en la dirección hacia adelante
+        rb.MovePosition(rb.position + transform.forward * walkSpeed * Time.deltaTime);
+
+        // Actualiza la animación de caminar
         SetAnimation("Walk");
     }
 
@@ -141,18 +148,19 @@ public abstract class Enemy : MonoBehaviour
     private IEnumerator SmoothRotation()
     {
         isRotating = true;
+
         // Mientras el objeto no haya alcanzado la rotación deseada
-        while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
+        while (Quaternion.Angle(rb.rotation, targetRotation) > 0.1f)
         {
             // Interpolamos la rotación suavemente usando Slerp
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            rb.MoveRotation(Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.deltaTime));
 
             // Esperamos hasta el siguiente frame
             yield return null;
         }
 
         // Aseguramos que la rotación final sea exactamente la deseada
-        transform.rotation = targetRotation;
+        rb.MoveRotation(targetRotation);
 
         isRotating = false;
     }
@@ -160,23 +168,37 @@ public abstract class Enemy : MonoBehaviour
     // Movimiento hacia el jugador
     protected void MoveTowardsPlayer()
     {
+        // Calcula la dirección hacia el jugador y normaliza la dirección en el plano XZ (y = 0)
         Vector3 direction = (player.transform.position - transform.position).normalized;
         direction.y = 0;
-        transform.rotation = Quaternion.LookRotation(direction);
-        transform.Translate(Vector3.forward * runSpeed * Time.deltaTime);
 
+        // Rota el Rigidbody hacia la dirección del jugador
+        rb.MoveRotation(Quaternion.LookRotation(direction));
+
+        // Mueve el Rigidbody hacia adelante en la dirección del movimiento
+        rb.MovePosition(rb.position + direction * runSpeed * Time.deltaTime);
+
+        // Actualiza la animación de caminar
         SetAnimation("Walk");
     }
 
     // Ataque
     protected void Attack()
     {
+        // Calcula la dirección hacia el jugador
         var lookPos = player.transform.position - transform.position;
         lookPos.y = 0;
 
+        // Calcula la rotación para mirar al jugador
         var rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, 5f);
+
+        // Rota el Rigidbody hacia el jugador utilizando MoveRotation
+        rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, rotation, 5f));
+
+        // Inicia la animación de ataque
         SetAnimation("Attack");
+
+        // Marca que está atacando
         attacking = true;
     }
 
