@@ -4,7 +4,8 @@ using static Constantes_celda;
 public class Galerias : IGalerias
 {
     Crear_nexo _Cr_Nexo = new Crear_nexo();
-    
+    int _tot_gal = 0;//suma el total de galerias
+
     public void crear_galerias() {
         //funcion para proponer posibles espacios para hacer galerias en la mazmorra
         Debug.Log("Este metodo fue sobrecaragdo usaer el nuevo metodo:\ncrear_galerias(Cell[,] board)");
@@ -23,8 +24,12 @@ public class Galerias : IGalerias
         //la direccion general para recorrer el camino es tanto en x o en y de menos a mas
         //esto sirve para para saber que puerta bloquear si quiero obligar a tomar una desviacion
         //hacia una galeria
-               
-        int ancho = board.GetLength(0), alto = board.GetLength(1), cont_g = 0;
+
+        int ancho = board.GetLength(0),
+            alto = board.GetLength(1),
+            cont_g = 0;
+            
+            
         const int EJE_X = 0, EJE_Y = 1;
         int max_gal = board.Length / 4; //determinar la catidad maxima de galerias en el tablero
         int[] coordboard;
@@ -51,7 +56,7 @@ public class Galerias : IGalerias
             {
                 coordboard = Lista_coord[a];    
                 max_gal--;//descontar galeria
-                //crear deistancia variable entre galerias
+                //crear distancia variable entre galerias
                 cont_g = Random.Range(3, 8);    
             }
             else if (max_gal < (board.Length / 4) && max_gal > 0)
@@ -122,6 +127,7 @@ public class Galerias : IGalerias
 
         int cont = 0;
         bool gal;
+        _tot_gal++;
         for (int c = 0; c <= 1; c++)
         {
 
@@ -142,6 +148,7 @@ public class Galerias : IGalerias
                         board[a, b].reset_puerta();
                         board[a, b].visited = true;
                         board[a, b].galeria = true;
+                        board[a, b].num_galeria = _tot_gal;
                         //crear compartimientos
                         if (cont == 4)
                         {

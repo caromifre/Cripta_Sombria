@@ -29,7 +29,7 @@ public class Cargar_criptas : MonoBehaviour
         _Gen_mazmorra = go.AddComponent<Instanciar_criptas>();
 
         _guardado.CargarDesdeScriptableObject(ref _board,ref _X, ref _Y);
-        Debug.Log("_X: " + _X + "_Y: " + _Y);
+        //Debug.Log("_X: " + _X + "_Y: " + _Y);
         _Gen_mazmorra.Generardungeon(_rooms, _board, _board.GetLength(0), _board.GetLength(1), _X, _Y,(int)_tipo_celda);
 
     }
@@ -37,7 +37,7 @@ public class Cargar_criptas : MonoBehaviour
     void inicializar_tablero()
     {
         //crea un tablero en blanco
-        Debug.Log("x= " + _board.GetLength(0) + " y= " + _board.GetLength(1));
+        //Debug.Log("x= " + _board.GetLength(0) + " y= " + _board.GetLength(1));
         for (int a = 0; a < _board.GetLength(0); a++)
         {
             for (int b = 0; b < _board.GetLength(1); b++)

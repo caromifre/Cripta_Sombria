@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 4207313150175797167}
   - component: {fileID: 1092582490008725442}
   - component: {fileID: -1287299501853248882}
+  - component: {fileID: 798614685273335654}
   m_Layer: 0
   m_Name: Pasillo
   m_TagString: Untagged
@@ -144,6 +145,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ins_enemy: {fileID: 7979423323213027020, guid: 3bf117e32c71fb947b2fb7e63705b20f,
     type: 3}
+--- !u!114 &798614685273335654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406978126415857164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a3df8ba6247ff4b99ccdcf0b9c85bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2456154830534361988
 GameObject:
   m_ObjectHideFlags: 0

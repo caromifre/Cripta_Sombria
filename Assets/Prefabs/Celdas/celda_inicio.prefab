@@ -79,6 +79,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4207313150175797167}
   - component: {fileID: 1092582490008725442}
+  - component: {fileID: 7148888840663100394}
   m_Layer: 0
   m_Name: celda_inicio
   m_TagString: Untagged
@@ -143,6 +144,18 @@ MonoBehaviour:
   - {fileID: 2795065132856690259}
   - {fileID: 6401440522525641599}
   - {fileID: 7556282696954941643}
+--- !u!114 &7148888840663100394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2406978126415857164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a3df8ba6247ff4b99ccdcf0b9c85bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2456154830534361988
 GameObject:
   m_ObjectHideFlags: 0

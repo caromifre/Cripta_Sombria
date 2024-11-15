@@ -12,6 +12,8 @@ public class Game_manager : MonoBehaviour, IAdditive_scene,ILoad_scene, ILoose_s
     public float _tot_vida;
     //nombre de las escenas a cargar
     [SerializeField] string _Hud,_Menu_muerte;
+    
+
     string _nivel_actual;
     private void Awake()
     {
@@ -51,4 +53,6 @@ public class Game_manager : MonoBehaviour, IAdditive_scene,ILoad_scene, ILoose_s
     public void mostrar_menu_muerte() {
         SceneManager.LoadScene(_Menu_muerte, LoadSceneMode.Single);
     }
+
+ 
 }

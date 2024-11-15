@@ -20,7 +20,7 @@ public class Guardar_nivel_Disk : ScriptableObject
         //guardar
         Bf.Serialize(file,cell);
 
-        Debug.Log("directorio: " + Obt_Dir(nom_arch)  + " nombre: " + nom_arch);
+        //Debug.Log("directorio: " + Obt_Dir(nom_arch)  + " nombre: " + nom_arch);
         //cerrar
         file.Close();
     }

@@ -13,7 +13,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void Awake()
     {
         
-        health = 50;
+        health = 1000;
         //actualizar la vida en el game_manager
         
         _anim = GetComponent<Animator>();

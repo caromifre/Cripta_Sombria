@@ -6,6 +6,7 @@ using static Constantes_celda;
 public class Instanciar_criptas : MonoBehaviour, IGen_mazmorra
 {
     Prop_Celda _P_celda;
+    Datos_celda _datos_celda;
     public void GenerateDungeon()
     {
         Debug.Log("Este metodo fue sobrecaragdo usaer el nuevo metodo:\n Generardungeon(GameObject[] rooms, Cell[,] board, int X, int Y,float o_x,float o_y)");
@@ -17,12 +18,16 @@ public class Instanciar_criptas : MonoBehaviour, IGen_mazmorra
         // X,Y indican el tamaño de la matriz de objetos a instanciar
         //o_x,o_y es el tamaño de la celda offset en x e y
         GameObject Nueva_celda;
-        int celda;
-        Debug.Log("tamaño: " + board.GetLength(0) + " - " + board.GetLength(1));
+        int celda,
+            tot_gal=0,
+            num_gal=0;
+        bool galeria=false;
+        //Debug.Log("tamaño: " + board.GetLength(0) + " - " + board.GetLength(1));
         for (int a = 0; a < X; a++)
         {
             for (int b = 0; b < Y; b++)
             {
+                galeria = board[a,b].galeria;
                 if (board[a, b].visited)
                 {
                     if (board[a, b].inicio) celda = _INICIO;
@@ -30,7 +35,7 @@ public class Instanciar_criptas : MonoBehaviour, IGen_mazmorra
                     else if (board[a, b].fin) celda = _FIN;
                     //else celda = Random.Range(2, rooms.Length);
 
-                    else if (board[a, b].galeria) celda = 3;
+                    else if (galeria) celda = 3;
 
                     else if (board[a, b].pasillo) celda = 2;
 
@@ -38,6 +43,23 @@ public class Instanciar_criptas : MonoBehaviour, IGen_mazmorra
 
                     //Debug.Log("instancia: " + a + " - "+ b);
                     Nueva_celda = Instantiate(rooms[celda], new Vector3(a * o_x, 0f, -b * o_y), Quaternion.identity) as GameObject;
+
+                    //adjuntar informacion
+                    _datos_celda = Nueva_celda.GetComponent<Datos_celda>();
+                    //guardar coordenadas de la matriz
+                    _datos_celda.SetCoords(a, b);
+                    //guardar datos de las galerias
+                    if (tot_gal == 0 && galeria) {
+                        
+                        tot_gal = board[a, b].num_galeria;
+                        Debug.Log("detecto total de galerias" + tot_gal);
+                    }
+                    if (galeria) {
+                        num_gal = board[a, b].num_galeria;
+                        Debug.Log("Guarda valores para galeria tot: "+ tot_gal +" num:" + num_gal);
+                        _datos_celda.SetGal(num_gal, tot_gal);
+                    }
+
                     _P_celda = Nueva_celda.GetComponent<Prop_Celda>();
                     _P_celda.actualizar_celda(_PAREDES, board[a, b].pared);
                     _P_celda.actualizar_celda(_PUERTAS, board[a, b].puerta);
