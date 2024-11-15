@@ -10,7 +10,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: Health
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3715153888093332043}
   m_Solo: 0
@@ -75,7 +75,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: Health
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2926595227493493665}
   m_Solo: 0
@@ -100,7 +100,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: Health
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Walk
     m_EventTreshold: 0
@@ -128,7 +128,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: Health
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2926595227493493665}
   m_Solo: 0
@@ -152,9 +152,6 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 4
-    m_ConditionEvent: Health
-    m_EventTreshold: 0.1
-  - m_ConditionMode: 3
     m_ConditionEvent: Health
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
@@ -181,7 +178,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: Health
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2926595227493493665}
   m_Solo: 0
@@ -237,7 +234,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: Health
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Defend
     m_EventTreshold: 0
@@ -364,7 +361,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Die
-  m_Speed: 1
+  m_Speed: 0.3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 6405362417315357868}
@@ -398,7 +395,7 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 3
     m_ConditionEvent: Health
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3715153888093332043}
   m_Solo: 0
@@ -423,7 +420,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: Health
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: SimpleAttack
     m_EventTreshold: 0
@@ -451,7 +448,7 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 3
     m_ConditionEvent: Health
-    m_EventTreshold: 0.1
+    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Defend
     m_EventTreshold: 0

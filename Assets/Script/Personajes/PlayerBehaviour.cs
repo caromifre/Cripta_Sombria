@@ -13,7 +13,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void Awake()
     {
         
-        health = 500;
+        health = 50;
         //actualizar la vida en el game_manager
         
         _anim = GetComponent<Animator>();
@@ -28,14 +28,14 @@ public class PlayerBehaviour : MonoBehaviour
     // Recibe dano
     public void TakeDamage(float damage)
     {
-        if (!Input.GetButton("Fire2"))
-        {
-            //Debug.Log(health);
-            health -= damage;
-            _anim.SetFloat("Health", health);
-            //actualizar la vida en el game_manager
-            _controler._tot_vida = health;
-        }
+        if (!Input.GetButton("Fire2")) health -= damage;
+        
+        //actualizar la vida en el game_manager
+        _controler._tot_vida = health;
+        _anim.SetFloat("Health", health);
+            
+            
+        
         if (health <= 0) {
             //_controler.mostrar_menu_muerte();
         }
