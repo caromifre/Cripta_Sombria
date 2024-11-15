@@ -8,7 +8,7 @@ public class Game_manager : MonoBehaviour, IAdditive_scene,ILoad_scene, ILoose_s
 { 
     public static Game_manager Instance=>instance;
     public static Game_manager instance;
-    [SerializeField] int _cant_vidas = 3;
+    /*[SerializeField] int _cant_vidas = 3;*/
     public float _tot_vida;
     //nombre de las escenas a cargar
     [SerializeField] string _Hud,_Menu_muerte;
@@ -44,12 +44,13 @@ public class Game_manager : MonoBehaviour, IAdditive_scene,ILoad_scene, ILoose_s
         SceneManager.LoadScene(_Hud, LoadSceneMode.Additive);
     }
 
-    //pasar de nivel
+    //caragar nivel1
     public void Cargar_nueva_escena() {
         SceneManager.LoadScene("Nivel1", LoadSceneMode.Single);
         SceneManager.LoadScene(_Hud, LoadSceneMode.Additive);
     }
 
+    //mostrar menu muerte
     public void mostrar_menu_muerte() {
         SceneManager.LoadScene(_Menu_muerte, LoadSceneMode.Single);
     }

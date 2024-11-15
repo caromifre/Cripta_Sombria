@@ -12,10 +12,19 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private Transform playerTransform; // Referencia al transform del Player
     // Diccionario para almacenar el inventario (nombre del ítem y cantidad)
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
+
+    Game_manager _controler;        
+      
+        
     public void Awake()
-    {
+    {   
+        //obtner insancia del gamemanagaer
+        _controler = Game_manager.Instance;
         health = 500f;
         maxHealth = health;
+        //actualizar la vida en el game_manager
+        _controler._tot_vida = health;
+
         _anim = GetComponent<Animator>();
         _anim.SetFloat("Health", health);
         // Inicializamos el inventario vacío
@@ -132,9 +141,8 @@ public class PlayerBehaviour : MonoBehaviour
         if (!Input.GetButton("Fire2"))
         {
             health -= damage;
+            _controler._tot_vida = health;
             _anim.SetFloat("Health", health);
-
-            Debug.Log(health);
         }
             
     }

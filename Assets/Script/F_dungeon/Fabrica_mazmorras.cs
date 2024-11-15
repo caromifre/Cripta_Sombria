@@ -10,7 +10,7 @@ public class Fabrica_mazmorras : MonoBehaviour
     Galerias _C_galerias= new Galerias();
     Instancia_mazmorra _Gen_mazmorra;
     [SerializeField] int _x, _y;
-    [SerializeField] int _startPos = 0;
+    //[SerializeField] int _startPos = 0;
 
     [SerializeField] GameObject[] _rooms;
     [SerializeField] _TIPO_CELDA _tipo_celda;//selecionar decoracion
