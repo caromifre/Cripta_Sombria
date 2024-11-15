@@ -19,7 +19,7 @@ public class Activar_enemigos : MonoBehaviour
             _Enemigos.instanciar_enemigos();
             //_Enemy_isntan.SetActive(false);
             Destroy( _Enemy_isntan );
-            Debug.Log("limite del insanciador de la celda");
+           // Debug.Log("limite del insanciador de la celda");
         }
     }
 }

@@ -22,10 +22,10 @@ public class Instanciar_enemigos : MonoBehaviour
         _transform = this.transform;
         
         //Vector3 pos_enemy = new Vector3(transform.position.x+_O_X, 0f, - transform.position.y + _O_Y );
-        Debug.Log("posicion: " + this.transform.position);
-        Debug.Log("new vector3: " + new Vector3(_O_X, 0f, _O_Y));
+        //Debug.Log("posicion: " + this.transform.position);
+        //Debug.Log("new vector3: " + new Vector3(_O_X, 0f, _O_Y));
         Vector3 nn = this.transform.position + new Vector3(_O_X, 0f, _O_Y);
-        Debug.Log("suam de vectores: " + nn);
+        //Debug.Log("suam de vectores: " + nn);
 
         _Nuevo_enemigo = Instantiate(_Enemigos[t_en],nn , Quaternion.identity);
     }
