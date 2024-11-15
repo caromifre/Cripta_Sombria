@@ -16433,8 +16433,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 280748512}
-  - component: {fileID: 280748514}
   - component: {fileID: 280748513}
+  - component: {fileID: 280748514}
   m_Layer: 2
   m_Name: Instanciador
   m_TagString: Untagged
@@ -16485,13 +16485,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280748511}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34a5f8c18f11f5d44b24deee0528a8db, type: 3}
+  m_Script: {fileID: 11500000, guid: ffb695e1ea9805d49a86295394c34325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ins_enemy: {fileID: 7979423323213027020, guid: 3475860ddcd79f8449b3fdbacb650952,
-    type: 3}
+  _Enemigos:
+  - {fileID: 2754694677389908571, guid: b2a58fa7c9f7ff443bc5904c48c2c185, type: 3}
+  - {fileID: 1738739185814747127, guid: efcd683c723ae8d4383a110244c0b012, type: 3}
+  _Jefes:
+  - {fileID: 4414871117303439921, guid: bf215dadb806e9e46a8a0546cad02a02, type: 3}
+  _offset: {x: 0, y: 0}
 --- !u!1 &281637055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 16038835297913163, guid: 7c7baabdbc078cb4098d5880fc72c0f3,
