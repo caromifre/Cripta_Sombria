@@ -18,17 +18,22 @@ public class PlayerBehaviour : MonoBehaviour
         
     public void Awake()
     {   
-        //obtner insancia del gamemanagaer
-        _controler = Game_manager.Instance;
+        
         health = 500f;
         maxHealth = health;
-        //actualizar la vida en el game_manager
-        _controler._tot_vida = health;
+        
 
         _anim = GetComponent<Animator>();
         _anim.SetFloat("Health", health);
         // Inicializamos el inventario vacío
         inventory = new Dictionary<string, int>();
+    }
+    private void Start()
+    {
+        //obtner insancia del gamemanagaer
+        _controler = Game_manager.Instance;
+        //actualizar la vida en el game_manager
+        _controler._tot_vida = health;
     }
     private void Update()
     {

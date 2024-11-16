@@ -16,15 +16,20 @@ public class SO_guardaNivel : Guardar_nivel_Disk
     //array tipo cell para alamacernar la mazmorra
     public Cell[] cells;
     //ancho de la mazmora
+    [Tooltip("¡NO MODIFICAR! este valor esta solo para ser visualizdo")]
     public int width;
     //alto de la mazmorra
+    [Tooltip("¡NO MODIFICAR! este valor esta solo para ser visualizdo")]
     public int height;
     //nombre del archivo donde se alamacena la mazmorra
+    [Tooltip("Nombre del archivo con el que se guarda el mapa")]
     public string archivo;
     //nombre de la carpeta donde se guardara el archivo
     //esta carpeta se debe crear en la carpeta donde se halla 
     //el sriptableobject
-    public string nom_carpeta;
+    [Tooltip("Esta Carpeta se creara dentro de Assets")]
+    public string nom_carpeta="Mapas_bin";
     //tamaño de la celda
+    [Tooltip("Especifica tamaño de la celda en X y en Y, ¡NO MODIFICAR!")]
     public float offset_X, offset_Y;
 }

@@ -5,7 +5,7 @@ public class GuardarCargarMazmorra : MonoBehaviour
 {
     [SerializeField] private SO_guardaNivel _mazmorraSO;
     public int _whidth, _height;
-    string _name_arch;
+    string _name_arch,_Carpeta;
 
     private void Awake()
     {
@@ -13,6 +13,7 @@ public class GuardarCargarMazmorra : MonoBehaviour
         _name_arch = _mazmorraSO.archivo;
         _whidth = _mazmorraSO.width;
         _height = _mazmorraSO.height;
+        _Carpeta = _mazmorraSO.nom_carpeta;
     }
     public void GuardarEnScriptableObject(Cell[,] board, int x, int y,float o_x,float o_y)
     {
@@ -39,8 +40,8 @@ public class GuardarCargarMazmorra : MonoBehaviour
                     }
                 }
                 //guardar datos en archivo binario en 
-                _mazmorraSO.Guardar(_mazmorraSO.cells,_mazmorraSO.archivo);
-                Debug.Log("Mazmorra guardada en Scriptable Object");
+                _mazmorraSO.Guardar(_mazmorraSO.cells,_mazmorraSO.archivo,_Carpeta);
+                Debug.Log("Mazmorra guardada en Scriptable Object en la carpeta: " + _Carpeta);
           }
     }
 
@@ -60,7 +61,7 @@ public class GuardarCargarMazmorra : MonoBehaviour
         if(inicializar_tablero(ref board)){
             //obtener datos del archivo binario
             int c = 0;
-            _mazmorraSO.Cargar(_mazmorraSO.archivo);
+            _mazmorraSO.Cargar(_mazmorraSO.archivo,_Carpeta);
             o_x = _mazmorraSO.offset_X;
             o_y = _mazmorraSO.offset_Y;
             for (int i = 0; i < _mazmorraSO.width; i++)
