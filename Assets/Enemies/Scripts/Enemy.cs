@@ -2,65 +2,53 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : MonoBehaviour
+public abstract class Enemy : Character, IInteractable, IAttacker
 {
     // Atributos comunes para todos los enemigos
-    public float health { get; protected set; }
-    public float walkSpeed { get; protected set; }
-    public float runSpeed { get; protected set; }
     public float detectionRange { get; protected set; }
-    public float damageGenerate { get; protected set; }
-    public float distanceAttack { get; protected set; }
 
-    protected Animator animator;
+    // Player
     protected GameObject player;
-    private Rigidbody rb;
 
     protected float player_distance; // Distancia del jugador
     protected string action; // Animacion
     protected int routine; // Rutina de comportamiento
     private float timer;   // Cronometro
     private Quaternion targetRotation;
-    public bool attacking = false; // Cambia su estado para saber cuando se toco al jugador para atacarlo o de casualidad
 
-    // variables para el suavizado de la rotacion
-    private bool isRotating = false;
-    private float rotationSpeed = 2.0f; // Ajusta la velocidad de rotación
-  
-    //[SerializeField] GameObject _activar_portal;
-
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-        player = GameObject.Find("Player");
-        rb = GetComponent<Rigidbody>();
-    }
-
-
+    // Variables para el suavizado de la rotacion
+    private float rotationSpeed = 2.0f; // Ajusta la velocidad de rotacion
 
     private void Update()
     {
+        if (health <= 0) { StartCoroutine(Die()); };
         attacking = false;
-
         // Si el jugador esta cerca y:
         if (DetectPlayer())
         {
             // detecta al jugador y este esta dentro de su rango de ataque procede a atacarlo
-            if (DistanceToPlayer() <= distanceAttack)
+            if (DistanceToPlayer() <= distanceAttack && !attacking)
             {
-                Attack(); 
+                Attack();
+                StartCoroutine(AttackCooldownCoroutine());
             }
-            // detecta al jugador y este esta fuera del area de ataque, procede a acercarse
+            // detecta al jugador si este esta fuera del area de ataque, procede a acercarse
             if (DistanceToPlayer() > distanceAttack)
             {
                 MoveTowardsPlayer();
             }
         }
         // En caso de que no detecte al jugador cerca continua con su rutina
-        else 
-        { 
-            BehaviourRoutine(); 
+        else
+        {
+            BehaviourRoutine();
         }
+    }
+
+    public void Interact(PlayerBehaviour player)
+    {
+        Debug.Log($"{player.name} ha interactuado con {this.name}");
+        TakeDamage(player.damageGenerate);
     }
 
     // Logica de comportamiento segun una rutina basica
@@ -82,7 +70,7 @@ public abstract class Enemy : MonoBehaviour
             switch (routine)
             {
                 case 0: // Quedarse quieto
-                    SetAnimationFalse();
+                    animationManager.IdleAnimation();
                     break;
                 case 1: // Rotar
                     RotateEnemy();
@@ -100,7 +88,7 @@ public abstract class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             // Desactivar la animacion de caminar
-            animator.SetBool("Walk", false);
+            animationManager.IdleAnimation();
 
             // Sumar 90 grados a la direccion actual
             transform.Rotate(0, 90, 0);
@@ -125,10 +113,10 @@ public abstract class Enemy : MonoBehaviour
         rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRotation, 0.5f));
 
         // Mueve el Rigidbody en la dirección hacia adelante
-        rb.MovePosition(rb.position + transform.forward * walkSpeed * Time.deltaTime);
+        rb.MovePosition(rb.position + transform.forward * speed * Time.deltaTime);
 
         // Actualiza la animación de caminar
-        SetAnimation("Walk");
+        animationManager.WalkingAnimation();
     }
 
     // Calcula la distancia a la que se encuentra del player
@@ -151,12 +139,10 @@ public abstract class Enemy : MonoBehaviour
     //corrutina para suavisar el giro
     private IEnumerator SmoothRotation()
     {
-        isRotating = true;
-
-        // Mientras el objeto no haya alcanzado la rotación deseada
+        // Mientras el objeto no haya alcanzado la rotacion deseada
         while (Quaternion.Angle(rb.rotation, targetRotation) > 0.1f)
         {
-            // Interpolamos la rotación suavemente usando Slerp
+            // Interpolamos la rotacion suavemente usando Slerp
             rb.MoveRotation(Quaternion.Slerp(rb.rotation, targetRotation, rotationSpeed * Time.deltaTime));
 
             // Esperamos hasta el siguiente frame
@@ -165,8 +151,6 @@ public abstract class Enemy : MonoBehaviour
 
         // Aseguramos que la rotación final sea exactamente la deseada
         rb.MoveRotation(targetRotation);
-
-        isRotating = false;
     }
 
     // Movimiento hacia el jugador
@@ -180,15 +164,18 @@ public abstract class Enemy : MonoBehaviour
         rb.MoveRotation(Quaternion.LookRotation(direction));
 
         // Mueve el Rigidbody hacia adelante en la dirección del movimiento
-        rb.MovePosition(rb.position + direction * runSpeed * Time.deltaTime);
+        rb.MovePosition(rb.position + direction * sprintSpeed * Time.deltaTime);
 
         // Actualiza la animación de caminar
-        SetAnimation("Walk");
+        animationManager.WalkingAnimation();
     }
 
     // Ataque
     protected void Attack()
     {
+        // Marca que esta atacando
+        attacking = true;
+
         // Calcula la dirección hacia el jugador
         var lookPos = player.transform.position - transform.position;
         lookPos.y = 0;
@@ -199,72 +186,20 @@ public abstract class Enemy : MonoBehaviour
         // Rota el Rigidbody hacia el jugador utilizando MoveRotation
         rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, rotation, 5f));
 
-        // Inicia la animación de ataque
-        SetAnimation("Attack");
-
-        // Marca que está atacando
-        attacking = true;
+        // Inicia la animacion de ataque
+        animationManager.AttackAnimation();
     }
-
-    // Recibe dano
-    public void TakeDamage(float damage)
+    private IEnumerator AttackCooldownCoroutine()
     {
-        /*Debug.Log("dano al esqueleto!");
-        Debug.Log(health);
-        Debug.Log("-------------------");*/
-        // Animacion de recibir daño
-        SetAnimation("Damage");
-
-        // Restar vida
-        health -= damage;
-
-        // Actualizar vida en el animator controller
-        animator.SetFloat("Health", health);
-
-        // En caso de que la vida sea menor a 1 el player muere
-        if (health <= 0) Die();
+        attacking = false;
+        yield return new WaitForSeconds(5f); // Tiempo de cooldown
     }
 
     // Metodo para manejar la muerte
-    protected virtual void Die()
+    protected IEnumerator Die()
     {
-        Debug.Log("inicando muerte");
-        SetAnimation("Die");
-        //Destroy(gameObject);
-        /// hay que agregar una demora para que se reproduzca la animacion de muerte
+        animationManager.UpdateHealthAnimation(health);
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
     }
-
-    // Metodo para manejar los cambios de animaciones
-    protected void SetAnimation(string action)
-    {
-        SetAnimationFalse();
-
-        switch (action)
-        {
-            case "Still": // Quieto
-                SetAnimationFalse();
-                break;
-            case "Walk": // Caminar
-                animator.SetBool("Walk", true);
-                break;
-            case "Attack": // Atacar
-                animator.SetBool("Attack", true);
-                break;
-            case "Damage": // Recibir dano
-                animator.SetBool("Damage", true);
-                break;
-            case "Die": // Morir
-                animator.SetFloat("Health", 0);
-                break;
-        }
-    }
-
-    // Metodo para establecer las animaciones en false
-    protected void SetAnimationFalse()
-    {
-        animator.SetBool("Walk", false);
-        animator.SetBool("Attack", false);
-        animator.SetBool("Damage", false);
-    }
-
 }

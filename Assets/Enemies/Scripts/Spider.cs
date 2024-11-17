@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class Spider : Enemy
 {
-    [SerializeField] float _healt = 50;
     private void Start()
     {
         // Valores de la araña
-        health = _healt;
-        walkSpeed = 3;
-        runSpeed = 5;
-        detectionRange = 15;
-        damageGenerate = 5;
+        health = 50f;
+        speed = 3f;
+        sprintSpeed = 5f;
+        detectionRange = 15f;
+        damageGenerate = 5f;
         distanceAttack = 0.7f;
 
         player = GameObject.Find("Player");
-        animator = GetComponent<Animator>();
-        animator.SetFloat("Health", health);
+        _anim.SetFloat("Health", health);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -25,9 +23,12 @@ public class Spider : Enemy
         {
             attacking = false;
 
-            // Llamo al metodo del player para reastale vida, segun el daño que genera el esqueleto
-            PlayerBehaviour playerHealth = other.gameObject.GetComponent<PlayerBehaviour>();
-            playerHealth.TakeDamage(damageGenerate);
+            // Llamo al metodo del player para restarle vida, segun el daño que genera el enemigo
+            Character playerCharacter = other.gameObject.GetComponent<Character>();
+            if (playerCharacter != null)
+            {
+                playerCharacter.TakeDamage(damageGenerate);
+            }
         }
     }
 }
