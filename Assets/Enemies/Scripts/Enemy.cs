@@ -229,7 +229,7 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         SetAnimation("Die");
-        
+        Destroy(this);
         /// hay que agregar una demora para que se reproduzca la animacion de muerte
     }
 
