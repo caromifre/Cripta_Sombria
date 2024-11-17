@@ -21,7 +21,7 @@ public abstract class Enemy : Character, IInteractable, IAttacker
 
     private void Update()
     {
-        if (health <= 0) { Die(); };
+        if (health <= 0) { StartCoroutine(Die()); };
         attacking = false;
         // Si el jugador esta cerca y:
         if (DetectPlayer())
@@ -196,10 +196,10 @@ public abstract class Enemy : Character, IInteractable, IAttacker
     }
 
     // Metodo para manejar la muerte
-    protected virtual void Die()
+    protected IEnumerator Die()
     {
         animationManager.UpdateHealthAnimation(health);
+        yield return new WaitForSeconds(5f);
         Destroy(gameObject);
-        /// hay que agregar una demora para que se reproduzca la animacion de muerte
     }
 }

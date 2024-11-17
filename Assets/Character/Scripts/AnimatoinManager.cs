@@ -48,7 +48,7 @@ public class AnimationManager
     // Controla la animacion de recibir daño
     public void UpdateDamageAnimation()
     {
-        _anim.SetTrigger("TakeDamage");
+        _anim.SetTrigger("Damage");
     }
     public void ResetAnimations()
     {
