@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBehaviour : Character
+public class PlayerBehaviour : Character, IAttacker
 {
     // Caracteristicas
     public float interactRange = 1.5f; // Rango para recoger el item

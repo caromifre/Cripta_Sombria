@@ -43,8 +43,6 @@ public abstract class Enemy : Character, IInteractable, IAttacker
         {
             BehaviourRoutine();
         }
-
-        attacking = false;
     }
 
     public void Interact(PlayerBehaviour player)
@@ -193,6 +191,7 @@ public abstract class Enemy : Character, IInteractable, IAttacker
     }
     private IEnumerator AttackCooldownCoroutine()
     {
+        yield return new WaitForSeconds(1.14f);
         attacking = false;
         yield return new WaitForSeconds(5f); // Tiempo de cooldown
     }

@@ -19,17 +19,23 @@ public class Sword : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Character target = other.GetComponent<Character>();
+        Character target = other.GetComponentInParent<Character>();
+        Debug.Log("Objeto detectado: " + target);
 
         if (target != null && attacker != null)
         {
-            if (attacker is IAttacker && target != null)
+            Debug.Log("Atacante encontrado: " + attacker);
+
+            if (attacker.IsAttacking)
             {
-                if (attacker.IsAttacking) // Si esta atacando
-                {
-                    target.TakeDamage(attacker.DamageGenerate); // Aplica daño al objetivo
-                }
+                Debug.Log("Atacante está atacando, aplicando daño");
+                target.TakeDamage(attacker.DamageGenerate); // Aplica daño al objetivo
+            }
+            else
+            {
+                Debug.Log("Atacante no está atacando");
             }
         }
     }
+
 }
