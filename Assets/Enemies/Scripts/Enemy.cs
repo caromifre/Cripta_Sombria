@@ -228,6 +228,7 @@ public abstract class Enemy : MonoBehaviour
     // Metodo para manejar la muerte
     protected virtual void Die()
     {
+        Debug.Log("inicando muerte");
         SetAnimation("Die");
         //Destroy(gameObject);
         /// hay que agregar una demora para que se reproduzca la animacion de muerte

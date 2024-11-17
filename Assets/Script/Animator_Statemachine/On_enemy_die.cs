@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class On_enemy_die : StateMachineBehaviour
 {
-    [SerializeField] GameObject _Enemy;
+
     // Este método se llama cuando una transición sale del estado
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Estado de animación enemigo  terminado");
-        Destroy(_Enemy);       
+        Destroy(animator.gameObject);       
     }
     /* public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
      {
