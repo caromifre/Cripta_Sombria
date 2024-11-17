@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Enemy : Character, IInteractable, IAttacker
+public abstract class Enemy : Character, IInteractable
 {
     // Atributos comunes para todos los enemigos
     public float detectionRange { get; protected set; }
@@ -191,7 +191,7 @@ public abstract class Enemy : Character, IInteractable, IAttacker
     }
     private IEnumerator AttackCooldownCoroutine()
     {
-        yield return new WaitForSeconds(1.14f);
+        yield return new WaitForSeconds(0.5f);
         attacking = false;
         yield return new WaitForSeconds(5f); // Tiempo de cooldown
     }

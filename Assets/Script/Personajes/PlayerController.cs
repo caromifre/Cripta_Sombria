@@ -16,16 +16,18 @@ public class PlayerController : PlayerBehaviour
         // Cambiamos las animaciones segun el estado
         if (direction.magnitude > 0)
         {
-            // Verificamos si la direccion no es cero
-            if (direction != Vector3.zero)
-            {
-                rotationManager.Rotate(ref characterTransform, ref rb, ref direction, smoothTime, ref currentVelocity);
-            }
+            // Rotamos al jugador
+            rotationManager.Rotate(ref characterTransform, ref rb, ref direction, smoothTime, ref currentVelocity);
+            
+            // Movemos al jugador en una direccion 
             MovePlayer(direction);
+
+            // Correr
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 animationManager.RunningAnimation();
             }
+            // Caminar 
             else
             {
                 animationManager.WalkingAnimation();
@@ -36,15 +38,19 @@ public class PlayerController : PlayerBehaviour
             animationManager.IdleAnimation();
         }
 
-        // Verificar si se hizo click izquierdo del mouse
+        // Interactuar con enemigos u objetos en el mapa
         if (Input.GetMouseButtonDown(0))
         {
             TryInteractWithObject();
         }
+
+        // Tomar botella de curacion (en caso de tener en el inventario)
         if (Input.GetKeyDown(KeyCode.C))
         {
             UseHealthPotion();
         }
+
+        // Activar o desactivar defensa
         if (Input.GetButton("Fire2"))
         {
             defenseManager.StartDefending();
@@ -115,13 +121,15 @@ public class PlayerController : PlayerBehaviour
 
                 if (distance <= distanceAttack && hit.collider.CompareTag("Enemy") && !attacking)
                 {
-                    // Registrar el último ataque y activar la animación
+                    // Registrar el ultimo ataque y activar la animacion
                     attacking = true;
                     animationManager.AttackAnimation();
-                    // Si el enemigo implementa IInteractable, ejecutar la interacción
+
+                    // Si el enemigo implementa IInteractable, ejecutar la interaccion
                     IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                     interactable?.Interact(this);
-                    // Esperar la duración de la animación antes de permitir otro ataque
+
+                    // Esperar la duracion de la animacion antes de permitir otro ataque
                     Invoke(nameof(ResetAttack), 1.5f);
                 }
 

@@ -63,7 +63,7 @@ public class Character : MonoBehaviour, IAttacker
             //_controler._tot_vida = health; ??
             animationManager.UpdateHealthAnimation(health);
 
-            Debug.Log($"Daño recibido: {damage}, Salud restante: {health}");
+            Debug.Log($"{gameObject.name} recibio daño: {damage}, Salud restante: {health}");
         }
     }
 }
