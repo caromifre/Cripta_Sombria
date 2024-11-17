@@ -146,6 +146,8 @@ public class PlayerController : PlayerBehaviour
             }
         }
     }
+    
+    // Reestablece el ataque en falso
     public void ResetAttack()
     {
         attacking = false;

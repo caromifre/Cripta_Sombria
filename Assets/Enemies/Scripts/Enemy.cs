@@ -22,15 +22,16 @@ public abstract class Enemy : Character, IInteractable
     private void Update()
     {
         if (health <= 0) { StartCoroutine(Die()); };
-        
+
+        attacking = false;
+
         // Si el jugador esta cerca y:
         if (DetectPlayer())
         {
             // detecta al jugador y este esta dentro de su rango de ataque procede a atacarlo
             if (DistanceToPlayer() <= distanceAttack && !attacking)
             {
-                Attack();
-                StartCoroutine(AttackCooldownCoroutine());
+                AttackRoutine();
             }
             // detecta al jugador si este esta fuera del area de ataque, procede a acercarse
             if (DistanceToPlayer() > distanceAttack)
@@ -77,6 +78,34 @@ public abstract class Enemy : Character, IInteractable
                     break;
                 case 2: // Caminar
                     Walk();
+                    break;
+            }
+        }
+    }
+
+    // Logica de comportamiento segun una rutina de ataque
+    public virtual void AttackRoutine()
+    {
+        // Contador
+        timer += Time.deltaTime;
+
+        // Cada 2 segundos el enemigo volvera a elegir una accion a realizar
+        if (timer >= 2)
+        {
+            routine = Random.Range(0, 2);
+            timer = 0;
+            Debug.Log(timer);
+        }
+        // Si el enemigo esta vivo elije una accion a realizar
+        if (health > 0)
+        {
+            switch (routine)
+            {
+                case 0: // Quedarse quieto
+                    animationManager.IdleAnimation();
+                    break;
+                case 1: // Rotar
+                    Attack();
                     break;
             }
         }
@@ -136,7 +165,7 @@ public abstract class Enemy : Character, IInteractable
         else { return false; }  
     }
 
-    //corrutina para suavisar el giro
+    // Corrutina para suavisar el giro
     private IEnumerator SmoothRotation()
     {
         // Mientras el objeto no haya alcanzado la rotacion deseada
@@ -189,12 +218,14 @@ public abstract class Enemy : Character, IInteractable
         // Inicia la animacion de ataque
         animationManager.AttackAnimation();
     }
-    private IEnumerator AttackCooldownCoroutine()
-    {
-        yield return new WaitForSeconds(0.5f);
-        attacking = false;
-        yield return new WaitForSeconds(5f); // Tiempo de cooldown
-    }
+
+    // Tiempo de espera antes del proximo ataque
+    //private IEnumerator AttackCooldownCoroutine()
+    //{
+    //    yield return new WaitForSeconds(20f);
+    //    attacking = false;
+    //    yield return new WaitForSeconds(5f); // Tiempo de cooldown
+    //}
 
     // Metodo para manejar la muerte
     protected IEnumerator Die()

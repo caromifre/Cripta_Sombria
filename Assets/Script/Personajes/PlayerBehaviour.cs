@@ -41,7 +41,7 @@ public class PlayerBehaviour : Character
         _controler = Game_manager.Instance; // (esto posiblemente sea mejor ponerlo en character, si es que los enemigos tambien lo van a usar)
 
         // Actualizar la vida en el game_manager
-        //_controler._tot_vida = health;
+        _controler._tot_vida = health;
 
         // Dano que genera y rango
         damageGenerate = 10f; // Esto se deberia modificar si integramos diferentes armas
