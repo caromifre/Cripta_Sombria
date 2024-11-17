@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2962536688735511003}
   m_Layer: 8
-  m_Name: Spider
+  m_Name: Spider 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -504,6 +504,11 @@ PrefabInstance:
     - target: {fileID: 8417361359673230750, guid: f5504c4259743b3488c4983d01351d4b,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 67313858497157f4eb0f45ef0341f67e, type: 2}
+    - target: {fileID: 8417361359673230750, guid: f5504c4259743b3488c4983d01351d4b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: cb426eb41c33843468a8c828117053bb, type: 2}
     - target: {fileID: 8577250129722032071, guid: f5504c4259743b3488c4983d01351d4b,

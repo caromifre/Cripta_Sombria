@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Skeleton : Enemy
 {
+    [SerializeField] float _health = 100;
     private void Start()
     {
         // Valores del esqueleto
-        health = 100f;
+        health = _health;
         speed = 2f;
         sprintSpeed = 1.5f;
         detectionRange = 5f;

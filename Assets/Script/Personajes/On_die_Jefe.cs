@@ -9,7 +9,8 @@ public class On_die_Jefe : StateMachineBehaviour
     {
         Debug.Log("Estado de animación terminado");
 
-        Game_manager.Instance.jefe_muerto();
+        //Game_manager.Instance.jefe_muerto();
+        //Destroy(animator.gameObject);
     }
 
 }

@@ -219,14 +219,6 @@ public abstract class Enemy : Character, IInteractable
         animationManager.AttackAnimation();
     }
 
-    // Tiempo de espera antes del proximo ataque
-    //private IEnumerator AttackCooldownCoroutine()
-    //{
-    //    yield return new WaitForSeconds(20f);
-    //    attacking = false;
-    //    yield return new WaitForSeconds(5f); // Tiempo de cooldown
-    //}
-
     // Metodo para manejar la muerte
     protected IEnumerator Die()
     {

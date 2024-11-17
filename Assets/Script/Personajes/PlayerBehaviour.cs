@@ -21,7 +21,7 @@ public class PlayerBehaviour : Character
     protected FollowCamera cameraScript;
 
     // Game manager
-    Game_manager _controler;
+    //Game_manager _controler;
 
     public void Start()
     {
@@ -33,12 +33,12 @@ public class PlayerBehaviour : Character
         itemUseManager = new ItemUseManager();
 
         // Vida del player
-        health = 500f;
+        health = 10f;
         maxHealth = health;
         _anim.SetFloat("Health", health);
 
         // Obtner insancia del gamemanagaer 
-        _controler = Game_manager.Instance; // (esto posiblemente sea mejor ponerlo en character, si es que los enemigos tambien lo van a usar)
+        _controler = Game_manager.Instance;
 
         // Actualizar la vida en el game_manager
         _controler._tot_vida = health;
@@ -59,17 +59,5 @@ public class PlayerBehaviour : Character
         {
             Debug.Log("Usaste una poción de salud.");
         }
-    }
-
-    // Recibe dano
-    public void TakeDamage2(float damage)// De esto ahora se encarga el character ya que hay funciones que se repiten en enemigos y player
-    {
-        if (!Input.GetButton("Fire2"))
-        {
-            health -= damage;
-            _controler._tot_vida = health;
-            _anim.SetFloat("Health", health);
-        }
-
     }
 }
