@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Spider : Enemy
 {
+    [SerializeField] float _health= 50;
     private void Start()
     {
         // Valores de la araña
-        health = 50f;
+        health = _health;
         speed = 3f;
         sprintSpeed = 5f;
         detectionRange = 15f;
