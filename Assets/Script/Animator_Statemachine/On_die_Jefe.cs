@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class On_die_Jefe : StateMachineBehaviour
 {
+    [SerializeField] GameObject _Gmo_conluz;
     // Este método se llama cuando una transición sale del estado
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Estado de animación terminado");
 
-        Game_manager.Instance.jefe_muerto();
+        //Game_manager.Instance.jefe_muerto();
+        Destroy(animator.gameObject);
     }
 
 }

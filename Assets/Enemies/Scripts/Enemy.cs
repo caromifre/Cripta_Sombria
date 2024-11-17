@@ -21,27 +21,34 @@ public abstract class Enemy : Character, IInteractable
 
     private void Update()
     {
-        if (health <= 0) { StartCoroutine(Die()); };
+        //if (health <= 0) { StartCoroutine(Die()); };
         
         // Si el jugador esta cerca y:
-        if (DetectPlayer())
+        if (health>0)
         {
-            // detecta al jugador y este esta dentro de su rango de ataque procede a atacarlo
-            if (DistanceToPlayer() <= distanceAttack && !attacking)
+            if(DetectPlayer())
             {
-                Attack();
-                StartCoroutine(AttackCooldownCoroutine());
+                // detecta al jugador y este esta dentro de su rango de ataque procede a atacarlo
+                if (DistanceToPlayer() <= distanceAttack && !attacking)
+                {
+                    Attack();
+                    StartCoroutine(AttackCooldownCoroutine());
+                }
+                // detecta al jugador si este esta fuera del area de ataque, procede a acercarse
+                if (DistanceToPlayer() > distanceAttack)
+                {
+                    MoveTowardsPlayer();
+                }
             }
-            // detecta al jugador si este esta fuera del area de ataque, procede a acercarse
-            if (DistanceToPlayer() > distanceAttack)
+            // En caso de que no detecte al jugador cerca continua con su rutina
+            else
             {
-                MoveTowardsPlayer();
+                BehaviourRoutine();
             }
-        }
-        // En caso de que no detecte al jugador cerca continua con su rutina
-        else
-        {
-            BehaviourRoutine();
+        } 
+        else {
+
+            animationManager.UpdateHealthAnimation(health);
         }
     }
 
@@ -80,6 +87,7 @@ public abstract class Enemy : Character, IInteractable
                     break;
             }
         }
+
     }
 
     // Funcion para esquivar paredes
@@ -197,10 +205,10 @@ public abstract class Enemy : Character, IInteractable
     }
 
     // Metodo para manejar la muerte
-    protected IEnumerator Die()
+   /* protected IEnumerator Die()
     {
         animationManager.UpdateHealthAnimation(health);
-        yield return new WaitForSeconds(3f);
-        Destroy(gameObject);
-    }
+        //yield return new WaitForSeconds(3f);
+        //Destroy(gameObject);
+    }*/
 }
