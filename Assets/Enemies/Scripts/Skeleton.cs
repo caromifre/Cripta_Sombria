@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Skeleton : Enemy
 {
-    [SerializeField] float _health = 10f;
+    [SerializeField] float _health = 100;
     private void Start()
     {
         // Valores del esqueleto

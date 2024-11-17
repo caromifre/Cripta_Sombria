@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Minotaur : Enemy
 {
-    [SerializeField] float _health = 250;
+    [SerializeField] float _healt = 250;
     private void Start()
     {
         // Valores del orco
-        health = _health;
+        health = _healt;
         speed = 1f;
         sprintSpeed = 2f;
         detectionRange = 10f;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spider : Enemy
 {
-    [SerializeField] float _health= 50;
+    [SerializeField] float _health = 50;
     private void Start()
     {
         // Valores de la araña
