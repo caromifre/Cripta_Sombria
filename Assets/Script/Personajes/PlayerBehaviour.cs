@@ -49,9 +49,9 @@ public class PlayerBehaviour : MonoBehaviour
             UseHealthBottle();
         }
 
-        if (Game_manager.Instance._Jefe_muerto && !_activar_portal.GetComponent<Light>().enabled) { 
+        /*if (Game_manager.Instance._Jefe_muerto && !_activar_portal.GetComponent<Light>().enabled) { 
             _activar_portal.GetComponent<Light>().enabled = true;
-        }
+        }*/
 
     }
     private void UseHealthBottle()

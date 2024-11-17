@@ -229,7 +229,7 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         SetAnimation("Die");
-        Destroy(this);
+        //Destroy(gameObject);
         /// hay que agregar una demora para que se reproduzca la animacion de muerte
     }
 
@@ -265,4 +265,5 @@ public abstract class Enemy : MonoBehaviour
         animator.SetBool("Attack", false);
         animator.SetBool("Damage", false);
     }
+
 }
