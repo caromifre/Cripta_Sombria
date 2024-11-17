@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
@@ -12,7 +13,7 @@ public class PlayerBehaviour : MonoBehaviour
     [SerializeField] private Transform playerTransform; // Referencia al transform del Player
     // Diccionario para almacenar el inventario (nombre del ítem y cantidad)
     private Dictionary<string, int> inventory = new Dictionary<string, int>();
-
+    [SerializeField] GameObject _activar_portal;
     Game_manager _controler;        
       
         
@@ -47,6 +48,11 @@ public class PlayerBehaviour : MonoBehaviour
         {
             UseHealthBottle();
         }
+
+        if (Game_manager.Instance._Jefe_muerto && !_activar_portal.GetComponent<Light>().enabled) { 
+            _activar_portal.GetComponent<Light>().enabled = true;
+        }
+
     }
     private void UseHealthBottle()
     {
@@ -85,11 +91,11 @@ public class PlayerBehaviour : MonoBehaviour
         // Si el raycast detecta un objeto
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Default", "TransparentFX", "Water", "UI")))
         {
-            Debug.Log($"Impacto con objeto: {hit.collider.gameObject.name}");
+            //Debug.Log($"Impacto con objeto: {hit.collider.gameObject.name}");
             Recolectable item = hit.collider.GetComponentInParent<Recolectable>();
 
-            Debug.Log("colisiono");
-            Debug.Log(item);
+           /* Debug.Log("colisiono");
+            Debug.Log(item);*/
 
             // Si el objeto clickeado tiene el componente Item
             if (item != null)

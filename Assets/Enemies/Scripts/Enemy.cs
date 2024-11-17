@@ -26,6 +26,8 @@ public abstract class Enemy : MonoBehaviour
     // variables para el suavizado de la rotacion
     private bool isRotating = false;
     private float rotationSpeed = 2.0f; // Ajusta la velocidad de rotación
+  
+    //[SerializeField] GameObject _activar_portal;
 
     private void Awake()
     {
@@ -33,6 +35,8 @@ public abstract class Enemy : MonoBehaviour
         player = GameObject.Find("Player");
         rb = GetComponent<Rigidbody>();
     }
+
+
 
     private void Update()
     {
@@ -205,9 +209,9 @@ public abstract class Enemy : MonoBehaviour
     // Recibe dano
     public void TakeDamage(float damage)
     {
-        Debug.Log("dano al esqueleto!");
+        /*Debug.Log("dano al esqueleto!");
         Debug.Log(health);
-        Debug.Log("-------------------");
+        Debug.Log("-------------------");*/
         // Animacion de recibir daño
         SetAnimation("Damage");
 
@@ -225,7 +229,7 @@ public abstract class Enemy : MonoBehaviour
     protected virtual void Die()
     {
         SetAnimation("Die");
-        Destroy(gameObject);
+        
         /// hay que agregar una demora para que se reproduzca la animacion de muerte
     }
 

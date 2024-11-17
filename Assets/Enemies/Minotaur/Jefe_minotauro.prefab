@@ -4180,6 +4180,7 @@ GameObject:
   - component: {fileID: 605501237624249645}
   - component: {fileID: 1755593885648488570}
   - component: {fileID: 5186431537158664827}
+  - component: {fileID: 7839294833489135464}
   m_Layer: 0
   m_Name: Jefe_minotauro
   m_TagString: Enemy
@@ -4289,6 +4290,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attacking: 0
+--- !u!114 &7839294833489135464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4414871117303439921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ddc715d6ede6c348866932f3cf1a4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _portal: {fileID: 3097021228936817227, guid: 27ab648df65e08941a0648287d7ebdfb, type: 3}
 --- !u!1 &4414871117353324497
 GameObject:
   m_ObjectHideFlags: 0

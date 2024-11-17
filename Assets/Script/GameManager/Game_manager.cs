@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Loading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Constantes_celda;
 
 public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_scene
 {
@@ -12,13 +13,17 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
     public float _tot_vida;
     //nombre de las escenas a cargar
     [SerializeField] string _Hud, _Menu_muerte;
+    [SerializeField] string[] _Nivel;
+    [SerializeField] string[] _Menues;
+  
     //cofigurar cantidad de jefes por nivel
     //[SerializeField] int _Jefe = 1;//por defecto 1
     public bool _Jefe_activo { get; protected set; } = false;
     //esta variable se activa al morir el jefe para habilitar el cambio de nivel
     public bool _Jefe_muerto { get; protected set; } = false;
 
-    string _nivel_actual;
+    int _nivel_actual = _NIVEL1;
+
     private void Awake()
     {
         if (instance == null)
@@ -38,20 +43,33 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
     }
 
     // Update is called once per frame
-    void Update()
+    /*void Update()
     {
         
-    }
+    }*/
 
     //mostrar el hud
     public void agregar_escena() {
         SceneManager.LoadScene(_Hud, LoadSceneMode.Additive);
     }
 
-    //caragar nivel1
+    //cargar nivel1
     public void Cargar_nueva_escena() {
-        SceneManager.LoadScene("Nivel1", LoadSceneMode.Single);
-        SceneManager.LoadScene(_Hud, LoadSceneMode.Additive);
+        Cargar_nueva_escena(false);
+    }
+    public void Cargar_nueva_escena(bool next = false) {
+        if (!next)
+        {
+            //por defecto se carga el nivel 1
+            SceneManager.LoadScene(_Nivel[_NIVEL1], LoadSceneMode.Single);
+            SceneManager.LoadScene(_Hud, LoadSceneMode.Additive);
+        }
+        else { 
+            _nivel_actual++;
+            SceneManager.LoadScene(_Nivel[_nivel_actual], LoadSceneMode.Single);
+            SceneManager.LoadScene(_Hud, LoadSceneMode.Additive);
+        }
+        
     }
 
     //mostrar menu muerte

@@ -20,7 +20,8 @@ public static class Constantes_celda
                      _INICIO = 0,
                      _FIN = 1,//indica posicion pilares
                      _CELDA_DECORADA = 2,//incica la posicion en el array para las celdas decordas
-                     _CELDA_GAlERIA = 3;//indica la posicion para las celdas tipo galeria
+                     _CELDA_GAlERIA = 3,//indica la posicion para las celdas tipo galeria
+                     _NIVEL1 = 0;//constante para manejar el array de niveles del Game manager
 
 
 
@@ -43,4 +44,6 @@ public static class Constantes_celda
         ORN_ESQUELETO=5
     
     }
+
+
 }

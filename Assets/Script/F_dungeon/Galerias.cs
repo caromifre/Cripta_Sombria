@@ -56,6 +56,7 @@ public class Galerias : IGalerias
             {
                 coordboard = Lista_coord[a];    
                 max_gal--;//descontar galeria
+
                 //crear distancia variable entre galerias
                 cont_g = Random.Range(3, 8);    
             }
@@ -90,20 +91,20 @@ public class Galerias : IGalerias
                 hacer_galeria(board, pos_x - 1, pos_y - 1, pos_x, pos_y);
             }
             //probar limite diagonal arriba derecho
-            if (pos_y - 1 >= 0 && pos_x + 1 < ancho && !board[pos_x + 1, pos_y - 1].galeria)
+            else if (pos_y - 1 >= 0 && pos_x + 1 < ancho && !board[pos_x + 1, pos_y - 1].galeria)
             {
                 //Debug.Log("//probar limite diagonal arriba derecho");
                 hacer_galeria(board, pos_x, pos_y - 1, pos_x + 1, pos_y);
             }
             //probar limite diagonal abajo izquierda
-            if (pos_y + 1 < alto && pos_x - 1 >= 0 && !board[pos_x - 1, pos_y + 1].galeria)
+            else if (pos_y + 1 < alto && pos_x - 1 >= 0 && !board[pos_x - 1, pos_y + 1].galeria)
             {
                 //Debug.Log("//probar limite diagonal abajo izquierda");
                 hacer_galeria(board, pos_x - 1, pos_y, pos_x, pos_y + 1);
             }
 
             //probar diagonal abajo a la derecha
-            if (pos_y + 1 < alto && pos_x + 1 < ancho && !board[pos_x + 1, pos_y + 1].galeria)
+            else if (pos_y + 1 < alto && pos_x + 1 < ancho && !board[pos_x + 1, pos_y + 1].galeria)
             {
                 //Debug.Log("//probar diagonal abajo a la derecha");
                 hacer_galeria(board, pos_x, pos_y, pos_x + 1, pos_y + 1);

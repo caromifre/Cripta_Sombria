@@ -3,7 +3,10 @@ guid: 9c9054b36cc3e1f4b99bef3b9f17f331
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerTransform: {instanceID: 0}
+  - _activar_portal: {fileID: 3097021228936817227, guid: 27ab648df65e08941a0648287d7ebdfb,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

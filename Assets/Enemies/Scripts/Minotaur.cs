@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Minotaur : Enemy
 {
+    
     private void Start()
     {
         // Valores del orco
