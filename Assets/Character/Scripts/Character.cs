@@ -34,7 +34,7 @@ public class Character : MonoBehaviour, IAttacker
     public bool IsAttacking => attacking;
 
     // Game manager
-    //public Game_manager _controler; ??
+     public Game_manager _controler;
 
     public virtual void Awake()
     {
@@ -47,9 +47,13 @@ public class Character : MonoBehaviour, IAttacker
         defenseManager = new DefenseManager(_anim);
         animationManager = new AnimationManager(_anim);
         rotationManager = new RotationManager();
-        // _controler = Game_manager.Instance; ??
+        //_controler = Game_manager.Instance;
+        _controler = Game_manager.Instance;
     }
-
+    private void Start()
+    {
+        
+    }
     // Funcion para recibir dano
     public void TakeDamage(float damage)
     {
@@ -60,7 +64,7 @@ public class Character : MonoBehaviour, IAttacker
         else
         {
             health -= damage;
-            //_controler._tot_vida = health; ??
+            _controler._tot_vida = health;
             animationManager.UpdateHealthAnimation(health);
 
             Debug.Log($"{gameObject.name} recibio daño: {damage}, Salud restante: {health}");

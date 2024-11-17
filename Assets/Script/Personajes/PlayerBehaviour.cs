@@ -21,13 +21,13 @@ public class PlayerBehaviour : Character
     protected FollowCamera cameraScript;
 
     // Game manager
-    Game_manager _controler;
+    //Game_manager _controler;
 
     public void Start()
     {
         // Camara del jugador
         cameraScript = Camera.main.GetComponent<FollowCamera>();
-
+        
         // Inventario
         inventoryManager = new InventoryManager();
         itemUseManager = new ItemUseManager();
@@ -67,7 +67,7 @@ public class PlayerBehaviour : Character
         if (!Input.GetButton("Fire2"))
         {
             health -= damage;
-            _controler._tot_vida = health;
+            //_controler._tot_vida = health;
             _anim.SetFloat("Health", health);
         }
 
