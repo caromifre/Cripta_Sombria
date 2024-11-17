@@ -22,7 +22,7 @@ public abstract class Enemy : Character, IInteractable, IAttacker
     private void Update()
     {
         if (health <= 0) { StartCoroutine(Die()); };
-        attacking = false;
+        
         // Si el jugador esta cerca y:
         if (DetectPlayer())
         {
@@ -43,6 +43,8 @@ public abstract class Enemy : Character, IInteractable, IAttacker
         {
             BehaviourRoutine();
         }
+
+        attacking = false;
     }
 
     public void Interact(PlayerBehaviour player)
@@ -199,7 +201,7 @@ public abstract class Enemy : Character, IInteractable, IAttacker
     protected IEnumerator Die()
     {
         animationManager.UpdateHealthAnimation(health);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
 }

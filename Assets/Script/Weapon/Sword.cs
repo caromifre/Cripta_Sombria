@@ -19,7 +19,7 @@ public class Sword : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Character target = other.GetComponentInParent<Character>();
+        Character target = other.GetComponent<Character>();
 
         if (target != null && attacker != null)
         {
