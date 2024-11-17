@@ -33,7 +33,7 @@ public class PlayerBehaviour : Character
         itemUseManager = new ItemUseManager();
 
         // Vida del player
-        health = 10f;
+        health = 500f;
         maxHealth = health;
         _anim.SetFloat("Health", health);
 

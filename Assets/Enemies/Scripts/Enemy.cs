@@ -21,28 +21,33 @@ public abstract class Enemy : Character, IInteractable
 
     private void Update()
     {
-        if (health <= 0) { StartCoroutine(Die()); };
-
-        attacking = false;
-
+        //if (health <= 0) { StartCoroutine(Die()); };
+        // attacking = false;
         // Si el jugador esta cerca y:
-        if (DetectPlayer())
+        if (health > 0)
         {
-            // detecta al jugador y este esta dentro de su rango de ataque procede a atacarlo
-            if (DistanceToPlayer() <= distanceAttack && !attacking)
+            if (DetectPlayer())
             {
-                AttackRoutine();
+                // detecta al jugador y este esta dentro de su rango de ataque procede a atacarlo
+                if (DistanceToPlayer() <= distanceAttack && !attacking)
+                {
+                    AttackRoutine();
+                }
+                // detecta al jugador si este esta fuera del area de ataque, procede a acercarse
+                if (DistanceToPlayer() > distanceAttack)
+                {
+                    MoveTowardsPlayer();
+                }
             }
-            // detecta al jugador si este esta fuera del area de ataque, procede a acercarse
-            if (DistanceToPlayer() > distanceAttack)
+            // En caso de que no detecte al jugador cerca continua con su rutina
+            else
             {
-                MoveTowardsPlayer();
+                BehaviourRoutine();
             }
         }
-        // En caso de que no detecte al jugador cerca continua con su rutina
         else
         {
-            BehaviourRoutine();
+            animationManager.UpdateHealthAnimation(health);
         }
     }
 
