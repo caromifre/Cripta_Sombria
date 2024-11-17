@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4241712817423798347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4637697494982780955}
+  - component: {fileID: 151902981036897524}
+  - component: {fileID: 8841675003202807276}
+  m_Layer: 0
+  m_Name: Cargar_nivel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4637697494982780955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4241712817423798347}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &151902981036897524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4241712817423798347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c891b7754f4d6c845b482605936b5d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rooms:
+  - {fileID: 2406978126415857164, guid: f1e5b2058d7ad8547afac8f3824353a6, type: 3}
+  - {fileID: 2406978126415857164, guid: 752dfb042d3c1be4da917eb5d23d0bea, type: 3}
+  - {fileID: 2406978126415857164, guid: fc648e9d5a3c45141987ec12f5d58595, type: 3}
+  - {fileID: 2406978126415857164, guid: b1366c6c680b97c489dc701760b225a6, type: 3}
+  - {fileID: 2406978126415857164, guid: f29b74a89d40483439cc69b21f2f549a, type: 3}
+  _tipo_celda: 4
+--- !u!114 &8841675003202807276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4241712817423798347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5931ce7f6642bf540b5208cbb4b06c73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mazmorraSO: {fileID: 0}
+  _whidth: 0
+  _height: 0
