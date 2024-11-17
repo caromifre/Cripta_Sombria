@@ -1,18 +1,21 @@
 using UnityEngine;
 
-public class Recolectable : MonoBehaviour
+public class Recolectable : MonoBehaviour, IInteractable
 {
-    private string itemName;
+    [SerializeField] private string itemName; // Nombre del objeto
 
-    private void Awake()
-    {
-        // Asigna automáticamente el nombre del GameObject al nombre del ítem
-        itemName = gameObject.name;
-    }
+    private bool isCollected = false;
 
-    // Método para devolver el nombre del ítem
-    public string GetItemName()
+    // Implementación correcta del método Interact
+    public void Interact(PlayerBehaviour player)
     {
-        return itemName;
+        if (isCollected) return;
+
+        // Añadir el objeto al inventario del jugador
+        player.inventoryManager.AddItem(itemName);
+
+        // Marcar como recolectado y destruir el objeto
+        isCollected = true;
+        Destroy(gameObject);
     }
 }

@@ -72,14 +72,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5251107426523682287}
-  - component: {fileID: 4325422168643840766}
   - component: {fileID: 6765920958299694738}
   - component: {fileID: 8734311435634128514}
   - component: {fileID: 8746017292990596939}
   - component: {fileID: 3122581947073398947}
   - component: {fileID: 8456319043298237098}
   - component: {fileID: -7298453461071184921}
-  - component: {fileID: -3637222370878956748}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -104,22 +102,6 @@ Transform:
   - {fileID: 7288372121016686638}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4325422168643840766
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7940719953895527930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 077d4ef0c8b06b04a9da6d213cac2a03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageGenerate: 10
-  pickupRange: 3
-  playerTransform: {fileID: 0}
-  attacking: 0
 --- !u!114 &6765920958299694738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,11 +115,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageGenerate: 10
-  pickupRange: 3
-  playerTransform: {fileID: 0}
-  speed: 3
-  sprintSpeed: 5
+  isSprinting: 0
+  distanceAttack: 0
+  attacking: 0
   smoothTime: 0.1
+  currentVelocity: 0.1
+  characterTransform: {fileID: 0}
+  rb: {fileID: 0}
+  interactRange: 1.5
+  currentVelocityItem: 0
+  smoothTimeItem: 0
 --- !u!114 &8734311435634128514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -151,8 +138,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageGenerate: 10
-  pickupRange: 3
-  playerTransform: {fileID: 5251107426523682287}
+  isSprinting: 0
+  distanceAttack: 0
+  attacking: 0
+  smoothTime: 0.05
+  currentVelocity: 0.1
+  characterTransform: {fileID: 0}
+  rb: {fileID: 0}
+  interactRange: 1.5
+  currentVelocityItem: 0
+  smoothTimeItem: 0
 --- !u!95 &8746017292990596939
 Animator:
   serializedVersion: 5
@@ -236,19 +231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f2f5f62f87110049bc0c59576c1b4fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-3637222370878956748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7940719953895527930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ddc715d6ede6c348866932f3cf1a4c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _portal: {fileID: 3097021228936817227, guid: 27ab648df65e08941a0648287d7ebdfb, type: 3}
 --- !u!1 &8943637886684816915
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +414,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Magician_RIO_Unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5da411caef41b5f4e9b45e576c6a27da,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -597,6 +597,7 @@ MonoBehaviour:
   currentVelocity: 0.1
   characterTransform: {fileID: 0}
   rb: {fileID: 0}
+  _health: 10
 --- !u!54 &5158025530136670861
 Rigidbody:
   m_ObjectHideFlags: 0

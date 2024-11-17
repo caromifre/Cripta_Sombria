@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 476753541458892497}
   - component: {fileID: 2412015803462443547}
   - component: {fileID: 5308656545553488724}
-  - component: {fileID: 3843915992576374411}
   m_Layer: 0
   m_Name: Sword_02
   m_TagString: Untagged
@@ -107,15 +106,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1407623660032272785, guid: ae1770622c5719243b33e6dfecf10aa6, type: 3}
---- !u!114 &3843915992576374411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4213627522537898958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7433f63d8e2bed841af7713ab293ba90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

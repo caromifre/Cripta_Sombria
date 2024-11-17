@@ -2,18 +2,7 @@ using UnityEngine;
 
 public class PlayerController : PlayerBehaviour
 {
-    [SerializeField] private float speed = 1f; // Velocidad de movimiento normal
-    [SerializeField] private float sprintSpeed = 2f; // Velocidad al correr
-    [SerializeField] private float smoothTime = 0f; // Tiempo de suavizado
-    private float currentVelocity = 0.1f; // Variable para SmoothDamp
-    private FollowCamera cameraScript; // Inyectar referencia desde el Inspector
-    private Rigidbody rb;
-    private bool isSprinting = false;
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody>();
-        cameraScript = Camera.main.GetComponent<FollowCamera>();
-    }
+    
     private void Update()
     {
         Controller();
@@ -22,22 +11,54 @@ public class PlayerController : PlayerBehaviour
     // Metodo principal para manejar el movimiento
     private void Controller()
     {
-        Vector3 inputDirection = GetInputDirection();
-
+        Vector3 direction = GetInputDirection();
         isSprinting = Input.GetKey(KeyCode.LeftShift);
 
-        // Cambiamos las animaciones según el estado
-        if (inputDirection.magnitude > 0)
+        // Cambiamos las animaciones segun el estado
+        if (direction.magnitude > 0)
         {
-            RotatePlayer(inputDirection);
-            MovePlayer(inputDirection);
-            _anim.SetBool("Walk", !isSprinting);
-            _anim.SetBool("Run", isSprinting);
+            // Rotamos al jugador
+            rotationManager.Rotate(ref characterTransform, ref rb, ref direction, smoothTime, ref currentVelocity);
+            
+            // Movemos al jugador en una direccion 
+            MovePlayer(direction);
+
+            // Correr
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                animationManager.RunningAnimation();
+            }
+            // Caminar 
+            else
+            {
+                animationManager.WalkingAnimation();
+            }
         }
         else
         {
-            _anim.SetBool("Walk", false);
-            _anim.SetBool("Run", false);
+            animationManager.IdleAnimation();
+        }
+
+        // Interactuar con enemigos u objetos en el mapa
+        if (Input.GetMouseButtonDown(0))
+        {
+            TryInteractWithObject();
+        }
+
+        // Tomar botella de curacion (en caso de tener en el inventario)
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            UseHealthPotion();
+        }
+
+        // Activar o desactivar defensa
+        if (Input.GetButton("Fire2"))
+        {
+            defenseManager.StartDefending();
+        }
+        else
+        {
+            defenseManager.StopDefending();
         }
     }
 
@@ -59,17 +80,6 @@ public class PlayerController : PlayerBehaviour
         return direction;
     }
 
-    // Metodo para rotar al jugador hacia la direccion de movimiento
-    private void RotatePlayer(Vector3 direction)
-    {
-        // Angulo objetivo basado en la direccion
-        float targetAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, Quaternion.LookRotation(direction).eulerAngles.y, ref currentVelocity, smoothTime);
-
-        // Rotacion al Rigidbody de forma suave
-        Quaternion targetRotation = Quaternion.Euler(0f, targetAngle, 0f);
-        rb.MoveRotation(targetRotation); // Usamos MoveRotation en lugar de transform.rotation
-    }
-
     // Metodo para mover al jugador
     private void MovePlayer(Vector3 direction)
     {
@@ -79,10 +89,66 @@ public class PlayerController : PlayerBehaviour
         rb.MovePosition(newPosition);
     }
 
+    // Rotar el persoaje al hacer click sobre un item recolectable o enemigo con la clase RotationManager
+    private void RotatePlayerTowardsItem(Vector3 objectPosition)
+    {
+        // Establezco la direccion objetivo
+        Vector3 direction = (objectPosition - characterTransform.position).normalized;
+
+        // Verifico si la direccion no es cero
+        if (direction != Vector3.zero)
+        {
+            rotationManager.Rotate(ref characterTransform, ref rb, ref direction, smoothTimeItem, ref currentVelocityItem);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         // Resetea la velocidad cuando colisiona con algo
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
+    }
+
+    // Metodo para interactuar con enemigos y/o items recolectables
+    public void TryInteractWithObject()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, LayerMask.GetMask("Recolectable", "Enemy")))
+        {
+            float distance = Vector3.Distance(characterTransform.position, hit.transform.position);
+            if ((distance <= distanceAttack && hit.collider.CompareTag("Enemy")) || (distance <= interactRange && hit.collider.CompareTag("Item")))
+            {
+                RotatePlayerTowardsItem(hit.transform.position);
+
+                if (distance <= distanceAttack && hit.collider.CompareTag("Enemy") && !attacking)
+                {
+                    // Registrar el ultimo ataque y activar la animacion
+                    attacking = true;
+                    animationManager.AttackAnimation();
+
+                    // Si el enemigo implementa IInteractable, ejecutar la interaccion
+                    IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+                    interactable?.Interact(this);
+
+                    // Esperar la duracion de la animacion antes de permitir otro ataque
+                    Invoke(nameof(ResetAttack), 1.5f);
+                }
+
+                if (distance <= interactRange && hit.collider.CompareTag("Item"))
+                {
+                    // Interactuar con otros objetos recolectables
+                    IInteractable interactable = hit.collider.GetComponent<IInteractable>();
+                    interactable?.Interact(this);
+                }
+            }
+            else
+            {
+                Debug.Log("El objeto está demasiado lejos.");
+            }
+        }
+    }
+    public void ResetAttack()
+    {
+        attacking = false;
     }
 }

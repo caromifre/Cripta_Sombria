@@ -45,11 +45,6 @@ public class AnimationManager
         _anim.SetTrigger("Attack");
     }
 
-    // Controla la animacion de recibir daño
-    public void UpdateDamageAnimation()
-    {
-        _anim.SetTrigger("Damage");
-    }
     public void ResetAnimations()
     {
         _anim.SetBool("Walk", false);

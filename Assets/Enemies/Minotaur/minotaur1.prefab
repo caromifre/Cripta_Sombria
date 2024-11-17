@@ -4288,7 +4288,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a4b562ecf1acb442911ab52e272592c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageGenerate: 0
+  isSprinting: 0
+  distanceAttack: 0
   attacking: 0
+  smoothTime: 0.05
+  currentVelocity: 0.1
+  characterTransform: {fileID: 0}
+  rb: {fileID: 0}
+  _healt: 10
 --- !u!1 &4414871117353324497
 GameObject:
   m_ObjectHideFlags: 0
@@ -5061,7 +5069,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8588806735536989320}
   - component: {fileID: 6200573982241170123}
-  - component: {fileID: 2197823607459695836}
+  - component: {fileID: 1238758475868563727}
   m_Layer: 0
   m_Name: collider_Axe
   m_TagString: Espada_Enemigo
@@ -5105,7 +5113,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.24659765, y: 0.6285498, z: 0.7428384}
   m_Center: {x: 0.47867024, y: 1.1004337, z: 0.62056875}
---- !u!114 &2197823607459695836
+--- !u!114 &1238758475868563727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5114,10 +5122,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6133693265523028943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2378c348a522b1419349297afcb40b2, type: 3}
+  m_Script: {fileID: 11500000, guid: d30857f03dbb2ca419d8afc84a500fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 5186431537158664827}
 --- !u!1 &6641023189439756449
 GameObject:
   m_ObjectHideFlags: 0
