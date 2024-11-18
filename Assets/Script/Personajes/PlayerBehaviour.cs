@@ -38,10 +38,10 @@ public class PlayerBehaviour : Character
         _anim.SetFloat("Health", health);
 
         // Obtner insancia del gamemanagaer 
-        _controler = Game_manager.Instance; // (esto posiblemente sea mejor ponerlo en character, si es que los enemigos tambien lo van a usar)
+        //_controler = Game_manager.Instance; // (esto posiblemente sea mejor ponerlo en character, si es que los enemigos tambien lo van a usar)
 
         // Actualizar la vida en el game_manager
-        _controler._tot_vida = health;
+        //_controler._tot_vida = health;
 
         // Dano que genera y rango
         damageGenerate = 10f; // Esto se deberia modificar si integramos diferentes armas
@@ -61,15 +61,5 @@ public class PlayerBehaviour : Character
         }
     }
 
-    // Recibe dano
-    public void TakeDamage2(float damage)// De esto ahora se encarga el character ya que hay funciones que se repiten en enemigos y player
-    {
-        if (!Input.GetButton("Fire2"))
-        {
-            health -= damage;
-            //_controler._tot_vida = health;
-            _anim.SetFloat("Health", health);
-        }
-
-    }
 }
+

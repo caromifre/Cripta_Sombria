@@ -2,10 +2,12 @@ using UnityEngine;
 
 public class PlayerController : PlayerBehaviour
 {
-    
+    //Game_manager _controler;
+
     private void Update()
     {
         Controller();
+        Game_manager.Instance._tot_vida = health;
     }
 
     // Metodo principal para manejar el movimiento

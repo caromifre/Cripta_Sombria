@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Tanto los enemigos como el player heredan de character ya que tienen algunas caracteristicas y funciones en comun
 public class Character : MonoBehaviour, IAttacker
 {
     // Caracteristicas en comun de enemigos y player
-    public float health { get; protected set;} // Vida
+    public float health { get; protected set; } // Vida
     public float maxHealth { get; protected set; } // Vida max
     public float damageGenerate; // Dano que genera al pegar
     protected float speed; // Velocidad de movimiento normal
@@ -34,7 +33,7 @@ public class Character : MonoBehaviour, IAttacker
     public bool IsAttacking => attacking;
 
     // Game manager
-     public Game_manager _controler;
+    //public Game_manager _controler;
 
     public virtual void Awake()
     {
@@ -48,12 +47,12 @@ public class Character : MonoBehaviour, IAttacker
         animationManager = new AnimationManager(_anim);
         rotationManager = new RotationManager();
         //_controler = Game_manager.Instance;
-        _controler = Game_manager.Instance;
-    }
-    private void Start()
-    {
         
     }
+    /*private void Start()
+    {
+     _controler._tot_vida
+    }*/
     // Funcion para recibir dano
     public void TakeDamage(float damage)
     {
@@ -64,7 +63,7 @@ public class Character : MonoBehaviour, IAttacker
         else
         {
             health -= damage;
-            _controler._tot_vida = health;
+            //_controler._tot_vida = health;
             animationManager.UpdateHealthAnimation(health);
 
             Debug.Log($"{gameObject.name} recibio daño: {damage}, Salud restante: {health}");

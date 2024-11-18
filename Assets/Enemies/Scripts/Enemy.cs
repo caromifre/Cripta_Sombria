@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,31 +22,30 @@ public abstract class Enemy : Character, IInteractable
     private void Update()
     {
         //if (health <= 0) { StartCoroutine(Die()); };
-        
+
         // Si el jugador esta cerca y:
-        if (health>0)
+
+        if (DetectPlayer() && health >= 0)
         {
-            if(DetectPlayer())
+            // detecta al jugador y este esta dentro de su rango de ataque procede a atacarlo
+            if (DistanceToPlayer() <= distanceAttack && !attacking)
             {
-                // detecta al jugador y este esta dentro de su rango de ataque procede a atacarlo
-                if (DistanceToPlayer() <= distanceAttack && !attacking)
-                {
-                    Attack();
-                    StartCoroutine(AttackCooldownCoroutine());
-                }
-                // detecta al jugador si este esta fuera del area de ataque, procede a acercarse
-                if (DistanceToPlayer() > distanceAttack)
-                {
-                    MoveTowardsPlayer();
-                }
+                AttackRoutine();
             }
-            // En caso de que no detecte al jugador cerca continua con su rutina
-            else
+            // detecta al jugador si este esta fuera del area de ataque, procede a acercarse
+            if (DistanceToPlayer() > distanceAttack)
             {
-                BehaviourRoutine();
+                MoveTowardsPlayer();
             }
-        } 
-        else {
+        }
+        // En caso de que no detecte al jugador cerca continua con su rutina
+        else
+        {
+            BehaviourRoutine();
+        }
+
+        if (health < 0)
+        {
 
             animationManager.UpdateHealthAnimation(health);
         }
@@ -87,7 +86,34 @@ public abstract class Enemy : Character, IInteractable
                     break;
             }
         }
+    }
 
+    // Logica de comportamiento segun una rutina de ataque
+    public virtual void AttackRoutine()
+    {
+        // Contador
+        timer += Time.deltaTime;
+
+        // Cada 2 segundos el enemigo volvera a elegir una accion a realizar
+        if (timer >= 2)
+        {
+            routine = Random.Range(0, 2);
+            timer = 0;
+            Debug.Log(timer);
+        }
+        // Si el enemigo esta vivo elije una accion a realizar
+        if (health > 0)
+        {
+            switch (routine)
+            {
+                case 0: // Quedarse quieto
+                    animationManager.IdleAnimation();
+                    break;
+                case 1: // Rotar
+                    Attack();
+                    break;
+            }
+        }
     }
 
     // Funcion para esquivar paredes
@@ -117,13 +143,13 @@ public abstract class Enemy : Character, IInteractable
     // Movimiento basico del enemigo
     protected void Walk()
     {
-        // Rota el Rigidbody hacia la dirección de la rotación objetivo
+        // Rota el Rigidbody hacia la direcciï¿½n de la rotaciï¿½n objetivo
         rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, targetRotation, 0.5f));
 
-        // Mueve el Rigidbody en la dirección hacia adelante
+        // Mueve el Rigidbody en la direcciï¿½n hacia adelante
         rb.MovePosition(rb.position + transform.forward * speed * Time.deltaTime);
 
-        // Actualiza la animación de caminar
+        // Actualiza la animaciï¿½n de caminar
         animationManager.WalkingAnimation();
     }
 
@@ -133,7 +159,7 @@ public abstract class Enemy : Character, IInteractable
         float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
         return distanceToPlayer;
     }
-    
+
     // Deteccion del jugador con un rango personalizado por cada enemigo, devuelve verdadero si el jugador esta dentro de la zona del enemigo
     protected bool DetectPlayer()
     {
@@ -141,10 +167,10 @@ public abstract class Enemy : Character, IInteractable
         {
             return true;
         }
-        else { return false; }  
+        else { return false; }
     }
 
-    //corrutina para suavisar el giro
+    // Corrutina para suavisar el giro
     private IEnumerator SmoothRotation()
     {
         // Mientras el objeto no haya alcanzado la rotacion deseada
@@ -157,24 +183,24 @@ public abstract class Enemy : Character, IInteractable
             yield return null;
         }
 
-        // Aseguramos que la rotación final sea exactamente la deseada
+        // Aseguramos que la rotaciï¿½n final sea exactamente la deseada
         rb.MoveRotation(targetRotation);
     }
 
     // Movimiento hacia el jugador
     protected void MoveTowardsPlayer()
     {
-        // Calcula la dirección hacia el jugador y normaliza la dirección en el plano XZ (y = 0)
+        // Calcula la direcciï¿½n hacia el jugador y normaliza la direcciï¿½n en el plano XZ (y = 0)
         Vector3 direction = (player.transform.position - transform.position).normalized;
         direction.y = 0;
 
-        // Rota el Rigidbody hacia la dirección del jugador
+        // Rota el Rigidbody hacia la direcciï¿½n del jugador
         rb.MoveRotation(Quaternion.LookRotation(direction));
 
-        // Mueve el Rigidbody hacia adelante en la dirección del movimiento
+        // Mueve el Rigidbody hacia adelante en la direcciï¿½n del movimiento
         rb.MovePosition(rb.position + direction * sprintSpeed * Time.deltaTime);
 
-        // Actualiza la animación de caminar
+        // Actualiza la animaciï¿½n de caminar
         animationManager.WalkingAnimation();
     }
 
@@ -184,11 +210,11 @@ public abstract class Enemy : Character, IInteractable
         // Marca que esta atacando
         attacking = true;
 
-        // Calcula la dirección hacia el jugador
+        // Calcula la direcciï¿½n hacia el jugador
         var lookPos = player.transform.position - transform.position;
         lookPos.y = 0;
 
-        // Calcula la rotación para mirar al jugador
+        // Calcula la rotaciï¿½n para mirar al jugador
         var rotation = Quaternion.LookRotation(lookPos);
 
         // Rota el Rigidbody hacia el jugador utilizando MoveRotation
@@ -197,18 +223,5 @@ public abstract class Enemy : Character, IInteractable
         // Inicia la animacion de ataque
         animationManager.AttackAnimation();
     }
-    private IEnumerator AttackCooldownCoroutine()
-    {
-        yield return new WaitForSeconds(0.5f);
-        attacking = false;
-        yield return new WaitForSeconds(5f); // Tiempo de cooldown
-    }
 
-    // Metodo para manejar la muerte
-   /* protected IEnumerator Die()
-    {
-        animationManager.UpdateHealthAnimation(health);
-        //yield return new WaitForSeconds(3f);
-        //Destroy(gameObject);
-    }*/
 }

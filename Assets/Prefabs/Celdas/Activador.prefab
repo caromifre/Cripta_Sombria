@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8266592225760390942}
   - component: {fileID: 4576560665076151520}
   - component: {fileID: 4347978681872735101}
+  - component: {fileID: -4632313474758447165}
   m_Layer: 0
   m_Name: Activador
   m_TagString: Chest
@@ -41,7 +42,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3097021228936817227}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
@@ -140,3 +141,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.631944, y: 1.6233851, z: 3.7209034}
   m_Center: {x: 0.02685239, y: -0.31169182, z: -0.07151847}
+--- !u!114 &-4632313474758447165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3097021228936817227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c31859dad49e2f948bca334a91d9738a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -9,9 +9,14 @@ public class On_die_Jefe : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Debug.Log("Estado de animación terminado");
+        
+        //notificar la muerte del jefe 
+        Game_manager.Instance.jefe_muerto();
 
-        //Game_manager.Instance.jefe_muerto();
+        //elmiinar al jefe de la escena
         Destroy(animator.gameObject);
+
+    
     }
 
 }

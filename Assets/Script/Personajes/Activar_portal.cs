@@ -20,11 +20,11 @@ public class Activar_portal : MonoBehaviour
             Debug.LogError("_portal no está asignado en el Inspector.");
         }
     }*/
-   /* private void Start()
+    private void Start()
     {
        
         _portal.GetComponent<Light>().enabled = true;  
-    }*/
+    }
 
     public void activar_portal() {
         //este metodo activa el componente light del gameobject
