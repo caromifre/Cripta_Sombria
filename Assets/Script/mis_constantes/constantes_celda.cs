@@ -45,5 +45,6 @@ public static class Constantes_celda
     
     }
 
+    public const string _PORTAL_TAG = "portal";
 
 }
