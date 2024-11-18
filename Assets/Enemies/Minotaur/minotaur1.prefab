@@ -4288,7 +4288,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a4b562ecf1acb442911ab52e272592c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageGenerate: 1
+  isSprinting: 0
+  distanceAttack: 0
   attacking: 0
+  smoothTime: 0.05
+  currentVelocity: 0.1
+  characterTransform: {fileID: 0}
+  rb: {fileID: 0}
+  audioSourceManager: {fileID: 0}
+  _healt: 250
 --- !u!1 &4414871117353324497
 GameObject:
   m_ObjectHideFlags: 0
@@ -5114,10 +5123,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6133693265523028943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2378c348a522b1419349297afcb40b2, type: 3}
+  m_Script: {fileID: 11500000, guid: d30857f03dbb2ca419d8afc84a500fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 5186431537158664827}
 --- !u!1 &6641023189439756449
 GameObject:
   m_ObjectHideFlags: 0

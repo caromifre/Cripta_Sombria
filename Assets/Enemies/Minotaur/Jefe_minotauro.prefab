@@ -4179,7 +4179,6 @@ GameObject:
   - component: {fileID: 4414871117303439920}
   - component: {fileID: 605501237624249645}
   - component: {fileID: 1755593885648488570}
-  - component: {fileID: 5186431537158664827}
   m_Layer: 0
   m_Name: Jefe_minotauro
   m_TagString: Enemy
@@ -4276,19 +4275,6 @@ CapsuleCollider:
   m_Height: 2.5012038
   m_Direction: 1
   m_Center: {x: 0.008942604, y: 1.0151719, z: 0.012506723}
---- !u!114 &5186431537158664827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4414871117303439921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a4b562ecf1acb442911ab52e272592c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attacking: 0
 --- !u!1 &4414871117353324497
 GameObject:
   m_ObjectHideFlags: 0
@@ -5061,7 +5047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8588806735536989320}
   - component: {fileID: 6200573982241170123}
-  - component: {fileID: 2197823607459695836}
+  - component: {fileID: 940342844040117199}
   m_Layer: 0
   m_Name: collider_Axe
   m_TagString: Espada_Enemigo
@@ -5105,7 +5091,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.24659765, y: 0.6285498, z: 0.7428384}
   m_Center: {x: 0.47867024, y: 1.1004337, z: 0.62056875}
---- !u!114 &2197823607459695836
+--- !u!114 &940342844040117199
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5114,10 +5100,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6133693265523028943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2378c348a522b1419349297afcb40b2, type: 3}
+  m_Script: {fileID: 11500000, guid: d30857f03dbb2ca419d8afc84a500fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 5186431537158664827}
 --- !u!1 &6641023189439756449
 GameObject:
   m_ObjectHideFlags: 0
