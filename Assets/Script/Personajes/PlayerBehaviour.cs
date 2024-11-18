@@ -36,7 +36,7 @@ public class PlayerBehaviour : Character
         _controler = Game_manager.Instance;
 
         // Vida del player
-        health = 500f;
+        health = 50f;
         maxHealth = health;
         _anim.SetFloat("Health", health);
 
