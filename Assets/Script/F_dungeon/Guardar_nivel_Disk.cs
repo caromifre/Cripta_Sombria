@@ -39,6 +39,7 @@ public class Guardar_nivel_Disk : ScriptableObject
             //descifrar y sobreescrobir el scriptableObject
             //JsonUtility.FromJsonOverwrite((string)Bf.Deserialize(file), this);
             JsonUtility.ToJson(Bf.Deserialize(file),this);//modo binario
+            //cell = (Cell[])Bf.Deserialize(file);
             //string jon=Bf.Deserialize(file); 
             //cerrar archivo
 
