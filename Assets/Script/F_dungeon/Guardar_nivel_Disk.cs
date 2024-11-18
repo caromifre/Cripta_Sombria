@@ -42,7 +42,7 @@ public class Guardar_nivel_Disk : ScriptableObject
             //string jon=Bf.Deserialize(file); 
             //cerrar archivo
 
-            Debug.Log("directorio: " + Obt_Dir(nom_arch,carpeta) + " nombre: " + nom_arch);
+            Debug.Log("mapá cargado directorio: " + Obt_Dir(nom_arch,carpeta) + " nombre: " + nom_arch);
             file.Close();
         }
     }
@@ -57,7 +57,7 @@ public class Guardar_nivel_Disk : ScriptableObject
         string nom_compl = string.IsNullOrEmpty(nom_arch)?name:nom_arch;
 
         string folderPath = Application.dataPath + "/" + carpeta;
-
+        //string folderPath = "D:/Niveles_cripta/";
         // Crear la carpeta si no existe
         if (!Directory.Exists(folderPath))
         {

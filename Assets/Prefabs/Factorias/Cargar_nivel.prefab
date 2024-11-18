@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4637697494982780955}
   - component: {fileID: 151902981036897524}
-  - component: {fileID: 8841675003202807276}
+  - component: {fileID: -240922935066759374}
   m_Layer: 0
   m_Name: Cargar_nivel
   m_TagString: Untagged
@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: 2406978126415857164, guid: f29b74a89d40483439cc69b21f2f549a, type: 3}
   - {fileID: 2406978126415857164, guid: b1366c6c680b97c489dc701760b225a6, type: 3}
   _tipo_celda: 4
---- !u!114 &8841675003202807276
+--- !u!114 &-240922935066759374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,6 +64,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5931ce7f6642bf540b5208cbb4b06c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mazmorraSO: {fileID: 0}
+  _mazmorraSO: {fileID: 11400000, guid: 747d76d9775e8ba46a076fc5ca19822c, type: 2}
   _whidth: 0
   _height: 0

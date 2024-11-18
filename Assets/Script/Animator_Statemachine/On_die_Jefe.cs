@@ -5,7 +5,7 @@ using UnityEngine;
 public class On_die_Jefe : StateMachineBehaviour
 {
     [SerializeField] GameObject _Gmo_conluz;
-    [SerializeField] GameObject _Portal;
+    
     
         // Este método se llama cuando una transición sale del estado
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -14,14 +14,8 @@ public class On_die_Jefe : StateMachineBehaviour
         
         //notificar la muerte del jefe 
         Game_manager.Instance.jefe_muerto();
-       /* if (_Portal.GetComponent<BoxCollider>() != null){
-            Debug.Log("activando portal");
-            _Portal.GetComponent<BoxCollider>().enabled = true;
-        }
-        else
-            Debug.Log("Al gameobject le falta el collider");*/
-       _Portal.SetActive(true);
         //elmiinar al jefe de la escena
+        _Gmo_conluz.GetComponent<Light>().enabled = true;
         Destroy(animator.gameObject);
 
     

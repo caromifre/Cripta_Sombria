@@ -23,7 +23,7 @@ public class DefenseManager
     public void StopDefending()
     {
         _anim.SetBool("Defend", false);
-        Debug.Log("Defensa desactivada.");
+       // Debug.Log("Defensa desactivada.");
     }
 
     // Verifica si esta en defensa

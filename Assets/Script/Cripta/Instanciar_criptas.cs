@@ -42,7 +42,7 @@ public class Instanciar_criptas : MonoBehaviour, IGen_mazmorra
                     else celda = 4;
 
                     //Debug.Log("instancia: " + a + " - "+ b);
-                    Nueva_celda = Instantiate(rooms[celda], new Vector3(a * o_x, 0f, -b * o_y), Quaternion.identity) as GameObject;
+                    Nueva_celda = Instantiate(rooms[celda], new Vector3(a * o_x, 0f, -b * o_y), Quaternion.identity);
 
                     //adjuntar informacion
                     _datos_celda = Nueva_celda.GetComponent<Datos_celda>();

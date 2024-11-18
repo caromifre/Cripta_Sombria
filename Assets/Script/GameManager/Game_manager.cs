@@ -16,7 +16,7 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
     [SerializeField] string[] _Nivel;
     [SerializeField] string[] _Menues;
     //gameobjetc del player para instanciarlo en el nuevo nivel
-    [SerializeField] GameObject _Player;
+    //[SerializeField] GameObject _Player;
     GameObject _Iplayer;
     //cofigurar cantidad de jefes por nivel
     //[SerializeField] int _Jefe = 1;//por defecto 1
@@ -70,9 +70,15 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
             _nivel_actual++;
             SceneManager.LoadScene(_Nivel[_nivel_actual], LoadSceneMode.Single);
             SceneManager.LoadScene(_Hud, LoadSceneMode.Additive);
-            _Iplayer = Instantiate(_Player, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+            //_Iplayer = Instantiate(_Player, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+            reset_nivel();
         }
         
+    }
+    void reset_nivel()
+    {
+        desactivar_jefe();
+        _Jefe_muerto = false;
     }
 
     //mostrar menu muerte
