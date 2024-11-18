@@ -6,7 +6,6 @@ public class Recolectable : MonoBehaviour, IInteractable
 
     private bool isCollected = false;
 
-    // Implementación correcta del método Interact
     public void Interact(PlayerBehaviour player)
     {
         if (isCollected) return;

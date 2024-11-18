@@ -776,8 +776,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.06095142, y: 0.21740331, z: 0.021986933}
-  m_Center: {x: -0.0010024012, y: -0.6163349, z: -0.00000005796516}
+  m_Size: {x: 0.06095142, y: 0.3342885, z: 0.021986933}
+  m_Center: {x: -0.0010022923, y: -0.55789024, z: -0.0000001768952}
 --- !u!114 &4941783410660890233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1738,6 +1738,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HealthEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916587607674923978, guid: 139d9b83a35fb5840803485444068080,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.3
       objectReference: {fileID: 0}
     - target: {fileID: 9029934935417960280, guid: 139d9b83a35fb5840803485444068080,
         type: 3}

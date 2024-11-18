@@ -12,9 +12,8 @@ public class Sword : MonoBehaviour
 {
     private IAttacker attacker; // Referencia al atacante (Jugador o Enemigo)
     private Collider swordCollider; // El collider de la espada
-    private bool canDealDamage = false; // Flag para permitir el daño
     private float damageCooldown = 1.14f; // Tiempo entre ataques
-    private float lastAttackTime = 0f; // Tiempo de la última vez que se aplicó daño
+    private float lastAttackTime = 0f; // Tiempo de la ultima vez que se aplico daño
 
     private void Start()
     {
@@ -29,30 +28,30 @@ public class Sword : MonoBehaviour
         {
             if (!swordCollider.enabled)
             {
-                swordCollider.enabled = true; // Activar el collider cuando está atacando
+                swordCollider.enabled = true; // Activar el collider cuando esta atacando
             }
         }
         else
         {
             if (swordCollider.enabled)
             {
-                swordCollider.enabled = false; // Desactivar el collider cuando no está atacando
+                swordCollider.enabled = false; // Desactivar el collider cuando no esta atacando
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verificamos si el atacante está en el proceso de ataque
+        // Verificamos si el atacante esta en el proceso de ataque
         if (attacker.IsAttacking && Time.time - lastAttackTime >= damageCooldown)
         {
-            // Solo aplicamos daño si ha pasado el tiempo suficiente desde el último ataque
+            // Solo aplicamos daño si ha pasado el tiempo suficiente desde el ultimo ataque
             Character target = other.GetComponentInParent<Character>();
             if (target != null)
             {
                 Debug.Log("Atacante está atacando, aplicando daño");
                 target.TakeDamage(attacker.DamageGenerate); // Aplica daño al objetivo
-                lastAttackTime = Time.time; // Actualizamos el tiempo del último ataque
+                lastAttackTime = Time.time; // Actualizamos el tiempo del ultimo ataque
             }
         }
     }

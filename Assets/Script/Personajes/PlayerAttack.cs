@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// //////////////////////// SCRIPT SIN USAR
+/// </summary>
 public class PlayerAttack : PlayerBehaviour
 {
     private void Update()

@@ -18,16 +18,4 @@ public class Spider : Enemy
         player = GameObject.Find("Player");
         _anim.SetFloat("Health", health);
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player") && attacking)
-        {
-            // Llamo al metodo del player para restarle vida, segun el daño que genera el enemigo
-            Character playerCharacter = other.gameObject.GetComponent<Character>();
-            if (playerCharacter != null)
-            {
-                playerCharacter.TakeDamage(damageGenerate);
-            }
-        }
-    }
 }
