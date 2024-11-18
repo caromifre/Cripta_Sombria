@@ -119,8 +119,6 @@ MonoBehaviour:
   isSprinting: 0
   distanceAttack: 0
   attacking: 0
-  isRunning: 0
-  isMoving: 0
   smoothTime: 0.1
   currentVelocity: 0.1
   characterTransform: {fileID: 0}
@@ -146,8 +144,6 @@ MonoBehaviour:
   isSprinting: 0
   distanceAttack: 0
   attacking: 0
-  isRunning: 0
-  isMoving: 0
   smoothTime: 0.05
   currentVelocity: 0.1
   characterTransform: {fileID: 0}
@@ -426,10 +422,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4064266227491120125, guid: 71cf14bca730d7b4592ae42ccba3e38f,
+        type: 3}
+      propertyPath: walkSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 4544cd1f9b0d00a498e3602ecfffcacc, type: 3}
     - target: {fileID: 5477275206822490609, guid: 71cf14bca730d7b4592ae42ccba3e38f,
         type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8855553003352243978, guid: 71cf14bca730d7b4592ae42ccba3e38f,
+        type: 3}
+      propertyPath: Loop
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
