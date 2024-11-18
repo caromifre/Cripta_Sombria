@@ -10,7 +10,6 @@ public static class ItemFactory
         {
             case "Bottle_Health":
                 return new HealthPotion();
-            // Aquí puedes agregar más ítems en el futuro
             default:
                 return null;
         }

@@ -11,7 +11,7 @@ public class Minotaur : Enemy
         health = _healt;
         speed = 1f;
         sprintSpeed = 2f;
-        detectionRange = 10f;
+        detectionRange = 3f;
         damageGenerate = 20f;
         distanceAttack = 1.5f;
 

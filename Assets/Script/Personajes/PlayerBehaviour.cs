@@ -45,7 +45,7 @@ public class PlayerBehaviour : Character
         _controler._tot_vida = health;
 
         // Dano que genera y rango
-        damageGenerate = 10f; // Esto se deberia modificar si integramos diferentes armas
+        damageGenerate = 200f; // Esto se deberia modificar si integramos diferentes armas
         distanceAttack = 1.8f;
 
         // Velocidad de movimiento del jugador en el mapa
