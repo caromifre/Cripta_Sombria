@@ -554,6 +554,7 @@ MonoBehaviour:
   currentVelocity: 0.1
   characterTransform: {fileID: 0}
   rb: {fileID: 0}
+  audioSourceManager: {fileID: 0}
   _health: 50
 --- !u!54 &5158025530136670861
 Rigidbody:

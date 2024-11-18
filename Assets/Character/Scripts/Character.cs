@@ -28,6 +28,7 @@ public class Character : MonoBehaviour, IAttacker
     protected RotationManager rotationManager;
     protected DefenseManager defenseManager;
     protected AnimationManager animationManager;
+    public AudioSourceManager audioSourceManager;
 
     // Implementación de IAttacker
     public float DamageGenerate => damageGenerate;
@@ -39,6 +40,7 @@ public class Character : MonoBehaviour, IAttacker
         characterTransform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         _anim = GetComponent<Animator>();
+        audioSourceManager = GetComponentInChildren<AudioSourceManager>();
 
         // Manager
         defenseManager = new DefenseManager(_anim);

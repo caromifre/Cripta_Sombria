@@ -27,16 +27,19 @@ public class PlayerController : PlayerBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 animationManager.RunningAnimation();
+                audioSourceManager.PlayFootstepSound(true);
             }
             // Caminar 
             else
             {
                 animationManager.WalkingAnimation();
+                audioSourceManager.PlayFootstepSound(false);
             }
         }
         else
         {
             animationManager.IdleAnimation();
+            audioSourceManager.StopFootstepSound();
         }
 
         // Interactuar con enemigos u objetos en el mapa
