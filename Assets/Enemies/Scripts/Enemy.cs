@@ -18,34 +18,34 @@ public abstract class Enemy : Character, IInteractable
 
     // Variables para el suavizado de la rotacion
     private float rotationSpeed = 2.0f; // Ajusta la velocidad de rotacion
-
     private void Update()
     {
-        //if (health <= 0) { StartCoroutine(Die()); };
-        // attacking = false;
-        // Si el jugador esta cerca y:
-        if (health > 0)
+        attacking = false;
+        // Si el jugador está cerca y la vida es mayor que 0
+        if (DetectPlayer() && health > 0)
         {
-            if (DetectPlayer())
+            animationManager.IdleAnimation();
+
+            // Si está en rango de ataque y no está atacando
+            if (DistanceToPlayer() <= distanceAttack && !attacking)
             {
-                // detecta al jugador y este esta dentro de su rango de ataque procede a atacarlo
-                if (DistanceToPlayer() <= distanceAttack && !attacking)
-                {
-                    AttackRoutine();
-                }
-                // detecta al jugador si este esta fuera del area de ataque, procede a acercarse
-                if (DistanceToPlayer() > distanceAttack)
-                {
-                    MoveTowardsPlayer();
-                }
+                // Ejecutar la rutina de ataque
+                Attack();
             }
-            // En caso de que no detecte al jugador cerca continua con su rutina
-            else
+            // Si el jugador está fuera del rango de ataque, moverse hacia él
+            else if (DistanceToPlayer() > distanceAttack && !attacking)
             {
-                BehaviourRoutine();
+                MoveTowardsPlayer();
             }
         }
-        else
+        // Si el jugador no está cerca, continuar con la rutina de comportamiento
+        else if (!DetectPlayer() && health > 0)
+        {
+            BehaviourRoutine();
+        }
+
+        // Si la salud es menor que 0, actualizar la animación de muerte o salud
+        if (health <= 0)
         {
             animationManager.UpdateHealthAnimation(health);
         }
@@ -54,7 +54,7 @@ public abstract class Enemy : Character, IInteractable
     public void Interact(PlayerBehaviour player)
     {
         Debug.Log($"{player.name} ha interactuado con {this.name}");
-        TakeDamage(player.damageGenerate);
+        //TakeDamage(player.damageGenerate);
     }
 
     // Logica de comportamiento segun una rutina basica
@@ -83,34 +83,6 @@ public abstract class Enemy : Character, IInteractable
                     break;
                 case 2: // Caminar
                     Walk();
-                    break;
-            }
-        }
-    }
-
-    // Logica de comportamiento segun una rutina de ataque
-    public virtual void AttackRoutine()
-    {
-        // Contador
-        timer += Time.deltaTime;
-
-        // Cada 2 segundos el enemigo volvera a elegir una accion a realizar
-        if (timer >= 2)
-        {
-            routine = Random.Range(0, 2);
-            timer = 0;
-            Debug.Log(timer);
-        }
-        // Si el enemigo esta vivo elije una accion a realizar
-        if (health > 0)
-        {
-            switch (routine)
-            {
-                case 0: // Quedarse quieto
-                    animationManager.IdleAnimation();
-                    break;
-                case 1: // Rotar
-                    Attack();
                     break;
             }
         }
@@ -222,13 +194,5 @@ public abstract class Enemy : Character, IInteractable
 
         // Inicia la animacion de ataque
         animationManager.AttackAnimation();
-    }
-
-    // Metodo para manejar la muerte
-    protected IEnumerator Die()
-    {
-        animationManager.UpdateHealthAnimation(health);
-        yield return new WaitForSeconds(3f);
-        Destroy(gameObject);
     }
 }

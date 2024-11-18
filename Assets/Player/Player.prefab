@@ -125,6 +125,7 @@ MonoBehaviour:
   interactRange: 1.5
   currentVelocityItem: 0
   smoothTimeItem: 0
+  _controler: {fileID: 0}
 --- !u!114 &8734311435634128514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +149,7 @@ MonoBehaviour:
   interactRange: 1.5
   currentVelocityItem: 0
   smoothTimeItem: 0
+  _controler: {fileID: 0}
 --- !u!95 &8746017292990596939
 Animator:
   serializedVersion: 5
@@ -329,8 +331,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4213627522537898958, guid: 92f8b959128871b40a304c49de4a5fb3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 969531631699238541}
   m_SourcePrefab: {fileID: 100100000, guid: 92f8b959128871b40a304c49de4a5fb3, type: 3}
+--- !u!1 &3722787755779827033 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4213627522537898958, guid: 92f8b959128871b40a304c49de4a5fb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 707118284968846999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &969531631699238541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3722787755779827033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30857f03dbb2ca419d8afc84a500fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4098890364274769891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3544930236466338164, guid: 92f8b959128871b40a304c49de4a5fb3,

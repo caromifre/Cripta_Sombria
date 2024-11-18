@@ -5,6 +5,7 @@ public class PlayerController : PlayerBehaviour
     private void Update()
     {
         Controller();
+        Game_manager.Instance._tot_vida = health;
     }
 
     // Metodo principal para manejar el movimiento

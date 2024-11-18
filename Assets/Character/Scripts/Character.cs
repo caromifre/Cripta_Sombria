@@ -33,9 +33,6 @@ public class Character : MonoBehaviour, IAttacker
     public float DamageGenerate => damageGenerate;
     public bool IsAttacking => attacking;
 
-    // Game manager
-    public Game_manager _controler;
-
     public virtual void Awake()
     {
         // Componentes
@@ -64,7 +61,6 @@ public class Character : MonoBehaviour, IAttacker
             {
                 health = 0;
             }
-            _controler._tot_vida = health;
             animationManager.UpdateHealthAnimation(health);
 
             Debug.Log($"{gameObject.name} recibio daño: {damage}, Salud restante: {health}");
