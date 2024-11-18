@@ -124,6 +124,10 @@ MonoBehaviour:
   characterTransform: {fileID: 0}
   rb: {fileID: 0}
   audioSourceManager: {fileID: 0}
+  runSound: {fileID: 8300000, guid: b9e22b71c3ab12b4cac7d74e269d9924, type: 3}
+  walkSound: {fileID: 8300000, guid: 4d11813f5983ce047873c94858e6a6c1, type: 3}
+  dieSound: {fileID: 8300000, guid: 7a39ba789208642ea9fda609aea157b6, type: 3}
+  damageSound: {fileID: 8300000, guid: bb6cdd13aeb95f743847b1cd460889bc, type: 3}
   interactRange: 1.5
   currentVelocityItem: 0
   smoothTimeItem: 0
@@ -149,6 +153,10 @@ MonoBehaviour:
   characterTransform: {fileID: 0}
   rb: {fileID: 0}
   audioSourceManager: {fileID: 0}
+  runSound: {fileID: 0}
+  walkSound: {fileID: 0}
+  dieSound: {fileID: 0}
+  damageSound: {fileID: 0}
   interactRange: 1.5
   currentVelocityItem: 0
   smoothTimeItem: 0
@@ -358,6 +366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30857f03dbb2ca419d8afc84a500fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSourceManager: {fileID: 0}
 --- !u!4 &4098890364274769891 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3544930236466338164, guid: 92f8b959128871b40a304c49de4a5fb3,
@@ -422,20 +431,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4064266227491120125, guid: 71cf14bca730d7b4592ae42ccba3e38f,
-        type: 3}
-      propertyPath: walkSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 4544cd1f9b0d00a498e3602ecfffcacc, type: 3}
     - target: {fileID: 5477275206822490609, guid: 71cf14bca730d7b4592ae42ccba3e38f,
         type: 3}
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8855553003352243978, guid: 71cf14bca730d7b4592ae42ccba3e38f,
+    - target: {fileID: 8487766821883066555, guid: 71cf14bca730d7b4592ae42ccba3e38f,
         type: 3}
-      propertyPath: Loop
-      value: 0
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

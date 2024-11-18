@@ -18,6 +18,11 @@ public abstract class Enemy : Character, IInteractable
 
     // Variables para el suavizado de la rotacion
     private float rotationSpeed = 2.0f; // Ajusta la velocidad de rotacion
+    public void Start()
+    {
+        isPlayer = false;
+
+    }
     private void Update()
     {
         attacking = false;
@@ -31,11 +36,13 @@ public abstract class Enemy : Character, IInteractable
             {
                 // Ejecutar la rutina de ataque
                 Attack();
+                audioSourceManager.StopFootstepSound();
             }
             // Si el jugador está fuera del rango de ataque, moverse hacia él
             else if (DistanceToPlayer() > distanceAttack && !attacking)
             {
                 MoveTowardsPlayer();
+                audioSourceManager.PlayFootstepSound(false, walkSound, runSound);
             }
         }
         // Si el jugador no está cerca, continuar con la rutina de comportamiento
@@ -50,7 +57,7 @@ public abstract class Enemy : Character, IInteractable
             animationManager.UpdateHealthAnimation(health);
         }
     }
-
+    //audioSourceManager.DamageEnemy(damageSound);
     public void Interact(PlayerBehaviour player)
     {
         Debug.Log($"{player.name} ha interactuado con {this.name}");
@@ -77,12 +84,15 @@ public abstract class Enemy : Character, IInteractable
             {
                 case 0: // Quedarse quieto
                     animationManager.IdleAnimation();
+                    audioSourceManager.StopFootstepSound();
                     break;
                 case 1: // Rotar
                     RotateEnemy();
+                    audioSourceManager.StopFootstepSound();
                     break;
                 case 2: // Caminar
                     Walk();
+                    audioSourceManager.PlayFootstepSound(false, walkSound, runSound);
                     break;
             }
         }

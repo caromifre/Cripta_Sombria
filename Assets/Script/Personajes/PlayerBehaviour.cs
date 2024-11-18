@@ -25,6 +25,7 @@ public class PlayerBehaviour : Character
 
     public void Start()
     {
+        isPlayer = true;
         // Camara del jugador
         cameraScript = Camera.main.GetComponent<FollowCamera>();
 

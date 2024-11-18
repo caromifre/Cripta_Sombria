@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 // Tanto los enemigos como el player heredan de character ya que tienen algunas caracteristicas y funciones en comun
@@ -14,7 +15,7 @@ public class Character : MonoBehaviour, IAttacker
     public bool isSprinting = false; // False = caminando / True = corriendo
     public float distanceAttack;
     public bool attacking = false; // Cambia su estado para saber cuando se toco al jugador para atacarlo o de casualidad
-
+    public bool isPlayer;
     // Valores para rotar al caminar 
     [SerializeField] public float smoothTime = 0.05f; // Tiempo de suavizado
     [SerializeField] public float currentVelocity = 0.1f; // Variable para SmoothDamp
@@ -30,9 +31,19 @@ public class Character : MonoBehaviour, IAttacker
     protected AnimationManager animationManager;
     public AudioSourceManager audioSourceManager;
 
+    // Audio
+    public AudioClip runSound;
+    public AudioClip walkSound;
+    public AudioClip dieSound;
+    public AudioClip damageSound;
+
+
+
     // Implementación de IAttacker
     public float DamageGenerate => damageGenerate;
     public bool IsAttacking => attacking;
+    public AudioClip DamageSound => damageSound;
+    public bool IsPlayer => isPlayer;
 
     public virtual void Awake()
     {
@@ -40,12 +51,12 @@ public class Character : MonoBehaviour, IAttacker
         characterTransform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         _anim = GetComponent<Animator>();
-        audioSourceManager = GetComponentInChildren<AudioSourceManager>();
 
         // Manager
         defenseManager = new DefenseManager(_anim);
         animationManager = new AnimationManager(_anim);
         rotationManager = new RotationManager();
+        audioSourceManager = GetComponentInChildren<AudioSourceManager>();
     }
 
     // Funcion para recibir dano
@@ -62,6 +73,7 @@ public class Character : MonoBehaviour, IAttacker
             if (health <= 0) 
             {
                 health = 0;
+                audioSourceManager.Die(dieSound);
             }
             animationManager.UpdateHealthAnimation(health);
 

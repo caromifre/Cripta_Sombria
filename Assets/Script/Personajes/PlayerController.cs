@@ -4,7 +4,10 @@ public class PlayerController : PlayerBehaviour
 {
     private void Update()
     {
-        Controller();
+        if (health > 0)
+        {
+            Controller();
+        }
         Game_manager.Instance._tot_vida = health;
     }
 
@@ -27,13 +30,13 @@ public class PlayerController : PlayerBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 animationManager.RunningAnimation();
-                audioSourceManager.PlayFootstepSound(true);
+                audioSourceManager.PlayFootstepSound(true, walkSound, runSound);
             }
             // Caminar 
             else
             {
                 animationManager.WalkingAnimation();
-                audioSourceManager.PlayFootstepSound(false);
+                audioSourceManager.PlayFootstepSound(false, walkSound, runSound);
             }
         }
         else
@@ -128,6 +131,7 @@ public class PlayerController : PlayerBehaviour
                     // Registrar el ultimo ataque y activar la animacion
                     attacking = true;
                     animationManager.AttackAnimation();
+                    audioSourceManager.DamageEnemy(damageSound);
 
                     // Si el enemigo implementa IInteractable, ejecutar la interaccion
                     IInteractable interactable = hit.collider.GetComponent<IInteractable>();
@@ -139,6 +143,7 @@ public class PlayerController : PlayerBehaviour
 
                 if (distance <= interactRange && hit.collider.CompareTag("Item"))
                 {
+                    audioSourceManager.PlayItemPickupSound();
                     // Interactuar con otros objetos recolectables
                     IInteractable interactable = hit.collider.GetComponent<IInteractable>();
                     interactable?.Interact(this);

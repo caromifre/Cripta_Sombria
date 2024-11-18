@@ -6,6 +6,8 @@ public interface IAttacker
 {
     float DamageGenerate { get; }
     bool IsAttacking { get; }
+    AudioClip DamageSound { get; }
+    bool IsPlayer { get; } // Nueva propiedad para identificar si es el jugador
 }
 
 public class Sword : MonoBehaviour
@@ -14,6 +16,9 @@ public class Sword : MonoBehaviour
     private Collider swordCollider; // El collider de la espada
     private float damageCooldown = 1.14f; // Tiempo entre ataques
     private float lastAttackTime = 0f; // Tiempo de la ultima vez que se aplico daño
+
+    // Referencia a AudioSourceManager
+    public AudioSourceManager audioSourceManager;
 
     private void Start()
     {
@@ -28,31 +33,51 @@ public class Sword : MonoBehaviour
         {
             if (!swordCollider.enabled)
             {
-                swordCollider.enabled = true; // Activar el collider cuando esta atacando
+                swordCollider.enabled = true; // Activar el collider cuando está atacando
             }
         }
         else
         {
             if (swordCollider.enabled)
             {
-                swordCollider.enabled = false; // Desactivar el collider cuando no esta atacando
+                swordCollider.enabled = false; // Desactivar el collider cuando no está atacando
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        // Verificamos si el atacante esta en el proceso de ataque
+        // Verificamos si el atacante está en el proceso de ataque
         if (attacker.IsAttacking && Time.time - lastAttackTime >= damageCooldown)
         {
-            // Solo aplicamos daño si ha pasado el tiempo suficiente desde el ultimo ataque
+            // Solo aplicamos daño si ha pasado el tiempo suficiente desde el último ataque
             Character target = other.GetComponentInParent<Character>();
             if (target != null)
             {
-                Debug.Log("Atacante está atacando, aplicando daño");
-                target.TakeDamage(attacker.DamageGenerate); // Aplica daño al objetivo
-                lastAttackTime = Time.time; // Actualizamos el tiempo del ultimo ataque
+                // Verificar si el atacante es el jugador o un enemigo
+                if (attacker.IsPlayer && target.CompareTag("Enemy"))
+                {
+                    // Si el atacante es el jugador, dañar solo a enemigos
+                    Debug.Log("Jugador atacando al enemigo, aplicando daño");
+                    target.TakeDamage(attacker.DamageGenerate);
+                }
+                else if (!attacker.IsPlayer && target.CompareTag("Player"))
+                {
+                    // Si el atacante es un enemigo, dañar solo al jugador
+                    Debug.Log("Enemigo atacando al jugador, aplicando daño");
+                    target.TakeDamage(attacker.DamageGenerate);
+                }
+
+                // Reproducir el sonido de daño desde la espada
+                if (audioSourceManager != null)
+                {
+                    audioSourceManager.DamageEnemy(attacker.DamageSound);
+                }
+
+                // Actualizamos el tiempo del último ataque
+                lastAttackTime = Time.time;
             }
         }
     }
 }
+
