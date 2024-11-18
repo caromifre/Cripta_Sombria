@@ -21,27 +21,27 @@ public class PlayerBehaviour : Character
     protected FollowCamera cameraScript;
 
     // Game manager
-    //Game_manager _controler;
+    public Game_manager _controler;
 
     public void Start()
     {
         // Camara del jugador
         cameraScript = Camera.main.GetComponent<FollowCamera>();
-        
+
         // Inventario
         inventoryManager = new InventoryManager();
         itemUseManager = new ItemUseManager();
+
+        // Obtner insancia del gamemanagaer 
+        _controler = Game_manager.Instance;
 
         // Vida del player
         health = 500f;
         maxHealth = health;
         _anim.SetFloat("Health", health);
 
-        // Obtner insancia del gamemanagaer 
-        //_controler = Game_manager.Instance; // (esto posiblemente sea mejor ponerlo en character, si es que los enemigos tambien lo van a usar)
-
         // Actualizar la vida en el game_manager
-        //_controler._tot_vida = health;
+        _controler._tot_vida = health;
 
         // Dano que genera y rango
         damageGenerate = 10f; // Esto se deberia modificar si integramos diferentes armas
@@ -60,6 +60,4 @@ public class PlayerBehaviour : Character
             Debug.Log("Usaste una poción de salud.");
         }
     }
-
 }
-

@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class PlayerController : PlayerBehaviour
 {
-    //Game_manager _controler;
-
     private void Update()
     {
         Controller();
@@ -29,16 +27,19 @@ public class PlayerController : PlayerBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 animationManager.RunningAnimation();
+                audioSourceManager.PlayFootstepSound(true);
             }
             // Caminar 
             else
             {
                 animationManager.WalkingAnimation();
+                audioSourceManager.PlayFootstepSound(false);
             }
         }
         else
         {
             animationManager.IdleAnimation();
+            audioSourceManager.StopFootstepSound();
         }
 
         // Interactuar con enemigos u objetos en el mapa
@@ -122,7 +123,7 @@ public class PlayerController : PlayerBehaviour
             {
                 RotatePlayerTowardsItem(hit.transform.position);
 
-                if (distance <= distanceAttack && hit.collider.CompareTag("Enemy") && !attacking)
+                if (distance <= distanceAttack && hit.collider.CompareTag("Enemy")  && !attacking)
                 {
                     // Registrar el ultimo ataque y activar la animacion
                     attacking = true;
@@ -149,6 +150,8 @@ public class PlayerController : PlayerBehaviour
             }
         }
     }
+    
+    // Reestablece el ataque en falso
     public void ResetAttack()
     {
         attacking = false;

@@ -76,9 +76,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca1b64954312db4f85ac90e71d3cd51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Gmo_conluz: {fileID: 3097021228936817227, guid: 27ab648df65e08941a0648287d7ebdfb,
-    type: 3}
-  _Portal: {fileID: 8996867798358639978, guid: 2f824d845a302184bacdc1b73d581931, type: 3}
+  _Gmo_conluz: {fileID: 0}
 --- !u!1101 &-8559514951148099939
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
