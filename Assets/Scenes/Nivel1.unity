@@ -384,7 +384,7 @@ PrefabInstance:
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
       propertyPath: _galerias.Array.size
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
@@ -451,6 +451,12 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
+      propertyPath: _galerias.Array.data[5]
+      value: 
+      objectReference: {fileID: 2406978126415857164, guid: cb64505b8e597dd4694da448def3e30f,
+        type: 3}
+    - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
+        type: 3}
       propertyPath: _pasillos.Array.data[0]
       value: 
       objectReference: {fileID: 2406978126415857164, guid: b1366c6c680b97c489dc701760b225a6,
@@ -483,6 +489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cargar_nivel
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241712817423798347, guid: a1f7f084c124b6f4195c7e66aac70ee3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4637697494982780955, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
