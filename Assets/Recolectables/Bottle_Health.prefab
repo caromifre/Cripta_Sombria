@@ -43,7 +43,7 @@ PrefabInstance:
     - target: {fileID: 3568398053166638294, guid: b6f9b587034166549809f3a9c6c33262,
         type: 3}
       propertyPath: m_Name
-      value: Bottle_01
+      value: Bottle_Health
       objectReference: {fileID: 0}
     - target: {fileID: 3568398053166638294, guid: b6f9b587034166549809f3a9c6c33262,
         type: 3}
@@ -138,3 +138,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230763cab5746514791b15d54c057e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: 
