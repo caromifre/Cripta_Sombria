@@ -534,6 +534,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8120114132182149098}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f5504c4259743b3488c4983d01351d4b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7802790421710717581}
   m_SourcePrefab: {fileID: 100100000, guid: f5504c4259743b3488c4983d01351d4b, type: 3}
 --- !u!4 &1392321312565872811 stripped
 Transform:
@@ -563,6 +567,7 @@ MonoBehaviour:
   isSprinting: 0
   distanceAttack: 0
   attacking: 0
+  isPlayer: 0
   smoothTime: 0.05
   currentVelocity: 0.1
   characterTransform: {fileID: 0}
@@ -644,6 +649,22 @@ CapsuleCollider:
   m_Height: 7.686415
   m_Direction: 1
   m_Center: {x: 0, y: 1.1099998, z: -0.24790168}
+--- !u!114 &7802790421710717581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736512005600285201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f6b2377e06ed6488579ddaf548fa95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drop_colectable: {fileID: 4506934394549619473, guid: 6a0a62112e14af2448e82325b457a49d,
+    type: 3}
+  _fuerza_impulso: 5
+  _radio_explosion: 2
 --- !u!4 &5468722949197175728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -2360744742265801488, guid: f5504c4259743b3488c4983d01351d4b,

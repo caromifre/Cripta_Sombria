@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spider : Enemy
 {
     [SerializeField] float _health = 50;
+    
 
     private void Start()
     {
@@ -18,5 +19,12 @@ public class Spider : Enemy
 
         player = GameObject.Find("Player");
         _anim.SetFloat("Health", health);
+        
     }
+    /*void update() {
+        if (health <= 0) {
+            _drop_Colectables.soltar_Item();
+        }
+    }*/
+
 }

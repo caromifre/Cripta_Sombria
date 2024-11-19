@@ -19,7 +19,7 @@ public class Instanciar_criptas : MonoBehaviour, IGen_mazmorra
         // X,Y indican el tamaño de la matriz de objetos a instanciar
         //o_x,o_y es el tamaño de la celda offset en x e y
         GameObject Nueva_celda, _room;
-        int celda,
+        int //celda,
             tot_gal=0,
             num_gal=0;
         bool galeria=false;

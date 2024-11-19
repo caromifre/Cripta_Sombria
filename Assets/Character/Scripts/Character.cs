@@ -38,6 +38,9 @@ public class Character : MonoBehaviour, IAttacker
     public AudioClip damageSound;
 
 
+    //soltar item
+    Drop_colectables _drop_Colectables;
+
 
     // Implementación de IAttacker
     public float DamageGenerate => damageGenerate;
@@ -74,6 +77,15 @@ public class Character : MonoBehaviour, IAttacker
             {
                 health = 0;
                 audioSourceManager.Die(dieSound);
+                //soltar item
+                if (GetComponent<Drop_colectables>() != null)
+                {
+                    _drop_Colectables = GetComponent<Drop_colectables>();
+                    _drop_Colectables.soltar_Item();
+                }
+                else {
+                    Debug.Log("el enmigo no dropea objetos");
+                }
             }
             animationManager.UpdateHealthAnimation(health);
 
