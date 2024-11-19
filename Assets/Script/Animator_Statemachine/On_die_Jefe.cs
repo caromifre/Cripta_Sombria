@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class On_die_Jefe : StateMachineBehaviour
 {
-    [SerializeField] GameObject _Gmo_conluz;
+    //[SerializeField] GameObject _Gmo_conluz;
     
     
         // Este método se llama cuando una transición sale del estado
@@ -15,7 +15,7 @@ public class On_die_Jefe : StateMachineBehaviour
         //notificar la muerte del jefe 
         Game_manager.Instance.jefe_muerto();
         //elmiinar al jefe de la escena
-        _Gmo_conluz.GetComponent<Light>().enabled = true;
+        //_Gmo_conluz.GetComponent<Light>().enabled = true;
         Destroy(animator.gameObject);
 
     
