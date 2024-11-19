@@ -438,6 +438,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -240922935066759374, guid: a1f7f084c124b6f4195c7e66aac70ee3,
+        type: 3}
+      propertyPath: _mazmorraSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 747d76d9775e8ba46a076fc5ca19822c,
+        type: 2}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
       propertyPath: _room_fin

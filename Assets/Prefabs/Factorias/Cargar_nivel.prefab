@@ -46,11 +46,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rooms:
-  - {fileID: 2406978126415857164, guid: f1e5b2058d7ad8547afac8f3824353a6, type: 3}
-  - {fileID: 2406978126415857164, guid: 752dfb042d3c1be4da917eb5d23d0bea, type: 3}
   - {fileID: 2406978126415857164, guid: fc648e9d5a3c45141987ec12f5d58595, type: 3}
+  - {fileID: 2406978126415857164, guid: 89d61604af7e0b5418886cdc2944eadd, type: 3}
+  - {fileID: 2406978126415857164, guid: 5a50da88f0710ac49b24ba8d763fd1e5, type: 3}
+  _celda_incio:
+  - {fileID: 2406978126415857164, guid: f1e5b2058d7ad8547afac8f3824353a6, type: 3}
+  - {fileID: 2406978126415857164, guid: 60cdce0a38f6cd244a02a4fcfe578c10, type: 3}
+  _galerias:
   - {fileID: 2406978126415857164, guid: f29b74a89d40483439cc69b21f2f549a, type: 3}
+  - {fileID: 2406978126415857164, guid: fe6942004fcb36240b6aa42f606fecc8, type: 3}
+  - {fileID: 2406978126415857164, guid: 8246c904f42446a45a6086aac14dedc0, type: 3}
+  - {fileID: 2406978126415857164, guid: 64df163fb3e41ec46aefe7be6c87d629, type: 3}
+  - {fileID: 2406978126415857164, guid: 8bacb78eb078e784eb9f696ccc922cc1, type: 3}
+  - {fileID: 2406978126415857164, guid: cb64505b8e597dd4694da448def3e30f, type: 3}
+  _pasillos:
   - {fileID: 2406978126415857164, guid: b1366c6c680b97c489dc701760b225a6, type: 3}
+  - {fileID: 2406978126415857164, guid: ade3b33e293c2e445abbb0c301e46131, type: 3}
+  - {fileID: 2406978126415857164, guid: 75acf3e2e3202ab478d0b8562ecdbab1, type: 3}
+  _room_fin: {fileID: 2406978126415857164, guid: 752dfb042d3c1be4da917eb5d23d0bea,
+    type: 3}
   _tipo_celda: 4
 --- !u!114 &-240922935066759374
 MonoBehaviour:
@@ -64,6 +78,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5931ce7f6642bf540b5208cbb4b06c73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mazmorraSO: {fileID: 11400000, guid: 747d76d9775e8ba46a076fc5ca19822c, type: 2}
+  _mazmorraSO: {fileID: 0}
   _whidth: 0
   _height: 0

@@ -47,8 +47,9 @@ MonoBehaviour:
   _tot_vida: 0
   _Hud: Hud_base
   _Menu_muerte: Dead_screen
+  _Menu_ganar: Ganaste
   _Nivel:
   - Nivel1
   - Nivel2
+  - Nivel3
   _Menues: []
-  _Player: {fileID: 7940719953895527930, guid: e7f87b508024fed46a8f2dfc992b8f98, type: 3}

@@ -12,7 +12,7 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
     /*[SerializeField] int _cant_vidas = 3;*/
     public float _tot_vida;
     //nombre de las escenas a cargar
-    [SerializeField] string _Hud, _Menu_muerte;
+    [SerializeField] string _Hud, _Menu_muerte,_Menu_ganar;
     [SerializeField] string[] _Nivel;
     [SerializeField] string[] _Menues;
     //gameobjetc del player para instanciarlo en el nuevo nivel
@@ -68,11 +68,18 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
         }
         else { 
             _nivel_actual++;
-            SceneManager.LoadScene(_Nivel[_nivel_actual], LoadSceneMode.Single);
-            SceneManager.LoadScene(_Hud, LoadSceneMode.Additive);
-            //_Iplayer = Instantiate(_Player, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
-            reset_nivel();
+            if (_nivel_actual < _Nivel.Length)
+            {
+                SceneManager.LoadScene(_Nivel[_nivel_actual], LoadSceneMode.Single);
+                SceneManager.LoadScene(_Hud, LoadSceneMode.Additive);
+                //_Iplayer = Instantiate(_Player, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+                reset_nivel();
+            }
+            else {
+                mostrar_menu_ganar();
+            }
         }
+
         
     }
     void reset_nivel()
@@ -98,5 +105,10 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
 
     public void jefe_muerto() { 
         _Jefe_muerto = true;
+    }
+
+    public void mostrar_menu_ganar() {
+        reset_nivel();
+        SceneManager.LoadScene(_Menu_ganar, LoadSceneMode.Single);
     }
 }
