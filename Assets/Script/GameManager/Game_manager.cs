@@ -10,7 +10,7 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
     public static Game_manager Instance => instance;
     public static Game_manager instance;
     /*[SerializeField] int _cant_vidas = 3;*/
-    public float _tot_vida;
+    public float _tot_vida,_max_vida;
     //nombre de las escenas a cargar
     [SerializeField] string _Hud, _Menu_muerte,_Menu_ganar;
     [SerializeField] string[] _Nivel;

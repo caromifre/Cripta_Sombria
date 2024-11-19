@@ -9,6 +9,7 @@ public class PlayerController : PlayerBehaviour
             Controller();
         }
         Game_manager.Instance._tot_vida = health;
+        Game_manager.Instance._max_vida = maxHealth;
     }
 
     // Metodo principal para manejar el movimiento

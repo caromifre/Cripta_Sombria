@@ -1,5 +1,5 @@
 
-public interface IObtener_canrtidad_vida 
+public interface IObtener_cantidad_vida 
 {
-    public void obtener_cantidad_vida();
+    public void actualizar_barra_vida();
 }
