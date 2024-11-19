@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 using static Constantes_celda;
 
@@ -11,13 +12,14 @@ public class Instanciar_criptas : MonoBehaviour, IGen_mazmorra
     {
         Debug.Log("Este metodo fue sobrecaragdo usaer el nuevo metodo:\n Generardungeon(GameObject[] rooms, Cell[,] board, int X, int Y,float o_x,float o_y)");
     }
-    public void Generardungeon(GameObject[] rooms, Cell[,] board, int X, int Y, float o_x, float o_y, int tipo_celda)
+    public void Generardungeon(GameObject[] rooms, GameObject[] celda_inicio, GameObject[] galerias, GameObject[] pasillos, GameObject room_fin, Cell[,] board, int X, int Y, float o_x, float o_y, int tipo_celda)
     {
         //rooms recibe un array de gameobjects a instanciar donde el elemento [0] es primer elemento a instanciar y [1] sera el ultimo
         //board es una matriz que indica que elemtos se van a instanciar
         // X,Y indican el tamaño de la matriz de objetos a instanciar
         //o_x,o_y es el tamaño de la celda offset en x e y
-        GameObject Nueva_celda;
+        GameObject Nueva_celda,_room;
+        
         int celda,
             tot_gal=0,
             num_gal=0;
@@ -30,19 +32,38 @@ public class Instanciar_criptas : MonoBehaviour, IGen_mazmorra
                 galeria = board[a,b].galeria;
                 if (board[a, b].visited)
                 {
-                    if (board[a, b].inicio) celda = _INICIO;
+                    if (board[a, b].inicio)
+                    {
+                        _room = celda_inicio[Random.Range(0, celda_inicio.Length)]; 
+                    }
 
-                    else if (board[a, b].fin) celda = _FIN;
+                    else if (board[a, b].fin) {
+                        //celda = _FIN;
+                        _room = room_fin;
+                    
+                    }
                     //else celda = Random.Range(2, rooms.Length);
 
-                    else if (galeria) celda = 3;
+                    else if (galeria) 
+                    {
+                        //celda = 3; 
+                        _room = galerias[Random.Range(0,galerias.Length)];
+                    }
 
-                    else if (board[a, b].pasillo) celda = 2;
-
-                    else celda = 4;
+                    else if (board[a, b].pasillo) 
+                    {
+                        //celda = 2;
+                        _room = pasillos[Random.Range(0,pasillos.Length)];
+                    }
+                    
+                    else 
+                    {
+                        //celda = 4;
+                        _room = rooms[Random.Range(0,rooms.Length)];
+                    }
 
                     //Debug.Log("instancia: " + a + " - "+ b);
-                    Nueva_celda = Instantiate(rooms[celda], new Vector3(a * o_x, 0f, -b * o_y), Quaternion.identity);
+                    Nueva_celda = Instantiate(_room, new Vector3(a * o_x, 0f, -b * o_y), Quaternion.identity);
 
                     //adjuntar informacion
                     _datos_celda = Nueva_celda.GetComponent<Datos_celda>();

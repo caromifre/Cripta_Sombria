@@ -8,7 +8,11 @@ using static Constantes_celda;
 public class Cargar_criptas : MonoBehaviour
 {
     //matriz de celdas
-    [SerializeField] GameObject[] _rooms;
+    [SerializeField] GameObject[] _rooms,
+                                  _celda_incio,
+                                  _galerias,
+                                  _pasillos;
+    [SerializeField] GameObject _room_fin;
     [SerializeField] _TIPO_CELDA _tipo_celda;
     Instanciar_criptas _Gen_mazmorra;
     GuardarCargarMazmorra _guardado;
@@ -30,7 +34,7 @@ public class Cargar_criptas : MonoBehaviour
 
         _guardado.CargarDesdeScriptableObject(ref _board,ref _X, ref _Y);
         //Debug.Log("_X: " + _X + "_Y: " + _Y);
-        _Gen_mazmorra.Generardungeon(_rooms, _board, _board.GetLength(0), _board.GetLength(1), _X, _Y,(int)_tipo_celda);
+        _Gen_mazmorra.Generardungeon(_rooms,_celda_incio,_galerias,_pasillos,_room_fin, _board, _board.GetLength(0), _board.GetLength(1), _X, _Y,(int)_tipo_celda);
 
     }
 
