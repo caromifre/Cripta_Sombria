@@ -14,11 +14,12 @@ TagManager:
   - Enemy_Boss
   - Item
   - portal
+  - Chest
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Recolectable
   - Water
   - UI
   - Enemy_wall
