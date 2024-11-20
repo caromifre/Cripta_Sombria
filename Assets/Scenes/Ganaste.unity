@@ -1062,7 +1062,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _volver_a_jugar
       value: 
-      objectReference: {fileID: 1963916940}
+      objectReference: {fileID: 1190521348}
     - target: {fileID: 3432479945294878618, guid: c2d6f52df7bc309469de9497db2b0976,
         type: 3}
       propertyPath: m_ReferenceResolution.x
@@ -1081,7 +1081,7 @@ PrefabInstance:
     - target: {fileID: 6306335094634832712, guid: c2d6f52df7bc309469de9497db2b0976,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6507287761416898821, guid: c2d6f52df7bc309469de9497db2b0976,
         type: 3}
@@ -1217,18 +1217,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1963916938}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1963916940 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4543711662341258071, guid: c2d6f52df7bc309469de9497db2b0976,
-    type: 3}
-  m_PrefabInstance: {fileID: 1963916938}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
