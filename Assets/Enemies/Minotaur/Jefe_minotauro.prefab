@@ -4304,11 +4304,11 @@ MonoBehaviour:
   walkSound: {fileID: 8300000, guid: b70d04f1f7e251b4f8629b271d71c623, type: 3}
   dieSound: {fileID: 8300000, guid: f4f935fa52b09d048b39e00ecf374d2e, type: 3}
   damageSound: {fileID: 8300000, guid: ac6034ade498bb94b87620cdf6eac48b, type: 3}
-  _healt: 800
+  _healt: 1200
   _speed: 1.5
   _sprintSpeed: 2.5
   _detectionRange: 5
-  _damageGenerate: 250
+  _damageGenerate: 600
   _distanceAttack: 1.5
 --- !u!1 &4414871117353324497
 GameObject:
