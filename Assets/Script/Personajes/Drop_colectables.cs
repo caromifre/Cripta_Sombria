@@ -27,7 +27,7 @@ public class Drop_colectables : MonoBehaviour, ISoltar_item
             {
                 Debug.Log("soltando item");
                 // Aplicar un impulso en una dirección aleatoria
-                Vector3 dir_explosion = Random.onUnitSphere; // Genera una dirección aleatoria
+                Vector3 dir_explosion = Random.onUnitSphere * _radio_explosion; // Genera una dirección aleatoria en un radio especifico
                 _rb.AddForce(dir_explosion * _fuerza_impulso, ForceMode.Impulse);
             }
         }

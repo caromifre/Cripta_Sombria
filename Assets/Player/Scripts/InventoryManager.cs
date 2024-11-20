@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using static Constantes_celda;
 public class InventoryManager
 {
     private Dictionary<string, int> inventory;
@@ -16,14 +16,17 @@ public class InventoryManager
         if (inventory.ContainsKey(itemTag))
         {
             inventory[itemTag]++;
+
         }
         else
         {
             inventory[itemTag] = 1;
         }
+        Game_manager.Instance.actualizar_pociones(itemTag, inventory[itemTag]);
 
-        Debug.Log($"Has recogido: {itemTag}. Total: {inventory[itemTag]}");
+        Debug.Log($"Has recogido: {itemTag}. Total: {Game_manager.Instance.obtener_cant_pociones(itemTag)}");
     }
+
 
     // Metodo para usar un item del inventario
     public bool UseItem(string itemTag, float health, float maxHealth)
@@ -32,9 +35,11 @@ public class InventoryManager
         {
             IItem item = ItemFactory.CreateItem(itemTag); // Creación del ítem
             item.Use(ref health, maxHealth, inventory);  // Uso del ítem
-            return true;
+            //actualizar invenario
+            Game_manager.Instance.actualizar_pociones(itemTag, inventory.ContainsKey(itemTag) ? inventory[itemTag] : 0);
+            return true;   
         }
-
+        
         Debug.Log($"No tienes {itemTag} o la cantidad es 0.");
         return false;
     }
@@ -52,6 +57,11 @@ public class InventoryManager
         {
             inventory.Remove(itemTag);
         }
+    }
+
+    public void agregar_desde_GM() {
+        //cargar inventario dese el gamemanager
+        inventory[_POCION_VIDA]=Game_manager.Instance.obtener_cant_pociones(_POCION_VIDA);
     }
 }
 

@@ -45,6 +45,7 @@ public static class Constantes_celda
     
     }
 
-    public const string _PORTAL_TAG = "portal";
+    public const string _PORTAL_TAG = "portal",
+                        _POCION_VIDA= "Pocion_vida";
 
 }

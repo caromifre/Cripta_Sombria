@@ -30,6 +30,7 @@ Transform:
   m_LocalScale: {x: 1.87, y: 1.87, z: 1.87}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 2401118611416769820}
   - {fileID: 8389476439559238918}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -87,11 +88,11 @@ Transform:
   m_GameObject: {fileID: 5012706754788566115}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.127, z: -0.000038842634}
-  m_LocalScale: {x: 0.53475946, y: 0.53475946, z: 0.53475946}
+  m_LocalPosition: {x: 0, y: 0.12700002, z: -0.000038842638}
+  m_LocalScale: {x: 0.5347595, y: 0.5347595, z: 0.5347595}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8389476439559238918}
+  m_Father: {fileID: 2195286853828988558}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &716647749840915125
 Light:
@@ -253,11 +254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 4237517483046682220, guid: b6f9b587034166549809f3a9c6c33262,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2401118611416769820}
+    m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3568398053166638294, guid: b6f9b587034166549809f3a9c6c33262,
         type: 3}
@@ -288,4 +285,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230763cab5746514791b15d54c057e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: 
+  itemName: Pocion_vida

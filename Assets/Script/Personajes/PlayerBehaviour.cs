@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Constantes_celda;
 
 public class PlayerBehaviour : Character
 {
@@ -36,6 +37,9 @@ public class PlayerBehaviour : Character
         // Obtner insancia del gamemanagaer 
         _controler = Game_manager.Instance;
 
+        //actualizar inventario desde gamemanger
+        inventoryManager.agregar_desde_GM();
+
         // Vida del player
         health = 500f;
         maxHealth = health;
@@ -56,9 +60,10 @@ public class PlayerBehaviour : Character
     // Metodo para usar la pocion de vida
     public void UseHealthPotion()
     {
-        if (inventoryManager.UseItem("Bottle_Health", health, maxHealth))
+        if (inventoryManager.UseItem(_POCION_VIDA, health, maxHealth))
         {
             Debug.Log("Usaste una poción de salud.");
+            health = maxHealth;
         }
     }
 }

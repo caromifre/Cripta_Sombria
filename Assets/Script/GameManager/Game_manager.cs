@@ -20,6 +20,11 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
     GameObject _Iplayer;
     //cofigurar cantidad de jefes por nivel
     //[SerializeField] int _Jefe = 1;//por defecto 1
+
+    //inventario
+    Dictionary<string, int> _inventario;
+    
+
     public bool _Jefe_activo { get; protected set; } = false;
     //esta variable se activa al morir el jefe para habilitar el cambio de nivel
     public bool _Jefe_muerto { get; protected set; } = false;
@@ -37,6 +42,8 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
         {
             Destroy(gameObject);
         }
+        //crear  diccionario
+        _inventario = new Dictionary<string, int>();
     }
     // Start is called before the first frame update
     void Start()
@@ -65,6 +72,8 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
             //por defecto se carga el nivel 1
             SceneManager.LoadScene(_Nivel[_NIVEL1], LoadSceneMode.Single);
             SceneManager.LoadScene(_Hud, LoadSceneMode.Additive);
+            reset_nivel();
+            Reset_inventario();
         }
         else { 
             _nivel_actual++;
@@ -76,6 +85,8 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
                 reset_nivel();
             }
             else {
+                reset_nivel();
+                Reset_inventario();
                 mostrar_menu_ganar();
             }
         }
@@ -91,6 +102,8 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
     //mostrar menu muerte
     public void mostrar_menu_muerte() {
         SceneManager.LoadScene(_Menu_muerte, LoadSceneMode.Single);
+        reset_nivel();
+        Reset_inventario();
     }
 
     public void activar_jefe() {
@@ -109,6 +122,27 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
 
     public void mostrar_menu_ganar() {
         reset_nivel();
+        Reset_inventario();
         SceneManager.LoadScene(_Menu_ganar, LoadSceneMode.Single);
+    }
+
+    public void actualizar_pociones(string itemId,int cant) {
+        //este metodo actualiza la lista de inventario en en el gamemanager
+        _inventario[itemId] = cant;
+    }
+
+    public int obtener_cant_pociones(string itemId) { 
+
+        return _inventario.ContainsKey(itemId) ? _inventario[itemId]:0;
+        
+    }
+
+    private void Reset_inventario()
+    {
+        //poner a 0 todo el inventario
+        foreach (var item in _inventario)
+        {
+            _inventario[item.Key] = 0;
+        }
     }
 }

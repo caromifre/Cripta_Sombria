@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Constantes_celda;
 
 public static class ItemFactory
 {
@@ -8,7 +9,7 @@ public static class ItemFactory
     {
         switch (itemTag)
         {
-            case "Bottle_Health":
+            case _POCION_VIDA:
                 return new HealthPotion();
             default:
                 return null;
