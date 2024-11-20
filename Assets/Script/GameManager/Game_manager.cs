@@ -140,9 +140,14 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
     private void Reset_inventario()
     {
         //poner a 0 todo el inventario
-        foreach (var item in _inventario)
+        if (_inventario.Count>0 )
         {
-            _inventario[item.Key] = 0;
+            //obtener la lista de indices
+            List<string> keys = new List<string>(_inventario.Keys);
+            foreach (string item in keys)
+            {
+                _inventario[item] = 0;
+            }
         }
     }
 }
