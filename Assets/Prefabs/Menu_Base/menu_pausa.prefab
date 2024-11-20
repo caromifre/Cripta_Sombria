@@ -734,6 +734,7 @@ GameObject:
   - component: {fileID: 3988007577157085845}
   - component: {fileID: 177938491428166034}
   - component: {fileID: -8954756413441911789}
+  - component: {fileID: 1683545252249670440}
   m_Layer: 5
   m_Name: menu_pausa
   m_TagString: Untagged
@@ -836,8 +837,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d501c9df36d89d4ba9a5810958643f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuPausa: {fileID: 0}
+  _menuPausa: {fileID: 233381565238388888}
   _audioFuente: {fileID: 0}
+  _btn_inicio: {fileID: 6034595000022194093}
+  _volver_a_jugar: {fileID: 4536869238297044350}
+  _btn_salir: {fileID: 8751366629063678184}
+--- !u!114 &1683545252249670440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5220634992933067100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b5b24628c47ce4cb3df64d95e9736f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuenteAudio: {fileID: 0}
+  botonOnOff: {fileID: 6177375897526457378}
+  configuracionAudio: {fileID: 11400000, guid: 4b47a00715118604e9246f6f4a9c0f87, type: 2}
 --- !u!1 &5765087013428299973
 GameObject:
   m_ObjectHideFlags: 0
