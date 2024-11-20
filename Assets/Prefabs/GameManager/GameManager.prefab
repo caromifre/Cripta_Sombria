@@ -45,10 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tot_vida: 0
+  _max_vida: 0
   _Hud: Hud_base
   _Menu_muerte: Dead_screen
   _Menu_ganar: Ganaste
   _Nivel:
   - Nivel1
   - Nivel2
+  - Nivel3
   _Menues: []
