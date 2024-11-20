@@ -546,6 +546,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1683545252249670440, guid: d9d04ba3721ab094289b1290d47c0b3f,
+        type: 3}
+      propertyPath: fuenteAudio
+      value: 
+      objectReference: {fileID: 1388046961345716778}
     - target: {fileID: 5220634992933067100, guid: d9d04ba3721ab094289b1290d47c0b3f,
         type: 3}
       propertyPath: m_Name
@@ -674,36 +679,14 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5220634992933067100, guid: d9d04ba3721ab094289b1290d47c0b3f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1177307265}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9d04ba3721ab094289b1290d47c0b3f, type: 3}
---- !u!1 &1177307260 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5220634992933067100, guid: d9d04ba3721ab094289b1290d47c0b3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1177307259}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1177307261 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 233381565238388888, guid: d9d04ba3721ab094289b1290d47c0b3f,
     type: 3}
   m_PrefabInstance: {fileID: 1177307259}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1177307262 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6177375897526457378, guid: d9d04ba3721ab094289b1290d47c0b3f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1177307259}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1177307263 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4536869238297044350, guid: d9d04ba3721ab094289b1290d47c0b3f,
@@ -728,21 +711,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1177307265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1177307260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30b5b24628c47ce4cb3df64d95e9736f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuenteAudio: {fileID: 1388046961345716778}
-  botonOnOff: {fileID: 1177307262}
-  configuracionAudio: {fileID: 11400000, guid: 4b47a00715118604e9246f6f4a9c0f87, type: 2}
 --- !u!1001 &1463007457
 PrefabInstance:
   m_ObjectHideFlags: 0

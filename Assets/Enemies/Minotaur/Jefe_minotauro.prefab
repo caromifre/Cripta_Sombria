@@ -4306,9 +4306,9 @@ MonoBehaviour:
   damageSound: {fileID: 8300000, guid: ac6034ade498bb94b87620cdf6eac48b, type: 3}
   _healt: 3000
   _speed: 1.5
-  _sprintSpeed: 2.5
-  _detectionRange: 10
-  _damageGenerate: 600
+  _sprintSpeed: 4
+  _detectionRange: 15
+  _damageGenerate: 800
   _distanceAttack: 2.5
 --- !u!1 &4414871117353324497
 GameObject:
