@@ -2574,8 +2574,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b5b24628c47ce4cb3df64d95e9736f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audio: {fileID: 1777551446}
-  _boton_onoff: {fileID: 882433843}
+  fuenteAudio: {fileID: 1777551446}
+  botonOnOff: {fileID: 882433843}
+  configuracionAudio: {fileID: 11400000, guid: 4b47a00715118604e9246f6f4a9c0f87, type: 2}
 --- !u!1 &2117600501
 GameObject:
   m_ObjectHideFlags: 0

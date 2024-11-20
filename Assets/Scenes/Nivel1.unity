@@ -487,6 +487,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5447013628840670873, guid: e7f87b508024fed46a8f2dfc992b8f98,
+        type: 3}
+      propertyPath: fuenteAudio
+      value: 
+      objectReference: {fileID: 1388046961345716778}
     - target: {fileID: 7940719953895527930, guid: e7f87b508024fed46a8f2dfc992b8f98,
         type: 3}
       propertyPath: m_Name
@@ -883,6 +888,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe5027dba1b0724e931ff8d021ecd82, type: 3}
+--- !u!82 &1388046961345716778 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6390795579281179536, guid: dbe5027dba1b0724e931ff8d021ecd82,
+    type: 3}
+  m_PrefabInstance: {fileID: 1388046961345716777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6569874860336851665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -895,6 +906,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735137543021008428, guid: 24d5055fa0fa64c49881392efb59245f,
+        type: 3}
+      propertyPath: _Nivel.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6065834083878269056, guid: 24d5055fa0fa64c49881392efb59245f,
         type: 3}
