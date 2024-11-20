@@ -283,6 +283,52 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 961f1b77c2f8bff4587b19ade2d68e4d,
         type: 2}
+    - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
+        type: 3}
+      propertyPath: _rooms.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
+        type: 3}
+      propertyPath: _rooms.Array.data[0]
+      value: 
+      objectReference: {fileID: 2406978126415857164, guid: 89d61604af7e0b5418886cdc2944eadd,
+        type: 3}
+    - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
+        type: 3}
+      propertyPath: _rooms.Array.data[1]
+      value: 
+      objectReference: {fileID: 2406978126415857164, guid: 5a50da88f0710ac49b24ba8d763fd1e5,
+        type: 3}
+    - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
+        type: 3}
+      propertyPath: _rooms.Array.data[2]
+      value: 
+      objectReference: {fileID: 2406978126415857164, guid: fc648e9d5a3c45141987ec12f5d58595,
+        type: 3}
+    - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
+        type: 3}
+      propertyPath: _celda_incio.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
+        type: 3}
+      propertyPath: _celda_incio.Array.data[0]
+      value: 
+      objectReference: {fileID: 2406978126415857164, guid: 60cdce0a38f6cd244a02a4fcfe578c10,
+        type: 3}
+    - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
+        type: 3}
+      propertyPath: _celda_incio.Array.data[1]
+      value: 
+      objectReference: {fileID: 2406978126415857164, guid: 4cfb9d43515a8e641a2ca4a37120af18,
+        type: 3}
+    - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
+        type: 3}
+      propertyPath: _celda_incio.Array.data[2]
+      value: 
+      objectReference: {fileID: 2406978126415857164, guid: 60cdce0a38f6cd244a02a4fcfe578c10,
+        type: 3}
     - target: {fileID: 4241712817423798347, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
       propertyPath: m_Name
@@ -382,7 +428,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
