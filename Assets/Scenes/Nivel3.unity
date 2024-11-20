@@ -504,6 +504,74 @@ Skybox:
   m_GameObject: {fileID: 1048908835}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: 3ca6eb1580b4aef4dae95ed92b2cd51e, type: 2}
+--- !u!1001 &1240860565
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2666958641514588014, guid: eb34eb41c1bccd6449f344f73f92d69b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666958641514588014, guid: eb34eb41c1bccd6449f344f73f92d69b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666958641514588014, guid: eb34eb41c1bccd6449f344f73f92d69b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666958641514588014, guid: eb34eb41c1bccd6449f344f73f92d69b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666958641514588014, guid: eb34eb41c1bccd6449f344f73f92d69b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666958641514588014, guid: eb34eb41c1bccd6449f344f73f92d69b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666958641514588014, guid: eb34eb41c1bccd6449f344f73f92d69b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666958641514588014, guid: eb34eb41c1bccd6449f344f73f92d69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666958641514588014, guid: eb34eb41c1bccd6449f344f73f92d69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2666958641514588014, guid: eb34eb41c1bccd6449f344f73f92d69b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5797929220356436006, guid: eb34eb41c1bccd6449f344f73f92d69b,
+        type: 3}
+      propertyPath: m_Name
+      value: Ambiente
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: eb34eb41c1bccd6449f344f73f92d69b, type: 3}
 --- !u!1 &1779800342
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,3 +699,4 @@ SceneRoots:
   - {fileID: 18444406}
   - {fileID: 298811230}
   - {fileID: 899621332}
+  - {fileID: 1240860565}
