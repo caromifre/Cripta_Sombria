@@ -5,21 +5,25 @@ using UnityEngine.UI;
 
 public class control_audio_menu : MonoBehaviour
 {
-    [SerializeField] AudioSource _audio;//control audio
-    [SerializeField] Toggle _boton_onoff;
-    // Start is called before the first frame update
+    [SerializeField] AudioSource fuenteAudio; // Control del AudioSource
+    [SerializeField] Toggle botonOnOff; // Toggle del menú
+    [SerializeField] Audio_config configuracionAudio; // Referencia al ScriptableObject
+
     void Start()
     {
-        // Asegurarse de que el Toggle refleje el estado inicial del audio
-        _boton_onoff.isOn = _audio.enabled;
+        // Sincronizar el estado inicial con el ScriptableObject
+        botonOnOff.isOn = configuracionAudio.Audio_onOff;
+        fuenteAudio.enabled = configuracionAudio.Audio_onOff;
 
-        // Suscribir el método onOff_sound al evento del Toggle
-        _boton_onoff.onValueChanged.AddListener(delegate { onOff_sound(); });
+        // Suscribir al evento de cambio del Toggle
+        botonOnOff.onValueChanged.AddListener(delegate { CambiarEstadoAudio(); });
     }
 
-    void onOff_sound() {
-
-        _audio.enabled = !_audio.enabled;
+    void CambiarEstadoAudio()
+    {
+        // Actualizar el estado del ScriptableObject y del AudioSource
+        configuracionAudio.Audio_onOff = botonOnOff.isOn;
+        fuenteAudio.enabled = botonOnOff.isOn;
     }
 
 }
