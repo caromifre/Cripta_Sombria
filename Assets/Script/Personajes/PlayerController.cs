@@ -4,6 +4,8 @@ public class PlayerController : PlayerBehaviour
 {
     private void Update()
     {
+        if (Time.timeScale == 0f) return; // Detener comportamiento si el juego está pausado
+
         if (health > 0)
         {
             Controller();

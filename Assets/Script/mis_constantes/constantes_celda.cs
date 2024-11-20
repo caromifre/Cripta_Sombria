@@ -21,8 +21,9 @@ public static class Constantes_celda
                      _FIN = 1,//indica posicion pilares
                      _CELDA_DECORADA = 2,//incica la posicion en el array para las celdas decordas
                      _CELDA_GAlERIA = 3,//indica la posicion para las celdas tipo galeria
-                     _NIVEL1 = 0;//constante para manejar el array de niveles del Game manager
-
+                     _NIVEL1 = 0,//constante para manejar el array de niveles del Game manager
+                     _MENU_PAUSA = 0,//contante para el manejo de menues en el gamemaneger
+                     _MENU_INICIO = 1;
 
 
     // booleanos para el control de los elementos de cada celda

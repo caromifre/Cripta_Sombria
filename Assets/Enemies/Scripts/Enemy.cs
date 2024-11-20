@@ -25,6 +25,9 @@ public abstract class Enemy : Character, IInteractable
     }
     private void Update()
     {
+     
+        if (Time.timeScale == 0f) return;//pausar a los enemigos
+
         attacking = false;
         // Si el jugador está cerca y la vida es mayor que 0
         if (DetectPlayer() && health > 0)

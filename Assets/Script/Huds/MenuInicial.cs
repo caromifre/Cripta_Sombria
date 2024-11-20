@@ -8,7 +8,12 @@ public class MenuInicial : MonoBehaviour
 
     public void Jugar()
     {
-        SceneManager.LoadScene("Nivel1");
+        if (Game_manager.Instance != null) {
+            Game_manager.Instance.Cargar_nueva_escena();
+        }
+        else{
+            SceneManager.LoadScene("Nivel1");
+        }
     }
 
     public void Salir()
@@ -18,15 +23,4 @@ public class MenuInicial : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

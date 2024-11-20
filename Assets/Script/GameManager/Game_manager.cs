@@ -133,8 +133,7 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
 
     public int obtener_cant_pociones(string itemId) { 
 
-        return _inventario.ContainsKey(itemId) ? _inventario[itemId]:0;
-        
+        return _inventario.ContainsKey(itemId) ? _inventario[itemId]:0;        
     }
 
     private void Reset_inventario()
@@ -150,4 +149,17 @@ public class Game_manager : MonoBehaviour, IAdditive_scene, ILoad_scene, ILoose_
             }
         }
     }
+
+    public void mostrar_menu_incio() {
+        //funcion para cargar un menu de forma aditiva
+        reset_nivel();
+        Reset_inventario();
+        SceneManager.LoadScene(_Menues[_MENU_INICIO], LoadSceneMode.Single);
+    }
+
+    public void ocultar_hud() {
+        //funcion para descargar la escena del menu
+        SceneManager.UnloadSceneAsync(_Hud);
+    }
+
 }
