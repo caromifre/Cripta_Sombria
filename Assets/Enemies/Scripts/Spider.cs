@@ -5,17 +5,21 @@ using UnityEngine;
 public class Spider : Enemy
 {
     [SerializeField] float _health = 50;
-    
+    [SerializeField] float _speed = 1.8f;
+    [SerializeField] float _sprintSpeed = 2.5f;
+    [SerializeField] float _detectionRange = 7f;
+    [SerializeField] float _damageGenerate = 20f;
+    [SerializeField] float _distanceAttack = 0.8f;
 
     private void Start()
     {
         // Valores de la araña
         health = _health;
-        speed = 1.8f;
-        sprintSpeed = 2f;
-        detectionRange = 7f;
-        damageGenerate = 5f;
-        distanceAttack = 0.8f;
+        speed = _speed;
+        sprintSpeed = _sprintSpeed;
+        detectionRange = _detectionRange;
+        damageGenerate = _damageGenerate;
+        distanceAttack = _distanceAttack;
 
         player = GameObject.Find("Player");
         _anim.SetFloat("Health", health);

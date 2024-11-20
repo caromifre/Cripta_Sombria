@@ -5,6 +5,12 @@ using UnityEngine;
 public class Minotaur : Enemy
 {
     [SerializeField] float _healt = 250;
+    [SerializeField] float _speed = 1f;
+    [SerializeField] float _sprintSpeed = 2f;
+    [SerializeField] float _detectionRange = 3f;
+    [SerializeField] float _damageGenerate = 20f;
+    [SerializeField] float _distanceAttack = 1.5f;
+
     private void Start()
     {
         // Valores del orco

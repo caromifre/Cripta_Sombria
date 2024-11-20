@@ -8,12 +8,14 @@ public class MenuInicial : MonoBehaviour
 
     public void Jugar()
     {
-        if (Game_manager.Instance != null) {
-            Game_manager.Instance.Cargar_nueva_escena();
+        if (Game_manager.Instance != null)
+        {
+            Destroy(Game_manager.Instance.gameObject);
+            Debug.Log("La instancia de Game_manager ha sido destruida.");
         }
-        else{
-            SceneManager.LoadScene("Nivel1");
-        }
+
+        SceneManager.LoadScene("Nivel1");
+        
     }
 
     public void Salir()

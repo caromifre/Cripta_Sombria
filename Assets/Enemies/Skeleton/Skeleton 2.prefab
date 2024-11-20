@@ -1708,7 +1708,12 @@ MonoBehaviour:
   walkSound: {fileID: 8300000, guid: 4d11813f5983ce047873c94858e6a6c1, type: 3}
   dieSound: {fileID: 8300000, guid: 7a39ba789208642ea9fda609aea157b6, type: 3}
   damageSound: {fileID: 8300000, guid: bb6cdd13aeb95f743847b1cd460889bc, type: 3}
-  _health: 100
+  _health: 300
+  _speed: 3
+  _sprintSpeed: 4
+  _detectionRange: 20
+  _damageGenerate: 100
+  _distanceAttack: 2
 --- !u!54 &4446995455341801347
 Rigidbody:
   m_ObjectHideFlags: 0

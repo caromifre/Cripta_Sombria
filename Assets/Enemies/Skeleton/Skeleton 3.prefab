@@ -1444,6 +1444,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 8890227113025779503}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 78db5dca926347c48bb845c6ada56b71,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1433264159560865730}
     - targetCorrespondingSourceObject: {fileID: -1230382594125828705, guid: 78db5dca926347c48bb845c6ada56b71,
         type: 3}
       insertIndex: -1
@@ -1511,7 +1515,12 @@ MonoBehaviour:
   walkSound: {fileID: 8300000, guid: 4d11813f5983ce047873c94858e6a6c1, type: 3}
   dieSound: {fileID: 8300000, guid: 7a39ba789208642ea9fda609aea157b6, type: 3}
   damageSound: {fileID: 8300000, guid: bb6cdd13aeb95f743847b1cd460889bc, type: 3}
-  _health: 100
+  _health: 400
+  _speed: 2
+  _sprintSpeed: 4
+  _detectionRange: 15
+  _damageGenerate: 150
+  _distanceAttack: 2
 --- !u!54 &4446995455341801347
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1562,6 +1571,22 @@ CapsuleCollider:
   m_Height: 1.9126861
   m_Direction: 1
   m_Center: {x: 0, y: 0.8970386, z: 0}
+--- !u!114 &1433264159560865730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2395619069512568703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9f6b2377e06ed6488579ddaf548fa95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _drop_colectable: {fileID: 4506934394549619473, guid: 6a0a62112e14af2448e82325b457a49d,
+    type: 3}
+  _fuerza_impulso: 5
+  _radio_explosion: 2
 --- !u!4 &2677431414832754758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8586184537322814872, guid: 78db5dca926347c48bb845c6ada56b71,
