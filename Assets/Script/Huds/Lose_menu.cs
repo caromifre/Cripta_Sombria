@@ -6,13 +6,14 @@ using UnityEngine.UI;
 
 public class Lose_menu : MonoBehaviour 
 {
-    [SerializeField] Button _volver_a_jugar;
+    [SerializeField] Button _volver_a_jugar,_menu_inicial;
     Game_manager _controler;
 
     private void Awake()
     {
         _controler= Game_manager.Instance;
         _volver_a_jugar?.onClick.AddListener(_controler.Cargar_nueva_escena);
+        _menu_inicial?.onClick.AddListener(_controler.mostrar_menu_incio);
     }
 
 

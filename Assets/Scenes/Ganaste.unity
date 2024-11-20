@@ -1782,6 +1782,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3273316559534727905, guid: c2d6f52df7bc309469de9497db2b0976,
         type: 3}
+      propertyPath: _menu_inicial
+      value: 
+      objectReference: {fileID: 1312180901}
+    - target: {fileID: 3273316559534727905, guid: c2d6f52df7bc309469de9497db2b0976,
+        type: 3}
       propertyPath: _volver_a_jugar
       value: 
       objectReference: {fileID: 1190521348}
@@ -1936,6 +1941,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1963916944}
+    - targetCorrespondingSourceObject: {fileID: 5803392023755514963, guid: c2d6f52df7bc309469de9497db2b0976,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1963916945}
   m_SourcePrefab: {fileID: 100100000, guid: c2d6f52df7bc309469de9497db2b0976, type: 3}
 --- !u!224 &1963916939 stripped
 RectTransform:
@@ -1956,6 +1965,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuenteAudio: {fileID: 1086971045}
+  configuracionAudio: {fileID: 11400000, guid: 4b47a00715118604e9246f6f4a9c0f87, type: 2}
+--- !u!114 &1963916945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220743216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b5b24628c47ce4cb3df64d95e9736f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuenteAudio: {fileID: 1086971045}
+  botonOnOff: {fileID: 1098127824}
   configuracionAudio: {fileID: 11400000, guid: 4b47a00715118604e9246f6f4a9c0f87, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
