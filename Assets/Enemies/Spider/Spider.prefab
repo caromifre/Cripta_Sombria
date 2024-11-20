@@ -679,6 +679,53 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1392321312565872811}
     m_Modifications:
+    - target: {fileID: 282430289352154134, guid: 139d9b83a35fb5840803485444068080,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 282430289352154134, guid: 139d9b83a35fb5840803485444068080,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e5fa9d60f6ccf114e9d87032e31f54f5,
+        type: 2}
+    - target: {fileID: 282430289352154134, guid: 139d9b83a35fb5840803485444068080,
+        type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.6313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 282430289352154134, guid: 139d9b83a35fb5840803485444068080,
+        type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.7058824
+      objectReference: {fileID: 0}
+    - target: {fileID: 282430289352154134, guid: 139d9b83a35fb5840803485444068080,
+        type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.7764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 282430289352154134, guid: 139d9b83a35fb5840803485444068080,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 282430289352154134, guid: 139d9b83a35fb5840803485444068080,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -2419031357678135236, guid: e5fa9d60f6ccf114e9d87032e31f54f5,
+        type: 2}
+    - target: {fileID: 282430289352154134, guid: 139d9b83a35fb5840803485444068080,
+        type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4288787654
+      objectReference: {fileID: 0}
+    - target: {fileID: 282430289352154134, guid: 139d9b83a35fb5840803485444068080,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4999741357343423912, guid: 139d9b83a35fb5840803485444068080,
         type: 3}
       propertyPath: m_Name
