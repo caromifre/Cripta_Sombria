@@ -6,8 +6,8 @@
 - Shift: Correr
 - C: Curarse (en caso de tener frasquitos rojos)
 - Q E: Flip cámara
-- Click izquierdo: Atacar a enemigos o recolectar items
-- Click derecho: Activa la defensa (manteniéndolo pulsado)
+- Click izquierdo del mouse: Atacar a enemigos o recolectar items
+- Click derecho del mouse: Activa la defensa (manteniéndolo pulsado)
 - Rueda del mouse: Zoom cámara
 - Esc: Pausa
 
