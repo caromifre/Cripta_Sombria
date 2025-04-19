@@ -11,7 +11,7 @@ public class ThirdPersonCamera : MonoBehaviour
     void LateUpdate()
     {
         // Rotar alrededor del jugador con el mouse
-        currentYaw += Input.GetAxis("Mouse X") * mouseSensitivity;
+        //currentYaw += Input.GetAxis("Mouse X") * mouseSensitivity;
 
         // Calcular posición deseada
         Quaternion rotation = Quaternion.Euler(0f, currentYaw, 0f);
