@@ -303,8 +303,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1109587623}
   offset: {x: 0, y: 2, z: 5}
-  smoothSpeed: 5
   mouseSensitivity: 3
+  smoothSpeed: 5
+  rotationLerpSpeed: 10
+  minPitch: -20
+  maxPitch: 20
 --- !u!1001 &426756846
 PrefabInstance:
   m_ObjectHideFlags: 0

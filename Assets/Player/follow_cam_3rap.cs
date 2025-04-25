@@ -2,25 +2,38 @@ using UnityEngine;
 
 public class ThirdPersonCamera : MonoBehaviour
 {
-    public Transform player; // Referencia al jugador
-    public Vector3 offset = new Vector3(0f, 2f, -5f); // Posición relativa a mantener detrás del jugador
-    public float smoothSpeed = 5f; // Suavizado del movimiento de cámara
-    public float mouseSensitivity = 3f; // Sensibilidad del mouse para rotar
-    private float currentYaw = 0f;
+    public Transform player;
+    public Vector3 offset = new Vector3(0f, 2f, -5f);
+    public float mouseSensitivity = 3f;
+    public float smoothSpeed = 10f;
+    public float rotationLerpSpeed = 10f;
+
+    private float yaw;
+    private float pitch;
+    public float minPitch = -10f;
+    public float maxPitch = 60f;
 
     void LateUpdate()
     {
-        // Rotar alrededor del jugador con el mouse
-        //currentYaw += Input.GetAxis("Mouse X") * mouseSensitivity;
+        // Solo rotar la cámara si se mantiene el botón derecho
+        if (Input.GetMouseButton(1))
+        {
+            yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
+            pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+            pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
+        }
 
-        // Calcular posición deseada
-        Quaternion rotation = Quaternion.Euler(0f, currentYaw, 0f);
+        Quaternion rotation = Quaternion.Euler(pitch, yaw, 0);
         Vector3 desiredPosition = player.position + rotation * offset;
 
-        // Movimiento suave hacia la posición deseada
+        // Suavizar la posición y orientación
         transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
+        transform.LookAt(player.position + Vector3.up * 1.5f);
 
-        // Mirar al jugador
-        transform.LookAt(player.position + Vector3.up * 1.5f); // Opcional: mirar un poco por encima del jugador
+        // Sincronizar rotación del jugador con cámara
+        Vector3 forward = transform.forward;
+        forward.y = 0;
+        Quaternion targetRotation = Quaternion.LookRotation(forward);
+        player.rotation = Quaternion.Lerp(player.rotation, targetRotation, rotationLerpSpeed * Time.deltaTime);
     }
 }

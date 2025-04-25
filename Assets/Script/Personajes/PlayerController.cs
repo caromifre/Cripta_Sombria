@@ -4,7 +4,7 @@ public class PlayerController : PlayerBehaviour
 {
     private void Update()
     {
-        if (Time.timeScale == 0f) return; // Detener comportamiento si el juego está pausado
+        if (Time.timeScale == 0f) return; // Detener comportamiento si el juego estï¿½ pausado
 
         if (health > 0)
         {
@@ -24,7 +24,8 @@ public class PlayerController : PlayerBehaviour
         if (direction.magnitude > 0)
         {
             // Rotamos al jugador
-            rotationManager.Rotate(ref characterTransform, ref rb, ref direction, smoothTime, ref currentVelocity);
+            // Ya no hace falta porque la cÃ¡mara rota al jugador
+            //rotationManager.Rotate(ref characterTransform, ref rb, ref direction, smoothTime, ref currentVelocity);
             
             // Movemos al jugador en una direccion 
             MovePlayer(direction);
@@ -72,7 +73,7 @@ public class PlayerController : PlayerBehaviour
     }
 
     // Obtener la direccion basada en la entrada del jugador
-    private Vector3 GetInputDirection()
+    /*private Vector3 GetInputDirection()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -87,7 +88,18 @@ public class PlayerController : PlayerBehaviour
         }
 
         return direction;
-    }
+    }*/
+
+    private Vector3 GetInputDirection()
+{
+    float horizontal = Input.GetAxisRaw("Horizontal");
+    float vertical = Input.GetAxisRaw("Vertical");
+
+    Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+
+    // Hacer que el movimiento sea relativo a la rotaciÃ³n del jugador
+    return characterTransform.TransformDirection(direction);
+}
 
     // Metodo para mover al jugador
     private void MovePlayer(Vector3 direction)
@@ -154,7 +166,7 @@ public class PlayerController : PlayerBehaviour
             }
             else
             {
-                Debug.Log("El objeto está demasiado lejos.");
+                Debug.Log("El objeto estï¿½ demasiado lejos.");
             }
         }
     }
