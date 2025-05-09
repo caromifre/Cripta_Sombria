@@ -38,4 +38,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Test_final.unity
     guid: 05a20a2f32b81914a9d72b924b3c4023
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 8c6d0bb163034604693be8ef3bbaa07c,
+      type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: 3e7be312ef75cb44a99602673f33f9dd, type: 2}
+  m_UseUCBPForAssetBundles: 0

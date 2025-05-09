@@ -126,7 +126,7 @@ public class PlayerController : PlayerBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // Resetea la velocidad cuando colisiona con algo
-        rb.velocity = Vector3.zero;
+        rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
     }
 
