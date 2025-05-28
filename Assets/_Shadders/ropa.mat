@@ -108,11 +108,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Activar_efecto_pocion: 0
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
+    - _Brillo_efect_pocion: 5.22
+    - _Brillo_efecto_pocion2: 3.17
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -140,11 +143,15 @@ Material:
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
+    - _textur_Efecto_pocion: 8
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_efect_pocion: {r: 1.4309015, g: 0.05244142, b: 0, a: 0}
+    - _Color_efecto_pocion2: {r: 0, g: 0.0148271965, b: 0.39326513, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tam_textura: {r: 1, g: 1, b: 0, a: 0}
+    - _Tam_textura: {r: 0.3, g: 0.3, b: 0, a: 0}
+    - _Vel_efect_pocion: {r: 0.5, g: 0.93, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

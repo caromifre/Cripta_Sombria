@@ -21,6 +21,7 @@ public class PlayerBehaviour : Character
     // Camara que seguira al jugador
     protected FollowCamera cameraScript;
 
+   
     // Game manager
     public Game_manager _controler;
 
@@ -55,15 +56,23 @@ public class PlayerBehaviour : Character
         // Velocidad de movimiento del jugador en el mapa
         speed = 2f;
         sprintSpeed = 3f;
+
+        //inicializar material
+       // _material = GetComponent<Renderer>().material;
     }
 
     // Metodo para usar la pocion de vida
-    public void UseHealthPotion()
+    public bool UseHealthPotion()
     {
         if (inventoryManager.UseItem(_POCION_VIDA, health, maxHealth))
         {
-            Debug.Log("Usaste una poción de salud.");
+            //Debug.Log("Usaste una pociï¿½n de salud.");
             health = maxHealth;
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

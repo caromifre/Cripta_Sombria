@@ -42,7 +42,7 @@ public class Character : MonoBehaviour, IAttacker
     Drop_colectables _drop_Colectables;
 
 
-    // Implementación de IAttacker
+    // Implementaciï¿½n de IAttacker
     public float DamageGenerate => damageGenerate;
     public bool IsAttacking => attacking;
     public AudioClip DamageSound => damageSound;
@@ -89,7 +89,7 @@ public class Character : MonoBehaviour, IAttacker
             }
             animationManager.UpdateHealthAnimation(health);
 
-            Debug.Log($"{gameObject.name} recibio daño: {damage}, Salud restante: {health}");
+            Debug.Log($"{gameObject.name} recibio daï¿½o: {damage}, Salud restante: {health}");
         }
     }
 }

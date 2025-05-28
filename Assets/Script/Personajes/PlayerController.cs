@@ -1,7 +1,14 @@
 using UnityEngine;
-
+using System.Collections;
+using Unity.VisualScripting;
 public class PlayerController : PlayerBehaviour
 {
+    [SerializeField] string materialProperty = "_Activar_efecto_pocion";
+    
+
+    [SerializeField] float _Duracion_efecto_curacion=0.5f;
+     public Material _material;
+  
     private void Update()
     {
         if (Time.timeScale == 0f) return; // Detener comportamiento si el juego est� pausado
@@ -9,7 +16,9 @@ public class PlayerController : PlayerBehaviour
         if (health > 0)
         {
             Controller();
+
         }
+
         Game_manager.Instance._tot_vida = health;
         Game_manager.Instance._max_vida = maxHealth;
     }
@@ -26,7 +35,7 @@ public class PlayerController : PlayerBehaviour
             // Rotamos al jugador
             // Ya no hace falta porque la cámara rota al jugador
             //rotationManager.Rotate(ref characterTransform, ref rb, ref direction, smoothTime, ref currentVelocity);
-            
+
             // Movemos al jugador en una direccion 
             MovePlayer(direction);
 
@@ -58,7 +67,10 @@ public class PlayerController : PlayerBehaviour
         // Tomar botella de curacion (en caso de tener en el inventario)
         if (Input.GetKeyDown(KeyCode.C))
         {
-            UseHealthPotion();
+            if (UseHealthPotion())
+            {
+                StartCoroutine(EjecutarPorTiempo(_Duracion_efecto_curacion));
+            }
         }
 
         // Activar o desactivar defensa
@@ -91,15 +103,15 @@ public class PlayerController : PlayerBehaviour
     }*/
 
     private Vector3 GetInputDirection()
-{
-    float horizontal = Input.GetAxisRaw("Horizontal");
-    float vertical = Input.GetAxisRaw("Vertical");
+    {
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
 
-    Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
-    // Hacer que el movimiento sea relativo a la rotación del jugador
-    return characterTransform.TransformDirection(direction);
-}
+        // Hacer que el movimiento sea relativo a la rotación del jugador
+        return characterTransform.TransformDirection(direction);
+    }
 
     // Metodo para mover al jugador
     private void MovePlayer(Vector3 direction)
@@ -170,10 +182,28 @@ public class PlayerController : PlayerBehaviour
             }
         }
     }
-    
+
     // Reestablece el ataque en falso
     public void ResetAttack()
     {
         attacking = false;
+    }
+    
+    IEnumerator EjecutarPorTiempo(float duracion)
+    {
+        float tiempo = 0f;
+        
+        // Acción que empieza
+        Debug.Log("Inicia ejecución efecto cura");
+        _material.SetFloat(materialProperty, 1);
+        while (tiempo < duracion)
+        {
+            // Aquí va el código que querés ejecutar repetidamente
+            tiempo += Time.deltaTime;
+            yield return null; // Espera 1 frame
+        }
+        _material.SetFloat(materialProperty, 0);
+        // Acción al finalizar
+        Debug.Log("Fin de ejecución cura");
     }
 }
