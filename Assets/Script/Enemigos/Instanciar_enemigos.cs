@@ -10,6 +10,7 @@ public class Instanciar_enemigos : MonoBehaviour,ISetGal
      box collider de la celda*/
     [SerializeField] GameObject[] _Enemigos,_Jefes;
     [SerializeField] Vector2 _offset;//offset para instanciar a los enemigos
+    [SerializeField] bool _mostrar_jefe=false;
     Transform _transform;
     float _O_X, _O_Y;
     GameObject _Nuevo_enemigo;
@@ -30,7 +31,7 @@ public class Instanciar_enemigos : MonoBehaviour,ISetGal
         Vector3 nn = this.transform.position + new Vector3(_O_X, 0f, _O_Y);
         //Debug.Log("suam de vectores: " + nn);
         Debug.Log("numero de galeria= " + _num_gal);
-        if (_num_gal== 1 && !_controler._Jefe_activo)//si es la ultima galeria instancia el jefe una sola vez
+        if (_num_gal== 1 || _mostrar_jefe && !_controler._Jefe_activo)//si es la ultima galeria instancia el jefe una sola vez
         {
             Debug.Log("APARECE EL JEFE");
             _Nuevo_enemigo = Instantiate(_Jefes[0], nn, Quaternion.identity);
