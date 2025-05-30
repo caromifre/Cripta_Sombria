@@ -8,32 +8,45 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Dorado_esquelto
-  m_Shader: {fileID: -6465566751694194690, guid: 9cc27ed2e28a50e42baa7ac45e187a51,
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Parent: {fileID: -876546973899608171, guid: f5504c4259743b3488c4983d01351d4b,
     type: 3}
-  m_Parent: {fileID: 2100000, guid: 271a5a47cc29f04429fba914f5c56fa8, type: 2}
-  m_ModifiedSerializedProperties: 4
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_ModifiedSerializedProperties: 14
+  m_ValidKeywords:
+  - _EMISSION
+  m_InvalidKeywords:
+  - _ALPHABLEND_ON
+  m_LightmapFlags: 0
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses:
   - MOTIONVECTORS
+  - GRABPASS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Normal_agua1:
         m_Texture: {fileID: 2800000, guid: a6eef098acdf41e4f8063ac6ddeba365, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _DstBlend: 0
     - _Normal_strengh: 1
+    - _SrcBlend: 1
     - _Suavizado: 0.77
+    - _ZWrite: 1
     m_Colors:
+    - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
+    - _Color: {r: 0.25332308, g: 0.25332308, b: 0.25332308, a: 1}
     - _Color_base: {r: 1, g: 0.7882353, b: 0.02352941, a: 0}
     - _Color_brillo: {r: 1.624505, g: 1.173726, b: 0, a: 0}
   m_BuildTextureStacks: []
