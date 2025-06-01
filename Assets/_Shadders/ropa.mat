@@ -42,6 +42,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Bufanda_oclusion_map:
+        m_Texture: {fileID: 2800000, guid: d253cc375cc308440a092869cbfdbc6e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -86,12 +90,40 @@ Material:
         m_Texture: {fileID: 2800000, guid: 881c1c767abdd754398510f444f0f8f3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Ropa_oclusion_map:
+        m_Texture: {fileID: 2800000, guid: 0dfdf64ba286f474f9f069a355bf1523, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_7c28f102264c43b38f690c0f53efdfc2_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 0dfdf64ba286f474f9f069a355bf1523, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_87d2b9ff7f054c7299430269ed39ae01_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: bab4fedcd2d53724182cdb906d1ac79c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_9981d1dbd25144079869eab50f44b6cf_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 0cf63409d56ea5048afbf5bb82d525f8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_afb429c005504c3690f93f8b6cf1ffc8_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 0cf63409d56ea5048afbf5bb82d525f8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_b76c3c717ad74121923216446dbb2458_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 2adb4dda809310e468bd71da8f7298c4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Textura_bufanda:
-        m_Texture: {fileID: 2800000, guid: e0e5391872df111479167fec4bf9ed48, type: 3}
+        m_Texture: {fileID: 2800000, guid: 6e3cba29b9b4fc843813749cd60a6ea0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Textura_ropa:
+        m_Texture: {fileID: 2800000, guid: 20005fd89a67cbc4eb3a1ddc6ecd3fb3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -149,9 +181,13 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Color_efect_pocion: {r: 1.4309015, g: 0.05244142, b: 0, a: 0}
     - _Color_efecto_pocion2: {r: 0, g: 0.0148271965, b: 0.39326513, a: 0}
+    - _Color_ropa: {r: 0, g: 0.5587137, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tam_textura: {r: 1, g: 1, b: 0, a: 0}
+    - _Tam_text_piel: {r: 20, g: 20, b: 0, a: 0}
+    - _Tam_textura: {r: 10, g: 10, b: 0, a: 0}
+    - _Tam_textura_bufanda: {r: 1, g: 1, b: 0, a: 0}
+    - _Tam_textura_ropa: {r: 9, g: 9, b: 0, a: 0}
     - _Vel_efect_pocion: {r: 0.5, g: 0.93, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
