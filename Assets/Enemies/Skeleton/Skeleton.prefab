@@ -1808,6 +1808,11 @@ PrefabInstance:
       propertyPath: m_CastShadows
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8093366831043386605, guid: 78db5dca926347c48bb845c6ada56b71,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e200f6db5a92d5847a45efbb9df7e3e8, type: 2}
     - target: {fileID: 8512578808808246586, guid: 78db5dca926347c48bb845c6ada56b71,
         type: 3}
       propertyPath: m_Layer
