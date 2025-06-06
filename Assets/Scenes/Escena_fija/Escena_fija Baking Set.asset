@@ -55,11 +55,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: -1, y: -1, z: -1}
       index: 15
-      probeCount: 704
+      probeCount: 512
       minSubdiv: 0
       indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 11
+      bricksCount: 8
       indirectionEntryInfo:
       - positionInBricks: {x: -9, y: -9, z: -9}
         minSubdiv: 0
@@ -125,11 +125,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 0, y: -1, z: -2}
       index: 1
-      probeCount: 2240
+      probeCount: 1728
       minSubdiv: 0
       indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 35
+      bricksCount: 27
       indirectionEntryInfo:
       - positionInBricks: {x: 0, y: -9, z: -18}
         minSubdiv: 0
@@ -139,11 +139,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 0, y: -1, z: -1}
       index: 16
-      probeCount: 1920
+      probeCount: 1664
       minSubdiv: 0
       indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 30
+      bricksCount: 26
       indirectionEntryInfo:
       - positionInBricks: {x: 0, y: -9, z: -9}
         minSubdiv: 0
@@ -209,11 +209,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 1, y: -1, z: -2}
       index: 2
-      probeCount: 2816
+      probeCount: 2624
       minSubdiv: 0
       indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 44
+      bricksCount: 41
       indirectionEntryInfo:
       - positionInBricks: {x: 9, y: -9, z: -18}
         minSubdiv: 0
@@ -307,11 +307,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 2, y: -1, z: -1}
       index: 18
-      probeCount: 2560
+      probeCount: 2432
       minSubdiv: 0
       indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 40
+      bricksCount: 38
       indirectionEntryInfo:
       - positionInBricks: {x: 18, y: -9, z: -9}
         minSubdiv: 0
@@ -379,8 +379,8 @@ MonoBehaviour:
   - sceneGUID: 9238d8d96b197104e809936efd2264cc
     cellList: 000000000f0000001e00000005000000140000002300000001000000100000001f000000060000001500000024000000020000001100000020000000070000001600000025000000030000001200000021000000080000001700000026000000
   cellSharedDataAsset:
-    m_AssetGUID: c2e40ef0bdc0cca41aeb3baea5288a0b
-    m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\c2e40ef0bdc0cca41aeb3baea5288a0b.bytes
+    m_AssetGUID: b30a33e7a440f5e45b1583c8a83e9de1
+    m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\b30a33e7a440f5e45b1583c8a83e9de1.bytes
     m_ElementSize: 8192
     m_StreamableCellDescs:
       m_Keys: 000000000f0000001e00000005000000140000002300000001000000100000001f000000060000001500000024000000020000001100000020000000070000001600000025000000030000001200000021000000080000001700000026000000
@@ -438,10 +438,10 @@ MonoBehaviour:
     m_Keys:
     - Default
     m_Values:
-    - sceneHash: -1245761307
+    - sceneHash: 1839139638
       cellDataAsset:
-        m_AssetGUID: 4cf3152bc5c08a147bdfe4fba91f33cd
-        m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\4cf3152bc5c08a147bdfe4fba91f33cd.bytes
+        m_AssetGUID: 937bd01a0b868c04aba4ca68e52e58b9
+        m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\937bd01a0b868c04aba4ca68e52e58b9.bytes
         m_ElementSize: 131072
         m_StreamableCellDescs:
           m_Keys: 000000000f0000001e00000005000000140000002300000001000000100000001f000000060000001500000024000000020000001100000020000000070000001600000025000000030000001200000021000000080000001700000026000000
@@ -496,8 +496,8 @@ MonoBehaviour:
             elementCount: 1
         m_Asset: {fileID: 0}
       cellOptionalDataAsset:
-        m_AssetGUID: 1cb4170abaf3e2c4d95881a8445d7ec7
-        m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\1cb4170abaf3e2c4d95881a8445d7ec7.bytes
+        m_AssetGUID: 574d863e2dcfd1749bfa785c9fd1a8c5
+        m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\574d863e2dcfd1749bfa785c9fd1a8c5.bytes
         m_ElementSize: 131072
         m_StreamableCellDescs:
           m_Keys: 000000000f0000001e00000005000000140000002300000001000000100000001f000000060000001500000024000000020000001100000020000000070000001600000025000000030000001200000021000000080000001700000026000000
@@ -552,8 +552,8 @@ MonoBehaviour:
             elementCount: 1
         m_Asset: {fileID: 0}
       cellProbeOcclusionDataAsset:
-        m_AssetGUID: fb2b2b35c913bc341a5e434c006610c0
-        m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\fb2b2b35c913bc341a5e434c006610c0.bytes
+        m_AssetGUID: 1e54d1f57e172484d9b442b1012c507d
+        m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\1e54d1f57e172484d9b442b1012c507d.bytes
         m_ElementSize: 0
         m_StreamableCellDescs:
           m_Keys: 000000000f0000001e00000005000000140000002300000001000000100000001f000000060000001500000024000000020000001100000020000000070000001600000025000000030000001200000021000000080000001700000026000000
@@ -608,8 +608,8 @@ MonoBehaviour:
             elementCount: 1
         m_Asset: {fileID: 0}
   cellBricksDataAsset:
-    m_AssetGUID: 425f081e22601394b8e35858cdfc8419
-    m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\425f081e22601394b8e35858cdfc8419.bytes
+    m_AssetGUID: 0d964ea00b0f78242bb7933f0c309ed2
+    m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\0d964ea00b0f78242bb7933f0c309ed2.bytes
     m_ElementSize: 16
     m_StreamableCellDescs:
       m_Keys: 000000000f0000001e00000005000000140000002300000001000000100000001f000000060000001500000024000000020000001100000020000000070000001600000025000000030000001200000021000000080000001700000026000000
@@ -617,55 +617,55 @@ MonoBehaviour:
       - offset: 0
         elementCount: 1
       - offset: 16
-        elementCount: 11
-      - offset: 192
+        elementCount: 8
+      - offset: 144
         elementCount: 1
-      - offset: 208
+      - offset: 160
         elementCount: 15
-      - offset: 448
+      - offset: 400
         elementCount: 40
-      - offset: 1088
+      - offset: 1040
         elementCount: 10
-      - offset: 1248
-        elementCount: 35
-      - offset: 1808
-        elementCount: 30
-      - offset: 2288
+      - offset: 1200
+        elementCount: 27
+      - offset: 1632
+        elementCount: 26
+      - offset: 2048
         elementCount: 1
-      - offset: 2304
+      - offset: 2064
         elementCount: 95
-      - offset: 3824
+      - offset: 3584
         elementCount: 88
-      - offset: 5232
+      - offset: 4992
         elementCount: 10
-      - offset: 5392
-        elementCount: 44
-      - offset: 6096
+      - offset: 5152
+        elementCount: 41
+      - offset: 5808
         elementCount: 14
-      - offset: 6320
+      - offset: 6032
         elementCount: 1
-      - offset: 6336
+      - offset: 6048
         elementCount: 95
-      - offset: 7856
+      - offset: 7568
         elementCount: 37
-      - offset: 8448
+      - offset: 8160
         elementCount: 1
-      - offset: 8464
+      - offset: 8176
         elementCount: 1
-      - offset: 8480
-        elementCount: 40
-      - offset: 9120
+      - offset: 8192
+        elementCount: 38
+      - offset: 8800
         elementCount: 1
-      - offset: 9136
+      - offset: 8816
         elementCount: 15
-      - offset: 9376
+      - offset: 9056
         elementCount: 99
-      - offset: 10960
+      - offset: 10640
         elementCount: 1
     m_Asset: {fileID: 0}
   cellSupportDataAsset:
-    m_AssetGUID: 9c2f94103f3499347b067357897aa560
-    m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\9c2f94103f3499347b067357897aa560.bytes
+    m_AssetGUID: 92546caab4fb5dd428af9906a0d91455
+    m_StreamableAssetPath: APVStreamingAssets\0f148e6a6884de941bd5fccb8cb80dd0\92546caab4fb5dd428af9906a0d91455.bytes
     m_ElementSize: 262144
     m_StreamableCellDescs:
       m_Keys: 000000000f0000001e00000005000000140000002300000001000000100000001f000000060000001500000024000000020000001100000020000000070000001600000025000000030000001200000021000000080000001700000026000000
