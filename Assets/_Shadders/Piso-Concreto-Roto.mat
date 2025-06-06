@@ -26,6 +26,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: f1e98278abecb8f4e821ff0944ce0eb2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _Oclusion_map:
         m_Texture: {fileID: 2800000, guid: 82744e8f5f9d04849b5964ea0407b3b3, type: 3}
         m_Scale: {x: 1, y: 1}
