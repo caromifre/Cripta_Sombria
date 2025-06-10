@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -42,8 +42,8 @@ RenderSettings:
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -66,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -541,9 +538,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1230333621}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 11
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
@@ -593,8 +589,12 @@ Light:
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &1230333623
 Transform:
   m_ObjectHideFlags: 0
@@ -651,120 +651,120 @@ PrefabInstance:
         type: 3}
       propertyPath: _room_fin
       value: 
-      objectReference: {fileID: 2406978126415857164, guid: 752dfb042d3c1be4da917eb5d23d0bea,
+      objectReference: {fileID: 2406978126415857164, guid: 88582b73ea963d84880b18f033500259,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
       propertyPath: _rooms.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
       propertyPath: _galerias.Array.size
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
       propertyPath: _pasillos.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _rooms.Array.data[0]
+      propertyPath: '_rooms.Array.data[0]'
       value: 
-      objectReference: {fileID: 2406978126415857164, guid: 89d61604af7e0b5418886cdc2944eadd,
+      objectReference: {fileID: 2406978126415857164, guid: dc6c6fd132def5545b5cf07a18d087e5,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _rooms.Array.data[1]
+      propertyPath: '_rooms.Array.data[1]'
       value: 
       objectReference: {fileID: 2406978126415857164, guid: 5a50da88f0710ac49b24ba8d763fd1e5,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _rooms.Array.data[2]
+      propertyPath: '_rooms.Array.data[2]'
       value: 
       objectReference: {fileID: 2406978126415857164, guid: fc648e9d5a3c45141987ec12f5d58595,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _rooms.Array.data[4]
+      propertyPath: '_rooms.Array.data[4]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
       propertyPath: _celda_incio.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _galerias.Array.data[0]
+      propertyPath: '_galerias.Array.data[0]'
       value: 
-      objectReference: {fileID: 2406978126415857164, guid: f29b74a89d40483439cc69b21f2f549a,
+      objectReference: {fileID: 2406978126415857164, guid: 547de49358201544ca8cbe516aaf4afa,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _galerias.Array.data[1]
+      propertyPath: '_galerias.Array.data[1]'
       value: 
       objectReference: {fileID: 2406978126415857164, guid: fe6942004fcb36240b6aa42f606fecc8,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _galerias.Array.data[2]
+      propertyPath: '_galerias.Array.data[2]'
       value: 
       objectReference: {fileID: 2406978126415857164, guid: 8246c904f42446a45a6086aac14dedc0,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _galerias.Array.data[3]
+      propertyPath: '_galerias.Array.data[3]'
       value: 
       objectReference: {fileID: 2406978126415857164, guid: 64df163fb3e41ec46aefe7be6c87d629,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _galerias.Array.data[4]
+      propertyPath: '_galerias.Array.data[4]'
       value: 
       objectReference: {fileID: 2406978126415857164, guid: 8bacb78eb078e784eb9f696ccc922cc1,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _galerias.Array.data[5]
+      propertyPath: '_galerias.Array.data[5]'
       value: 
       objectReference: {fileID: 2406978126415857164, guid: cb64505b8e597dd4694da448def3e30f,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _pasillos.Array.data[0]
+      propertyPath: '_pasillos.Array.data[0]'
       value: 
-      objectReference: {fileID: 2406978126415857164, guid: b1366c6c680b97c489dc701760b225a6,
+      objectReference: {fileID: 2406978126415857164, guid: c05fedea58ef0ae479ada539fbbb2a3e,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _pasillos.Array.data[1]
+      propertyPath: '_pasillos.Array.data[1]'
       value: 
       objectReference: {fileID: 2406978126415857164, guid: ade3b33e293c2e445abbb0c301e46131,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _pasillos.Array.data[2]
+      propertyPath: '_pasillos.Array.data[2]'
       value: 
       objectReference: {fileID: 2406978126415857164, guid: 75acf3e2e3202ab478d0b8562ecdbab1,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _celda_incio.Array.data[0]
+      propertyPath: '_celda_incio.Array.data[0]'
       value: 
-      objectReference: {fileID: 2406978126415857164, guid: 60cdce0a38f6cd244a02a4fcfe578c10,
+      objectReference: {fileID: 2406978126415857164, guid: dc6c6fd132def5545b5cf07a18d087e5,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _celda_incio.Array.data[1]
+      propertyPath: '_celda_incio.Array.data[1]'
       value: 
       objectReference: {fileID: 2406978126415857164, guid: 4cfb9d43515a8e641a2ca4a37120af18,
         type: 3}
     - target: {fileID: 151902981036897524, guid: a1f7f084c124b6f4195c7e66aac70ee3,
         type: 3}
-      propertyPath: _celda_incio.Array.data[2]
+      propertyPath: '_celda_incio.Array.data[2]'
       value: 
       objectReference: {fileID: 2406978126415857164, guid: 4cfb9d43515a8e641a2ca4a37120af18,
         type: 3}
