@@ -55,6 +55,10 @@ MonoBehaviour:
   _Jefes:
   - {fileID: 4414871117303439921, guid: 9acd2541739ef5846b5b391821b162e2, type: 3}
   _offset: {x: 2, y: 2}
+  _mostrar_jefe: 0
+  _VFX_Spawn_efect: {fileID: 5417138403308089870, guid: afee5a28a49c3d04290ba769f08c02fa,
+    type: 3}
+  _tiempo_delay: 1
 --- !u!65 &1805852623753581105
 BoxCollider:
   m_ObjectHideFlags: 0

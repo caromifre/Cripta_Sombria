@@ -1,8 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 public class Instanciar_enemigos : MonoBehaviour,ISetGal
 {
@@ -11,6 +9,8 @@ public class Instanciar_enemigos : MonoBehaviour,ISetGal
     [SerializeField] GameObject[] _Enemigos,_Jefes;
     [SerializeField] Vector2 _offset;//offset para instanciar a los enemigos
     [SerializeField] bool _mostrar_jefe=false;
+    [SerializeField] GameObject _VFX_Spawn_efect;
+    [SerializeField] float _tiempo_delay = 1.0f; // Tiempo antes de que aparezca el enemigo
     Transform _transform;
     float _O_X, _O_Y;
     GameObject _Nuevo_enemigo;
@@ -18,30 +18,53 @@ public class Instanciar_enemigos : MonoBehaviour,ISetGal
     int _num_gal = 0,
         _tot_gal=0;
 
-    public void instanciar_enemigos() {
+    void Start()
+    {        
+        
+    }
+    public void instanciar_enemigos()
+    {
+        _controler = Game_manager.Instance;
         _O_X = Random.Range(-_offset.x, _offset.x);
         _O_Y = Random.Range(-_offset.y, _offset.y);
-        int t_en = Random.Range(0, _Enemigos.Length);
         _transform = this.transform;
-        _controler = Game_manager.Instance;
-        //Vector3 pos_enemy = new Vector3(transform.position.x+_O_X, 0f, - transform.position.y + _O_Y );
-        //Debug.Log("posicion: " + this.transform.position);
-        //Debug.Log("new vector3: " + new Vector3(_O_X, 0f, _O_Y));
+        Vector3 spawnPos = _transform.position + new Vector3(_O_X, 0f, _O_Y);
+        Debug.Log("Llamada a instanciar_con efecto");
+        StartCoroutine(SpawnConEfecto(spawnPos));
+        
+    }
 
-        Vector3 nn = this.transform.position + new Vector3(_O_X, 0f, _O_Y);
-        //Debug.Log("suam de vectores: " + nn);
-        Debug.Log("numero de galeria= " + _num_gal);
-        if (_num_gal== 1 || _mostrar_jefe && !_controler._Jefe_activo)//si es la ultima galeria instancia el jefe una sola vez
+    IEnumerator SpawnConEfecto(Vector3 posicion)
+    {
+        /*float tiempo = 0,
+             duracion = _tiempo_delay;*/
+        // Instanciar el efecto VFX
+       // GameObject vfx = Instantiate(_VFX_Spawn_efect, posicion, Quaternion.identity);
+        Debug.Log("Se instancio el efecto portal");
+        // Esperar un tiempo antes de instanciar el enemigo (mitad de la animación del VFX)
+        Debug.Log("Esperando " + _tiempo_delay + " segundos...");
+        yield return new WaitForSeconds(_tiempo_delay);
+        Debug.Log("Tiempo de espera terminado, instanciando enemigo...");
+            
+        // Instanciar el enemigo o jefe
+        Debug.Log("variable jefe activo_" + _controler._Jefe_activo);
+        if (_num_gal == 1 || (_mostrar_jefe && !_controler._Jefe_activo))
         {
-            Debug.Log("APARECE EL JEFE");
-            _Nuevo_enemigo = Instantiate(_Jefes[0], nn, Quaternion.identity);
+            _Nuevo_enemigo = Instantiate(_Jefes[0], posicion, Quaternion.identity);
             _controler.activar_jefe();
         }
         else
         {
-            _Nuevo_enemigo = Instantiate(_Enemigos[t_en], nn, Quaternion.identity);
+            Debug.Log("instanciando enemigo");
+            int t_en = Random.Range(0, _Enemigos.Length);
+            _Nuevo_enemigo = Instantiate(_Enemigos[t_en], posicion, Quaternion.identity);
         }
+
+        // Opcional: destruir el efecto después de unos segundos
+        //Destroy(vfx, 1f); // Cambiá 3f por la duración real del efecto si lo sabés
+        
     }
+
 
     public void SetGal(int num, int tot)
     {
