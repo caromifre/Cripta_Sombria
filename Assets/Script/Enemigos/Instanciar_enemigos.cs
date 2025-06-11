@@ -53,10 +53,16 @@ public class Instanciar_enemigos : MonoBehaviour,ISetGal
 
         
         _nn = _transform.position + new Vector3(_O_X, 0f, _O_Y);
-        GameObject vfx = Instantiate(_VFX_Spawn_efect, _nn, Quaternion.identity);
+
+        if (!_Activar_portal)
+        {
+            GameObject vfx = Instantiate(_VFX_Spawn_efect, _nn, Quaternion.identity);
+             Destroy(vfx, 1.5f); // Cambiá 3f por la duración real del efecto si lo sabés
+        }
+
         Debug.Log("activar variable portal para inicair conteo");
         _Activar_portal = true;
-        Destroy(vfx, 1.5f); // Cambiá 3f por la duración real del efecto si lo sabés
+       
     }
 
     public void instanciar_efectivo()

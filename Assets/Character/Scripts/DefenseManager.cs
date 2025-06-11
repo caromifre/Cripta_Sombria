@@ -16,7 +16,7 @@ public class DefenseManager
     public void StartDefending()
     {
         _anim.SetBool("Defend", true);
-        Debug.Log("Defensa activada.");
+       // Debug.Log("Defensa activada.");
     }
 
     // Desactiva la defensa

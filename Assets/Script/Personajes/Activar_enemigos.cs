@@ -9,7 +9,6 @@ public class Activar_enemigos : MonoBehaviour
     Instanciar_enemigo*/
     GameObject _Enemy_isntan;
     Instanciar_enemigos _Enemigos;
-
    
     void OnTriggerEnter(Collider choque)
     {
@@ -18,7 +17,7 @@ public class Activar_enemigos : MonoBehaviour
             _Enemigos= _Enemy_isntan.GetComponent<Instanciar_enemigos>();
             _Enemigos.instanciar_enemigos();
             //_Enemy_isntan.SetActive(false);
-            Destroy( _Enemy_isntan );
+            Destroy( _Enemy_isntan,3f );
            // Debug.Log("limite del insanciador de la celda");
         }
     }

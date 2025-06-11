@@ -28,7 +28,7 @@ public class PlayerController : PlayerBehaviour
     {
         Vector3 direction = GetInputDirection();
         isSprinting = Input.GetKey(KeyCode.LeftShift);
-
+        defenseManager.StopDefending();
         // Cambiamos las animaciones segun el estado
         if (direction.magnitude > 0)
         {
@@ -74,14 +74,14 @@ public class PlayerController : PlayerBehaviour
         }
 
         // Activar o desactivar defensa
-        if (Input.GetButton("Fire2"))
+        /*if (Input.GetButton("Fire2"))
         {
             defenseManager.StartDefending();
         }
         else
         {
             defenseManager.StopDefending();
-        }
+        }*/
     }
 
     // Obtener la direccion basada en la entrada del jugador
