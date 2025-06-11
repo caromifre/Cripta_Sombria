@@ -11,9 +11,9 @@ public class Spider : Enemy
     [SerializeField] float _damageGenerate = 20f;
     [SerializeField] float _distanceAttack = 0.8f;
 
-    private void Start()
+    private new void Start()
     {
-        // Valores de la araña
+        // Valores de la araï¿½a
         health = _health;
         speed = _speed;
         sprintSpeed = _sprintSpeed;

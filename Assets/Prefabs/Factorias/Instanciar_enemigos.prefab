@@ -58,7 +58,7 @@ MonoBehaviour:
   _mostrar_jefe: 0
   _VFX_Spawn_efect: {fileID: 5417138403308089870, guid: afee5a28a49c3d04290ba769f08c02fa,
     type: 3}
-  _tiempo_delay: 1
+  _tiempo_delay: 0.5
 --- !u!65 &1805852623753581105
 BoxCollider:
   m_ObjectHideFlags: 0
