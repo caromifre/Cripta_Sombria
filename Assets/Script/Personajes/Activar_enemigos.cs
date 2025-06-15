@@ -16,6 +16,7 @@ public class Activar_enemigos : MonoBehaviour
             _Enemy_isntan = choque.gameObject;
             _Enemigos= _Enemy_isntan.GetComponent<Instanciar_enemigos>();
             _Enemigos.instanciar_enemigos();
+            choque.enabled = false;
             //_Enemy_isntan.SetActive(false);
             Destroy( _Enemy_isntan,3f );
            // Debug.Log("limite del insanciador de la celda");
