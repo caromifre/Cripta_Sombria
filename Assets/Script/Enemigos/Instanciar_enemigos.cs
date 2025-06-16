@@ -11,6 +11,7 @@ public class Instanciar_enemigos : MonoBehaviour, ISetGal
     [SerializeField] Vector2 _offset;//offset para instanciar a los enemigos
     [SerializeField] bool _mostrar_jefe = false;
     [SerializeField] GameObject _VFX_Spown_efect;
+    [SerializeField] float _Altura_portal = 0.01f;
     Transform _transform;
     Vector3 _pos_isnt;
     float _O_X, _O_Y, _conteo;
@@ -55,10 +56,10 @@ public class Instanciar_enemigos : MonoBehaviour, ISetGal
         _transform = this.transform;
         _controler = Game_manager.Instance;
         _pos_isnt = _transform.position + new Vector3(_O_X, 0f, _O_Y);
-       
+       Vector3 pos_portal=_transform.position + new Vector3(_O_X, _Altura_portal, _O_Y);
 
         //Vector3 nn = _transform.position + new Vector3(_O_X, 0f, _O_Y);
-        Instantiate(_VFX_Spown_efect, _pos_isnt, Quaternion.identity);
+        Instantiate(_VFX_Spown_efect,pos_portal, Quaternion.identity);
         _Insanciado = false;
 
     }

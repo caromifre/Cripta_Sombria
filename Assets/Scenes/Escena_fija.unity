@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.06
@@ -170379,7 +170379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c617c6a29d25d04a9a697048826cfe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ins_enemy: {fileID: 7979423323213027020, guid: 42636e1b97f7e724780b9139c651eab3,
+  _ins_enemy: {fileID: 7979423323213027020, guid: 3bf117e32c71fb947b2fb7e63705b20f,
     type: 3}
 --- !u!114 &932741611
 MonoBehaviour:
@@ -423362,7 +423362,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6739599443475532622, guid: 18ee5a5adbee45e4cbac89deecd431da, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
