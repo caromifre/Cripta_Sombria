@@ -140203,6 +140203,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 679598525}
   m_Mesh: {fileID: -6484715739403591833, guid: ea32476cf1ca9c24382512997df33bbc, type: 3}
+--- !u!1 &681593929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f6e6bffc5691ed4f80392eb175c831b,
+    type: 3}
+  m_PrefabInstance: {fileID: 857358990}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &681593932
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 681593929}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.6978018, y: 7.309392, z: 3.567271}
+  m_Center: {x: 0.0000011353266, y: 3.6768541, z: -0.021756263}
 --- !u!1 &681661371
 GameObject:
   m_ObjectHideFlags: 0
@@ -143592,15 +143619,34 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -3844966656205786134, guid: 3ab02dd64ea34dc4ba9fc9c42d7b7a82,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
     - target: {fileID: 919132149155446097, guid: 3ab02dd64ea34dc4ba9fc9c42d7b7a82,
         type: 3}
       propertyPath: m_Name
       value: Grave_2
       objectReference: {fileID: 0}
+    - target: {fileID: 4860194473665222517, guid: 3ab02dd64ea34dc4ba9fc9c42d7b7a82,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
+    - target: {fileID: 8350713938243030439, guid: 3ab02dd64ea34dc4ba9fc9c42d7b7a82,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3ab02dd64ea34dc4ba9fc9c42d7b7a82,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1542752374}
   m_SourcePrefab: {fileID: 100100000, guid: 3ab02dd64ea34dc4ba9fc9c42d7b7a82, type: 3}
 --- !u!1 &695529051
 GameObject:
@@ -175786,15 +175832,34 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8391231144940413331, guid: 6f6e6bffc5691ed4f80392eb175c831b,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
     - target: {fileID: 919132149155446097, guid: 6f6e6bffc5691ed4f80392eb175c831b,
         type: 3}
       propertyPath: m_Name
       value: Grave_4
       objectReference: {fileID: 0}
+    - target: {fileID: 3438670930684253275, guid: 6f6e6bffc5691ed4f80392eb175c831b,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
+    - target: {fileID: 7300339879154287094, guid: 6f6e6bffc5691ed4f80392eb175c831b,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f6e6bffc5691ed4f80392eb175c831b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 681593932}
   m_SourcePrefab: {fileID: 100100000, guid: 6f6e6bffc5691ed4f80392eb175c831b, type: 3}
 --- !u!1 &857568450
 GameObject:
@@ -197741,15 +197806,34 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -4198130775498723047, guid: a7a8fd51bbb959b4fb35d3e4755cc371,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
+    - target: {fileID: -826880285869115224, guid: a7a8fd51bbb959b4fb35d3e4755cc371,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
     - target: {fileID: 919132149155446097, guid: a7a8fd51bbb959b4fb35d3e4755cc371,
         type: 3}
       propertyPath: m_Name
       value: Grave_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1521503524665936043, guid: a7a8fd51bbb959b4fb35d3e4755cc371,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7a8fd51bbb959b4fb35d3e4755cc371,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1700764109}
   m_SourcePrefab: {fileID: 100100000, guid: a7a8fd51bbb959b4fb35d3e4755cc371, type: 3}
 --- !u!1 &972958777
 GameObject:
@@ -222580,15 +222664,34 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2103236391682250674, guid: 7fd920e85c9327d409b1ec4d33938f56,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
+    - target: {fileID: 553616989508670712, guid: 7fd920e85c9327d409b1ec4d33938f56,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
     - target: {fileID: 919132149155446097, guid: 7fd920e85c9327d409b1ec4d33938f56,
         type: 3}
       propertyPath: m_Name
       value: Grave_3
       objectReference: {fileID: 0}
+    - target: {fileID: 1074807519140268745, guid: 7fd920e85c9327d409b1ec4d33938f56,
+        type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: a905d57424eb7294a95fcec4e412b7f5, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7fd920e85c9327d409b1ec4d33938f56,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1181999219}
   m_SourcePrefab: {fileID: 100100000, guid: 7fd920e85c9327d409b1ec4d33938f56, type: 3}
 --- !u!1 &1071832424
 GameObject:
@@ -243028,6 +243131,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181366126}
   m_Mesh: {fileID: 4300000, guid: b31c62c35ced11c4383176ecffe930c9, type: 3}
+--- !u!1 &1181999216 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7fd920e85c9327d409b1ec4d33938f56,
+    type: 3}
+  m_PrefabInstance: {fileID: 1071367338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1181999219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181999216}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6835527, y: 4.072812, z: 2.2157986}
+  m_Center: {x: -0.058290035, y: 2.0110688, z: 0.04163633}
 --- !u!1 &1182254124
 GameObject:
   m_ObjectHideFlags: 0
@@ -312866,6 +312996,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1541978754}
   m_Mesh: {fileID: 4300000, guid: b31c62c35ced11c4383176ecffe930c9, type: 3}
+--- !u!1 &1542752371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3ab02dd64ea34dc4ba9fc9c42d7b7a82,
+    type: 3}
+  m_PrefabInstance: {fileID: 695510349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1542752374
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542752371}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8575344, y: 4.2600107, z: 2.793422}
+  m_Center: {x: -0.07123243, y: 2.0657926, z: -0.016759265}
 --- !u!1 &1542869066
 GameObject:
   m_ObjectHideFlags: 0
@@ -348429,6 +348586,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699906518}
   m_Mesh: {fileID: 4300000, guid: b31c62c35ced11c4383176ecffe930c9, type: 3}
+--- !u!1 &1700764106 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a7a8fd51bbb959b4fb35d3e4755cc371,
+    type: 3}
+  m_PrefabInstance: {fileID: 972919609}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1700764109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1700764106}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.67161834, y: 4.4791875, z: 2.2587678}
+  m_Center: {x: -0.08209548, y: 2.2321594, z: -0.018244484}
 --- !u!1 &1700826276
 GameObject:
   m_ObjectHideFlags: 0
