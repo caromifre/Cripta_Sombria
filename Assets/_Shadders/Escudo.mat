@@ -150,6 +150,7 @@ Material:
     - _AddPrecomputedVelocity: 0
     - _AlphaClip: 0
     - _AlphaToMask: 0
+    - _Ancho: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -166,11 +167,15 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _Nosie_scale: 30
+    - _Nosie_scale2: 6.32
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _Potencia_efecto: 10
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Rotar_textura_visible: -0.8
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -182,9 +187,11 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color_lad_visible: {r: 0, g: 0.5943396, b: 0.5705818, a: 0}
+    - _Color_lad_visible: {r: 1.866066, g: 0, b: 0.01827313, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _vel_dir_efecto: {r: 0.08, g: -0.09, b: 0, a: 0}
+    - _vel_dir_efecto2: {r: -0.9, g: 0.03, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6750628686890058111
