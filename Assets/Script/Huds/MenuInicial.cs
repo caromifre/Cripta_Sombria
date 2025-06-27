@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuInicial : MonoBehaviour
 {
+    [SerializeField] string _Nom_nivel = "Nivel1";
 
     public void Jugar()
     {
@@ -14,8 +15,8 @@ public class MenuInicial : MonoBehaviour
             Debug.Log("La instancia de Game_manager ha sido destruida.");
         }
 
-        SceneManager.LoadScene("Nivel1");
-        
+        SceneManager.LoadScene(_Nom_nivel);
+
     }
 
     public void Salir()

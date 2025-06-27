@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3151022108114916800}
   - component: {fileID: 1805852623753581105}
   m_Layer: 0
-  m_Name: Instanciar_Jefe
+  m_Name: Instanciar_Jefe 2
   m_TagString: Instan_Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
   - {fileID: 2754694677389908571, guid: 7f69943043b22484d8e8a9f03893747d, type: 3}
   - {fileID: 1738739185814747127, guid: fba4788cc01d29f4bb2a0feb890c4e2a, type: 3}
   _Jefes:
-  - {fileID: 4414871117303439921, guid: 9991bb23415c7324db24e3911a125e1e, type: 3}
+  - {fileID: 4414871117303439921, guid: 9acd2541739ef5846b5b391821b162e2, type: 3}
   _offset: {x: 2, y: 2}
   _mostrar_jefe: 1
   _VFX_Spown_efect: {fileID: 8335751486065420176, guid: a66008b3464b181419b398e7e390683a,

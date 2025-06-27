@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.06
@@ -261121,6 +261121,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5735137543021008428, guid: 24d5055fa0fa64c49881392efb59245f,
+        type: 3}
+      propertyPath: '_Menues.Array.data[1]'
+      value: MenuScene_new
       objectReference: {fileID: 0}
     - target: {fileID: 6065834083878269056, guid: 24d5055fa0fa64c49881392efb59245f,
         type: 3}
