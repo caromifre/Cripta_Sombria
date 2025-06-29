@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // Esta clase gestiona la defensa de los characteres que poseen escudo

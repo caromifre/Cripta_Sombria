@@ -13,7 +13,7 @@ public class Control_Pausa : MonoBehaviour
 
     bool _juego_Pausado = false; // Estado del juego
 
-    private void Awake()
+    private void Start()
     {
         _controler = Game_manager.Instance;
         _volver_a_jugar?.onClick.AddListener(Reanudar_Juego);
@@ -73,6 +73,8 @@ public class Control_Pausa : MonoBehaviour
     public void Mostrar_inicio()
     {
         _controler.mostrar_menu_incio();
+        _juego_Pausado = false;
+        Time.timeScale = 1f;
     }
 
     public void Salir()

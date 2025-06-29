@@ -5119,7 +5119,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5050356755118691366}
   - component: {fileID: 7045262674252389277}
-  - component: {fileID: 6739599443475532622}
   - component: {fileID: 3109031374456009818}
   - component: {fileID: 7995543159598779215}
   - component: {fileID: 3956882755413710085}
@@ -5184,36 +5183,6 @@ MonoBehaviour:
   materialProperty: _Activar_efecto_pocion
   _Duracion_efecto_curacion: 0.5
   _material: {fileID: 2100000, guid: 1346ccf881eba88448347d59d72cbddc, type: 2}
---- !u!114 &6739599443475532622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7052403155028786945}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c9054b36cc3e1f4b99bef3b9f17f331, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageGenerate: 10
-  isSprinting: 0
-  distanceAttack: 0
-  attacking: 0
-  isPlayer: 0
-  smoothTime: 0.05
-  currentVelocity: 0.1
-  characterTransform: {fileID: 0}
-  rb: {fileID: 0}
-  audioSourceManager: {fileID: 0}
-  runSound: {fileID: 0}
-  walkSound: {fileID: 0}
-  dieSound: {fileID: 0}
-  damageSound: {fileID: 0}
-  interactRange: 1.5
-  currentVelocityItem: 0
-  smoothTimeItem: 0
-  _controler: {fileID: 0}
 --- !u!95 &3109031374456009818
 Animator:
   serializedVersion: 7
