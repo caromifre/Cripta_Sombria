@@ -237,11 +237,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 0, y: 0, z: -1}
       index: 43
-      probeCount: 5632
+      probeCount: 5120
       minSubdiv: 0
       indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 88
+      bricksCount: 80
       indirectionEntryInfo:
       - positionInBricks: {x: 0, y: 0, z: -9}
         minSubdiv: 0
@@ -279,28 +279,28 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 1, y: -1, z: -2}
       index: 20
-      probeCount: 64
-      minSubdiv: 2
-      indexChunkCount: 1
+      probeCount: 1024
+      minSubdiv: 0
+      indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 1
+      bricksCount: 16
       indirectionEntryInfo:
       - positionInBricks: {x: 9, y: -9, z: -18}
-        minSubdiv: 2
+        minSubdiv: 0
         minBrickPos: {x: 0, y: 0, z: 0}
         maxBrickPosPlusOne: {x: 10, y: 10, z: 10}
         hasMinMax: 1
         hasOnlyBiggerBricks: 0
     - position: {x: 1, y: -1, z: -1}
       index: 38
-      probeCount: 64
-      minSubdiv: 2
-      indexChunkCount: 1
+      probeCount: 1600
+      minSubdiv: 0
+      indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 1
+      bricksCount: 25
       indirectionEntryInfo:
       - positionInBricks: {x: 9, y: -9, z: -9}
-        minSubdiv: 2
+        minSubdiv: 0
         minBrickPos: {x: 0, y: 0, z: 0}
         maxBrickPosPlusOne: {x: 10, y: 10, z: 10}
         hasMinMax: 1
@@ -349,11 +349,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 1, y: 0, z: -1}
       index: 44
-      probeCount: 9856
+      probeCount: 9472
       minSubdiv: 0
       indexChunkCount: 5
       shChunkCount: 2
-      bricksCount: 154
+      bricksCount: 148
       indirectionEntryInfo:
       - positionInBricks: {x: 9, y: 0, z: -9}
         minSubdiv: 0
@@ -377,28 +377,28 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 2, y: -1, z: -3}
       index: 3
-      probeCount: 64
-      minSubdiv: 2
-      indexChunkCount: 1
+      probeCount: 192
+      minSubdiv: 0
+      indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 1
+      bricksCount: 3
       indirectionEntryInfo:
       - positionInBricks: {x: 18, y: -9, z: -27}
-        minSubdiv: 2
+        minSubdiv: 0
         minBrickPos: {x: 0, y: 0, z: 0}
         maxBrickPosPlusOne: {x: 10, y: 10, z: 10}
         hasMinMax: 1
         hasOnlyBiggerBricks: 0
     - position: {x: 2, y: -1, z: -2}
       index: 21
-      probeCount: 64
-      minSubdiv: 2
-      indexChunkCount: 1
+      probeCount: 640
+      minSubdiv: 0
+      indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 1
+      bricksCount: 10
       indirectionEntryInfo:
       - positionInBricks: {x: 18, y: -9, z: -18}
-        minSubdiv: 2
+        minSubdiv: 0
         minBrickPos: {x: 0, y: 0, z: 0}
         maxBrickPosPlusOne: {x: 10, y: 10, z: 10}
         hasMinMax: 1
@@ -447,11 +447,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 2, y: 0, z: -2}
       index: 27
-      probeCount: 6400
+      probeCount: 6144
       minSubdiv: 0
       indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 100
+      bricksCount: 96
       indirectionEntryInfo:
       - positionInBricks: {x: 18, y: 0, z: -18}
         minSubdiv: 0
@@ -489,14 +489,14 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 3, y: -1, z: -3}
       index: 4
-      probeCount: 64
-      minSubdiv: 2
-      indexChunkCount: 1
+      probeCount: 2368
+      minSubdiv: 0
+      indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 1
+      bricksCount: 37
       indirectionEntryInfo:
       - positionInBricks: {x: 27, y: -9, z: -27}
-        minSubdiv: 2
+        minSubdiv: 0
         minBrickPos: {x: 0, y: 0, z: 0}
         maxBrickPosPlusOne: {x: 10, y: 10, z: 10}
         hasMinMax: 1
@@ -545,11 +545,11 @@ MonoBehaviour:
         hasOnlyBiggerBricks: 0
     - position: {x: 3, y: 0, z: -3}
       index: 10
-      probeCount: 6848
+      probeCount: 6528
       minSubdiv: 0
       indexChunkCount: 5
       shChunkCount: 1
-      bricksCount: 107
+      bricksCount: 102
       indirectionEntryInfo:
       - positionInBricks: {x: 27, y: 0, z: -27}
         minSubdiv: 0
@@ -694,7 +694,7 @@ MonoBehaviour:
     m_Keys:
     - Default
     m_Values:
-    - sceneHash: 436214703
+    - sceneHash: -1066731240
       cellDataAsset:
         m_AssetGUID: 85b320cd3b1710c4487dea8f3a5442d9
         m_StreamableAssetPath: APVStreamingAssets\71ae200292db5d04fab831b01ec9d3fe\85b320cd3b1710c4487dea8f3a5442d9.bytes
@@ -995,56 +995,56 @@ MonoBehaviour:
       - offset: 640
         elementCount: 1
       - offset: 656
-        elementCount: 88
-      - offset: 2064
+        elementCount: 80
+      - offset: 1936
         elementCount: 40
-      - offset: 2704
+      - offset: 2576
         elementCount: 1
-      - offset: 2720
+      - offset: 2592
+        elementCount: 16
+      - offset: 2848
+        elementCount: 25
+      - offset: 3248
         elementCount: 1
-      - offset: 2736
+      - offset: 3264
         elementCount: 1
-      - offset: 2752
-        elementCount: 1
-      - offset: 2768
-        elementCount: 1
-      - offset: 2784
+      - offset: 3280
         elementCount: 88
-      - offset: 4192
-        elementCount: 154
-      - offset: 6656
-        elementCount: 23
-      - offset: 7024
-        elementCount: 1
-      - offset: 7040
-        elementCount: 1
+      - offset: 4688
+        elementCount: 148
       - offset: 7056
+        elementCount: 23
+      - offset: 7424
+        elementCount: 3
+      - offset: 7472
+        elementCount: 10
+      - offset: 7632
         elementCount: 1
-      - offset: 7072
+      - offset: 7648
         elementCount: 1
-      - offset: 7088
+      - offset: 7664
         elementCount: 99
-      - offset: 8672
-        elementCount: 100
-      - offset: 10272
-        elementCount: 32
+      - offset: 9248
+        elementCount: 96
       - offset: 10784
+        elementCount: 32
+      - offset: 11296
         elementCount: 1
-      - offset: 10800
+      - offset: 11312
+        elementCount: 37
+      - offset: 11904
         elementCount: 1
-      - offset: 10816
+      - offset: 11920
         elementCount: 1
-      - offset: 10832
+      - offset: 11936
         elementCount: 1
-      - offset: 10848
-        elementCount: 1
-      - offset: 10864
-        elementCount: 107
-      - offset: 12576
+      - offset: 11952
+        elementCount: 102
+      - offset: 13584
         elementCount: 19
-      - offset: 12880
+      - offset: 13888
         elementCount: 1
-      - offset: 12896
+      - offset: 13904
         elementCount: 1
     m_Asset: {fileID: 0}
   cellSupportDataAsset:
